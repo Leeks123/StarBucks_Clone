@@ -2,10 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledTopNav = styled.div`
-  position: absolute;
-  top: 0px;
-  right: 90px;
-  border: 1px solid black;
   & > ul {
     display: flex;
     list-style-type: none;
@@ -15,7 +11,9 @@ const StyledTopNav = styled.div`
       height: 20px;
       font: normal 13px Avenir, Arial, georgia;
       color: #555;
-      border: 1px solid red;
+    }
+    li:hover {
+      text-decoration: underline;
     }
   }
 `;

@@ -7,12 +7,15 @@ import logo from "../../images/logo.png";
 
 const StyledNavTemplate = styled.div`
   position: relative;
-  border: 1px solid black;
 
   height: 120px;
   width: 100%;
   margin: 0 auto;
   box-sizing: content-box;
+  & .nav_wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
 `;
 const StyledA = styled.a`
   position: absolute;
@@ -31,9 +34,11 @@ const NavTemplate = () => {
   return (
     <div style={wrapper}>
       <StyledNavTemplate>
-        <StyledA />
-        <TopNav />
-        <NavSearch />
+        <div class="nav_wrapper">
+          <StyledA />
+          <TopNav />
+          <NavSearch />
+        </div>
         <BottomNav />
       </StyledNavTemplate>
     </div>
