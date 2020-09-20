@@ -6,8 +6,10 @@ import NavSearch from "./NavSearch";
 import logo from "../../images/logo.png";
 
 const StyledNavTemplate = styled.div`
-  position: relative;
-
+  position: fixed;
+  float: inline-start;
+  background: #f6f5f0;
+  left: 0;
   height: 120px;
   width: 100%;
   margin: 0 auto;
