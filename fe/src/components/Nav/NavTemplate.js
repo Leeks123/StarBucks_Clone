@@ -14,6 +14,7 @@ const StyledNavTemplate = styled.div`
   width: 100%;
   margin: 0 auto;
   box-sizing: content-box;
+  z-index: 10;
   & .nav_wrapper {
     display: flex;
     justify-content: flex-end;
