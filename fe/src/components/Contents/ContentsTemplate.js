@@ -4,6 +4,12 @@ import { IoIosArrowDropdown, IoIosArrowDropup } from "react-icons/io";
 import { BsPlusCircle } from "react-icons/bs";
 import badge from "../../images/nStore_badge_pc.png";
 import rewards_logo from "../../images/rewards-logo.png";
+import bean_bg from "../../images/bean_bg.jpg";
+import bean_img from "../../images/bean_img.png";
+import bean_txt from "../../images/bean_txt.png";
+import reserve_logo from "../../images/reserve_logo.png";
+import reserve_img from "../../images/reserve_ukambani_visual.png";
+import reserve_txt from "../../images/reserve_ukambani.png";
 
 const StyledContents = styled.div`
   padding-top: 120px;
@@ -22,52 +28,84 @@ const Badge = styled.div`
 
 const Content_1 = styled.div``;
 const Content_2 = styled.section`
-  display: flex;
+  width: 100wv;
   height: 62px;
-  .notice {
-    padding: 12px 0px 16px 80px;
-    display: flex;
+  margin-top: -62px;
+  margin-bottom: 62px;
+  .notice_back,
+  .promo_back {
+    display: inline-block;
+    position: relative;
     width: 50%;
-    background: black;
-    color: white;
-    .text {
-      margin: 8px;
-      font-size: 16px;
-      font-weight: bold;
-    }
-    ul {
-      margin: 0;
-      margin-top: 10px;
-      li {
-        padding-left: 10px;
-        margin-bottom: 5px;
-        list-style: none;
-      }
-      &:hover {
-        transform: translateY(-24px);
-      }
-    }
-    .button {
-      margin-left: 140px;
-    }
+    height: 62px;
+    top: 62px;
+    margin: 0;
+    z-index: -1;
   }
-  .promotion {
-    display: flex;
-    width: 50%;
+  .notice_back {
+    background: black;
+    left: 0px;
+  }
+  .promo_back {
     background: white;
-    color: #666;
-    a {
-      margin: 12px 0 12px 80px;
-      width: 234px;
+    left: 50wv;
+  }
+  .wrapper {
+    position: relative;
+    bottom: 3px;
+    z-index: 0;
+    width: 1080px;
+    display: flex;
+    height: 62px;
+    margin: 0 auto;
+    .notice {
+      box-sizing: border-box;
+      padding: 12px 0px 16px 80px;
       display: flex;
-      cursor: pointer;
+      width: 50%;
+      background: black;
+      color: white;
       .text {
-        padding-top: 8px;
+        margin: 8px;
         font-size: 16px;
         font-weight: bold;
       }
+      ul {
+        overflow: hidden;
+        margin: 0;
+        margin-top: 10px;
+        li {
+          padding-left: 10px;
+          margin-bottom: 5px;
+          list-style: none;
+        }
+        &:hover {
+          transform: translateY(-24px);
+        }
+      }
       .button {
-        margin-left: 60px;
+        margin-left: 50px;
+        margin-right: 10px;
+      }
+    }
+    .promotion {
+      display: flex;
+      width: 50%;
+      background: white;
+      color: #666;
+      a {
+        margin: 12px 0 12px 80px;
+        width: 234px;
+        display: flex;
+        cursor: pointer;
+        .text {
+          padding-top: 8px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .button {
+          margin-left: 60px;
+        }
       }
     }
   }
@@ -138,8 +176,77 @@ background: #1e3932;
       }
     }
 `;
-const Content_4 = styled.div``;
-const Content_5 = styled.div``;
+const Content_4 = styled.section`
+  .wrapper {
+    background: url(${bean_bg}) no-repeat;
+    img {
+      position: relative;
+      top : 3rem;
+      left : 20rem;
+      padding : 30px;
+    }
+    .bean_txt {
+        position relative;
+        top : -21rem;
+        left : 40rem;
+      background: url(${bean_txt}) no-repeat;
+      width: 453px;
+      height: 129px;
+    }
+    a {
+        position : relative;
+        left : 40rem;
+        top : -17rem;
+      padding: 10px 20px;
+      border: 2px solid black;
+      border-radius : 5px;
+      &:hover {
+          background : black;
+          color : white;
+          text-decoration : underline;
+          font-weight : bold;
+      }
+    }
+  }
+`;
+const Content_5 = styled.section`
+  background: #f4eed9;
+  height: 342px;
+  position: relative;
+  top: -77px;
+  .logo {
+    position: absolute;
+    top: 8rem;
+    left: 2rem;
+    height: 6rem;
+  }
+  .txt {
+    position: absolute;
+    top: 4rem;
+    left: 20%;
+    width: 12rem;
+  }
+  .img {
+    height: 100%;
+    width: 40wv;
+    position: absolute;
+    right: 0px;
+  }
+  a {
+    position: absolute;
+    top: 14rem;
+    left: 20%;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    &:hover {
+      background: black;
+      color: white;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+`;
 const Content_6 = styled.div``;
 const Content_7 = styled.div``;
 
@@ -150,25 +257,29 @@ const ContentsTemplate = () => {
       <StyledContents>
         <section className="content_1">dfkjdkf</section>
         <Content_2>
-          <div className="notice">
-            <div className="text">공지사항</div>
-            <ul>
-              <li>개인정보 처리방침 개정안내</li>
-              <li>스타벅스 카드 약관 개정안내</li>
-              <li>스타벅스 카드/홈페이지 이용안내</li>
-              <li>사이렌 오더 음료 기본 설정 변경 안내</li>
-            </ul>
-            <div className="button">
-              <BsPlusCircle size={36} />
-            </div>
-          </div>
-          <div className="promotion">
-            <a>
-              <div className="text">스타벅스 프로모션</div>
+          <div className="notice_back"></div>
+          <div className="promo_back"></div>
+          <div className="wrapper">
+            <div className="notice">
+              <div className="text">공지사항</div>
+              <ul>
+                <li>개인정보 처리방침 개정안내</li>
+                <li>스타벅스 카드 약관 개정안내</li>
+                <li>스타벅스 카드/홈페이지 이용안내</li>
+                <li>사이렌 오더 음료 기본 설정 변경 안내</li>
+              </ul>
               <div className="button">
-                <IoIosArrowDropdown size={36} />
+                <BsPlusCircle size={36} />
               </div>
-            </a>
+            </div>
+            <div className="promotion">
+              <a>
+                <div className="text">스타벅스 프로모션</div>
+                <div className="button">
+                  <IoIosArrowDropdown size={36} />
+                </div>
+              </a>
+            </div>
           </div>
         </Content_2>
         <Content_3>
@@ -204,8 +315,19 @@ const ContentsTemplate = () => {
             </div>
           </div>
         </Content_3>
-        <section className="content_4">dfkjdkf</section>
-        <section className="content_5">dfkjdkf</section>
+        <Content_4>
+          <div className="wrapper">
+            <img src={bean_img} />
+            <div className="bean_txt"></div>
+            <a className="bean_more">자세히 보기</a>
+          </div>
+        </Content_4>
+        <Content_5>
+          <img src={reserve_logo} className="logo" />
+          <img src={reserve_txt} className="txt" />
+          <img src={reserve_img} className="img" />
+          <a>자세히 보기</a>
+        </Content_5>
         <section className="content_6">dfkjdkf</section>
         <section className="content_7">dfkjdkf</section>
       </StyledContents>
