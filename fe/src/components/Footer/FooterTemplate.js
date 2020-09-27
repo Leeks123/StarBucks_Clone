@@ -6,6 +6,7 @@ import BottomFooter from "./BottomFooter";
 
 const FooterTemplate = () => {
   const StyledFooter = styled.div`
+    z-index: -20;
     width: 100vw;
     height: 100vh-120px;
     background: #2c2a29;

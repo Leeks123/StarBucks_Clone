@@ -10,9 +10,46 @@ import bean_txt from "../../images/bean_txt.png";
 import reserve_logo from "../../images/reserve_logo.png";
 import reserve_img from "../../images/reserve_ukambani_visual.png";
 import reserve_txt from "../../images/reserve_ukambani.png";
+import fav_bg from "../../images/fav_prod_bg.jpg";
+import fav_txt1 from "../../images/fav_prod_txt01.png";
+import fav_txt2 from "../../images/fav_prod_txt02.png";
+import fav_prod from "../../images/fav_20_autumn1.png";
+import reserve_visual from "../../images/reserve_visual_pc.png";
+import reserve_text from "../../images/reserve_text_pc.png";
+import store_img01 from "../../images/store_exp_img01.png";
+import store_img02 from "../../images/store_exp_img02.png";
+import store_img03 from "../../images/store_exp_img03.png";
+import store_img04 from "../../images/store_exp_img04.png";
+import store_bg from "../../images/store_bg.jpg";
+import store_txt01 from "../../images/store_txt01.png";
+import store_txt02 from "../../images/store_txt02.png";
+import autumn_bg from "../../images/2020_autumn1_bg.jpg";
+import autumn_emblem from "../../images/2020_autumn1_emblem.png";
+import autumn_item01 from "../../images/2020_autumn1_item01.png";
+import autumn_item02 from "../../images/2020_autumn1_item02.png";
+import autumn_item03 from "../../images/2020_autumn1_item03.png";
+import autumn_item04 from "../../images/2020_autumn1_item04.png";
+import autumn_item01Name from "../../images/2020_autumn1_item01_name.png";
+import autumn_item02Name from "../../images/2020_autumn1_item02_name.png";
+import autumn_item03Name from "../../images/2020_autumn1_item03_name.png";
+import autumn_item04Name from "../../images/2020_autumn1_item04_name.png";
 
 const StyledContents = styled.div`
   padding-top: 120px;
+  .favBg {
+    position: fixed;
+    left: -150px;
+    right: 0px;
+    width: 100wv;
+    height: 100%;
+    z-index: -20;
+
+    img {
+      overflow: visible;
+      width: 100%;
+      height: 85%;
+    }
+  }
 `;
 const Badge = styled.div`
   display: none;
@@ -26,7 +63,106 @@ const Badge = styled.div`
   z-index: 10;
 `;
 
-const Content_1 = styled.div``;
+const Content_1 = styled.section`
+  background: url(${autumn_bg});
+  width: 100%;
+  // height: calc(100%-120px);
+  height: 646px;
+  .wrapper {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    .title {
+      position: absolute;
+      width: 382px;
+      height: 134px;
+      top: 5rem;
+      background: url(${autumn_emblem}) no-repeat;
+    }
+    a {
+      position: relative;
+      top: 15rem;
+      padding: 5px 20px;
+      border: 2px solid white;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      &:hover {
+        background: #111;
+        border: 2px solid #111;
+        color: black;
+        text-decoration: underline;
+      }
+    }
+    .item01 {
+      position: absolute;
+      width: 358px;
+      height: 500px;
+      top: 10rem;
+      left: 17%;
+      img {
+        width: 100%;
+      }
+      .itemName01 {
+        position: absolute;
+        width: 190px;
+        height: 134px;
+        top: 20rem;
+        left: -10rem;
+      }
+    }
+    .item02 {
+      position: absolute;
+      width: 382px;
+      height: 134px;
+      top: 9rem;
+      left: 26rem;
+      img {
+        width: 100%;
+      }
+      .itemName02 {
+        position: absolute;
+        top: -1rem;
+        left: 4.5rem;
+        width: 132px;
+        height: 134px;
+      }
+    }
+    .item03 {
+      position: absolute;
+      width: 328px;
+      height: 134px;
+      top: 10rem;
+      left: 65%;
+      img {
+        width: 100%;
+      }
+      .itemName03 {
+        position: absolute;
+        top: -3rem;
+        left: 1.5rem;
+        width: 124px;
+        height: 134px;
+      }
+    }
+    .item04 {
+      position: absolute;
+      width: 304px;
+      height: 134px;
+      top: 5rem;
+      left: 83%;
+      img {
+        width: 100%;
+      }
+      .itemName04 {
+        position: absolute;
+        top: 27rem;
+        width: 206px;
+        height: 134px;
+      }
+    }
+  }
+`;
 const Content_2 = styled.section`
   width: 100wv;
   height: 62px;
@@ -186,9 +322,9 @@ const Content_4 = styled.section`
       padding : 30px;
     }
     .bean_txt {
-        position relative;
-        top : -21rem;
-        left : 40rem;
+      position relative;
+      top : -21rem;
+      left : 40rem;
       background: url(${bean_txt}) no-repeat;
       width: 453px;
       height: 129px;
@@ -247,15 +383,199 @@ const Content_5 = styled.section`
     }
   }
 `;
-const Content_6 = styled.div``;
-const Content_7 = styled.div``;
+const Content_6 = styled.section`
+  height: 650px;
+  padding-top: 50px;
+  position: relative;
+  .txt1 {
+    position: absolute;
+    left: 8.5rem;
+    background: url(${fav_txt1}) no-repeat;
+    width: 260px;
+    height: 240px;
+    margin: 0;
+  }
+  .txt2 {
+    position: absolute;
+    top: 18rem;
+    left: 2rem;
+    background: url(${fav_txt2}) no-repeat;
+    width: 24rem;
+    height: 12rem;
+    margin: 0;
+  }
+  a {
+    position: absolute;
+    top: 30rem;
+    left: 17rem;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    &:hover {
+      background: white;
+      color: black;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+  img {
+    position: absolute;
+    top: 0;
+    right: 3rem;
+  }
+`;
+const Content_7 = styled.section`
+  z-index: 2;
+  position: relative;
+  background: white;
+  width: 100%;
+  height: 500px;
+  padding: 100px 0;
+  .reserve_left {
+    position: absolute;
+    left: 10%;
+    background: url(${reserve_visual}) no-repeat;
+    width: 35%;
+    height: 506px;
+  }
+  .reserve_right {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    background: url(${reserve_text}) no-repeat;
+    width: 42%;
+    height: 85px;
+  }
+  a {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    color: #666;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    padding: 5px;
+    &:hover {
+      background-color: #c19d55;
+
+      color: white;
+    }
+  }
+`;
+const Content_8 = styled.section`
+  background: url(${store_bg});
+  height: 400px;
+  position: relative;
+  z-index: 1;
+  .img01 {
+    position: absolute;
+    background: url(${store_img01}) no-repeat;
+    width: 228px;
+    height: 228px;
+    z-index: 1;
+    top: 35%;
+    left: 27%;
+  }
+  .img02 {
+    position: absolute;
+    background: url(${store_img02}) no-repeat;
+    width: 360px;
+    height: 312px;
+    z-index: 0;
+    left: 10%;
+  }
+  .img03 {
+    position: absolute;
+    background: url(${store_img03}) no-repeat;
+    width: 343px;
+    height: 142px;
+    left: 40%;
+    top: -14%;
+    z-index: 0;
+  }
+  .img04 {
+    position: absolute;
+    background: url(${store_img04}) no-repeat;
+    width: 230px;
+    height: 102px;
+    right: 0px;
+    bottom: 0;
+  }
+  .txt01 {
+    position: absolute;
+    background: url(${store_txt01}) no-repeat;
+    top: 6.5rem;
+    left: 60%;
+    width: 385px;
+    height: 54px;
+  }
+  .txt02 {
+    position: absolute;
+    background: url(${store_txt02}) no-repeat;
+    top: 11rem;
+    left: 60%;
+    width: 366px;
+    height: 61px;
+  }
+
+  a {
+    position: absolute;
+    left: 60%;
+    top: 16rem;
+    padding: 5px 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    &:hover {
+      background: #111;
+      border: 2px solid #111;
+      color: white;
+      text-decoration: underline;
+    }
+  }
+`;
 
 const ContentsTemplate = () => {
   return (
     <div>
       <Badge />
+
       <StyledContents>
-        <section className="content_1">dfkjdkf</section>
+        <div class="favBg">
+          <img src={fav_bg} alt="fav_bg" />
+        </div>
+        <Content_1>
+          <div className="wrapper">
+            <div className="title" />
+            <a>자세히 보기</a>
+            <div className="item01">
+              <img src={autumn_item01} />
+              <div className="itemName01">
+                <img src={autumn_item01Name} />
+              </div>
+            </div>
+            <div className="item02">
+              <img src={autumn_item02} />
+              <div className="itemName02">
+                <img src={autumn_item02Name} />
+              </div>
+            </div>
+            <div className="item03">
+              <img src={autumn_item03} />
+              <div className="itemName03">
+                <img src={autumn_item03Name} />
+              </div>
+            </div>
+            <div className="item04">
+              <img src={autumn_item04} />
+              <div className="itemName04">
+                <img src={autumn_item04Name} />
+              </div>
+            </div>
+          </div>
+        </Content_1>
         <Content_2>
           <div className="notice_back"></div>
           <div className="promo_back"></div>
@@ -328,8 +648,26 @@ const ContentsTemplate = () => {
           <img src={reserve_img} className="img" />
           <a>자세히 보기</a>
         </Content_5>
-        <section className="content_6">dfkjdkf</section>
-        <section className="content_7">dfkjdkf</section>
+        <Content_6>
+          <div class="txt1">dkfjlkdjlfskf</div>
+          <div class="txt2">fdkfdlk</div>
+          <a>자세히 보기</a>
+          <img src={fav_prod} alt="fav_prod" />
+        </Content_6>
+        <Content_7>
+          <div className="reserve_left" />
+          <div className="reserve_right" />
+          <a>EXPLORE OUR STORY</a>
+        </Content_7>
+        <Content_8>
+          <div className="img01" />
+          <div className="img02" />
+          <div className="img03" />
+          <div className="img04" />
+          <div className="txt01" />
+          <div className="txt02" />
+          <a>매장 찾기</a>
+        </Content_8>
       </StyledContents>
     </div>
   );
