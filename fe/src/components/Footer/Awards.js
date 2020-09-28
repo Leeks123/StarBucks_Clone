@@ -21,26 +21,26 @@ import award_11 from "../../images/footer_award_11.jpg";
 import award_12 from "../../images/footer_award_12.jpg";
 import styled from "styled-components";
 
+const Img = styled.img`
+  width: 150px;
+`;
+const Wrapper = styled.div`
+  .carosel {
+    height: 64px;
+  }
+  .carousel__slider-tray-wrapper,
+  carousel__inner-slide {
+    height: 32px;
+  }
+  & > li {
+    height: 32px;
+    padding: 0;
+    slideInner___2mfX9 carousel__inner-slide {
+      height: 32px;
+    }
+  }
+`;
 const Awards = () => {
-  const Img = styled.img`
-    width: 150px;
-  `;
-  const Wrapper = styled.div`
-    .carosel {
-      height: 64px;
-    }
-    .carousel__slider-tray-wrapper,
-    carousel__inner-slide {
-      height: 32px;
-    }
-    & > li {
-      height: 32px;
-      padding: 0;
-      slideInner___2mfX9 carousel__inner-slide {
-        height: 32px;
-      }
-    }
-  `;
   return (
     <Wrapper>
       <CarouselProvider

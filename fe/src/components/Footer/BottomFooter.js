@@ -54,7 +54,7 @@ const StyledDiv = styled.div`
 const BottomFooter = () => {
   return (
     <StyledDiv>
-      <div class="termOfUse">
+      <div className="termOfUse">
         <ul>
           <li>
             <a id="green">개인정보처리방침</a>
@@ -79,7 +79,7 @@ const BottomFooter = () => {
           </li>
         </ul>
       </div>
-      <div class="LookLikeButton">
+      <div className="LookLikeButton">
         <ul>
           <li>
             <a>찾아오시는 길</a>
@@ -92,7 +92,7 @@ const BottomFooter = () => {
           </li>
         </ul>
       </div>
-      <div class="copyrightAndSoOn">
+      <div className="copyrightAndSoOn">
         <p>
           사업자등록번호 : 201-81-21515 (주)스타벅스커피 코리아 : 송 데이비드
           호섭 TEL : 1522-3232 개인정보 책임자 : 장석현

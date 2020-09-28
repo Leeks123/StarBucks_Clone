@@ -4,65 +4,64 @@ import footer_logo from "../../images/footer_logo.png";
 import Awards from "./Awards";
 import BottomFooter from "./BottomFooter";
 
-const FooterTemplate = () => {
-  const StyledFooter = styled.div`
-    z-index: -20;
-    width: 100vw;
-    height: 100vh-120px;
-    background: #2c2a29;
-    padding: 32px 0px;
-    box-sizing: border-box;
+const StyledFooter = styled.div`
+  z-index: -20;
+  width: 100vw;
+  height: 100vh-120px;
+  background: #2c2a29;
+  padding: 32px 0px;
+  box-sizing: border-box;
+  & a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  & ul {
+    padding: 0;
+    li {
+      list-style: none;
+    }
+  }
+`;
+const TopFooter = styled.div`
+  background: url(${footer_logo}) right 8px no-repeat;
+  width: 600px;
+  margin: 0px auto;
+  padding-bottom: 30px;
+  .wrapper {
+    display: grid;
+    grid-template-columns: 195px 195px 195px;
+    row-gap: 25px;
+    & span {
+      font: 14px arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+      color: white;
+    }
+    & li {
+      font: 12px "nbg", "맑은 고딕", HelveticaNeue, DroidSans, Sans-serif,
+        Helvetica;
+      color: white;
+      height: 24px;
+    }
     & a {
+      font-weight: bold;
       &:hover {
         text-decoration: underline;
       }
     }
-    & ul {
-      padding: 0;
-      li {
-        list-style: none;
-      }
-    }
-  `;
-  const TopFooter = styled.div`
-    background: url(${footer_logo}) right 8px no-repeat;
-    width: 600px;
-    margin: 0px auto;
-    padding-bottom: 30px;
-    .wrapper {
-      display: grid;
-      grid-template-columns: 195px 195px 195px;
-      row-gap: 25px;
-      & span {
-        font: 14px arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
-        color: white;
-      }
-      & li {
-        font: 12px "nbg", "맑은 고딕", HelveticaNeue, DroidSans, Sans-serif,
-          Helvetica;
-        color: white;
-        height: 24px;
-      }
-      & a {
-        font-weight: bold;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  `;
-  const MidFooter = styled.div`
-    .wrapper {
-      width: 620px;
+  }
+`;
+const MidFooter = styled.div`
+  .wrapper {
+    width: 620px;
 
-      margin: 0 auto;
-    }
-    height: 80px;
-    padding: 10px;
-    background: #282828;
-    box-sizing: border-box;
-  `;
-
+    margin: 0 auto;
+  }
+  height: 80px;
+  padding: 10px;
+  background: #282828;
+  box-sizing: border-box;
+`;
+const FooterTemplate = () => {
   return (
     <StyledFooter>
       <TopFooter>

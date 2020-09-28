@@ -37,7 +37,7 @@ const NavTemplate = () => {
   return (
     <div style={wrapper}>
       <StyledNavTemplate>
-        <div class="nav_wrapper">
+        <div className="nav_wrapper">
           <StyledA />
           <TopNav />
           <NavSearch />

@@ -1,0 +1,123 @@
+import React from "react";
+import styled from "styled-components";
+
+// icon
+import { IoIosArrowDropdown } from "react-icons/io";
+import { BsPlusCircle } from "react-icons/bs";
+
+const Content_2 = styled.section`
+  width: 100wv;
+  height: 62px;
+  margin-top: -62px;
+  margin-bottom: 62px;
+  .notice_back,
+  .promo_back {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    height: 62px;
+    top: 62px;
+    margin: 0;
+    z-index: -1;
+  }
+  .notice_back {
+    background: black;
+    left: 0px;
+  }
+  .promo_back {
+    background: white;
+    left: 50wv;
+  }
+  .wrapper {
+    position: relative;
+    bottom: 3px;
+    z-index: 0;
+    width: 1080px;
+    display: flex;
+    height: 62px;
+    margin: 0 auto;
+    .notice {
+      box-sizing: border-box;
+      padding: 12px 0px 16px 80px;
+      display: flex;
+      width: 50%;
+      background: black;
+      color: white;
+      .text {
+        margin: 8px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      ul {
+        overflow: hidden;
+        margin: 0;
+        margin-top: 10px;
+        li {
+          padding-left: 10px;
+          margin-bottom: 5px;
+          list-style: none;
+        }
+        &:hover {
+          transform: translateY(-24px);
+        }
+      }
+      .button {
+        margin-left: 50px;
+        margin-right: 10px;
+      }
+    }
+    .promotion {
+      display: flex;
+      width: 50%;
+      background: white;
+      color: #666;
+      a {
+        margin: 12px 0 12px 80px;
+        width: 234px;
+        display: flex;
+        cursor: pointer;
+        .text {
+          padding-top: 8px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .button {
+          margin-left: 60px;
+        }
+      }
+    }
+  }
+`;
+
+const Content02 = () => {
+  return (
+    <Content_2>
+      <div className="notice_back"></div>
+      <div className="promo_back"></div>
+      <div className="wrapper">
+        <div className="notice">
+          <div className="text">공지사항</div>
+          <ul>
+            <li>개인정보 처리방침 개정안내</li>
+            <li>스타벅스 카드 약관 개정안내</li>
+            <li>스타벅스 카드/홈페이지 이용안내</li>
+            <li>사이렌 오더 음료 기본 설정 변경 안내</li>
+          </ul>
+          <div className="button">
+            <BsPlusCircle size={36} />
+          </div>
+        </div>
+        <div className="promotion">
+          <a>
+            <div className="text">스타벅스 프로모션</div>
+            <div className="button">
+              <IoIosArrowDropdown size={36} />
+            </div>
+          </a>
+        </div>
+      </div>
+    </Content_2>
+  );
+};
+
+export default Content02;

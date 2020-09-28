@@ -78,8 +78,8 @@ const BottomNav = () => (
       <li>
         <a>COFFEE</a>
         <NavContents>
-          <div class="grid_wrapper">
-            <div class="grid">
+          <div className="grid_wrapper">
+            <div className="grid">
               <span>커피</span>
               <ul>
                 <li>스타벅스 원두</li>
@@ -87,16 +87,16 @@ const BottomNav = () => (
                 <li>스타벅스 오리가미</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>나와 어울리는 커피</span>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>스타벅스 리저브</span>
               <ul>
                 <li>RESERVE MEGAZINE</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>에스프레소 음료</span>
               <ul>
                 <li>도피오</li>
@@ -109,7 +109,7 @@ const BottomNav = () => (
                 <li>리스트레또 비안코</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>최상의 커피를 즐기는 법</span>
               <ul>
                 <li>커피 프레스</li>
@@ -119,7 +119,7 @@ const BottomNav = () => (
                 <li>리저브를 매장에서 다양하게 즐기는 법</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>커피 이야기</span>
               <ul>
                 <li>스타벅스 로스트 스펙트럼</li>
@@ -135,8 +135,8 @@ const BottomNav = () => (
       <li>
         <a>MENU</a>
         <NavContents>
-          <div class="grid_wrapper">
-            <div class="grid">
+          <div className="grid_wrapper">
+            <div className="grid">
               <span>음료</span>
               <ul>
                 <li>콜드 브루</li>
@@ -150,7 +150,7 @@ const BottomNav = () => (
                 <li>스타벅스 주스(병음료)</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>푸드</span>
               <ul>
                 <li>브레드</li>
@@ -162,7 +162,7 @@ const BottomNav = () => (
                 <li>아이스크림</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>상품</span>
               <ul>
                 <li>머그</li>
@@ -176,14 +176,14 @@ const BottomNav = () => (
                 <li>스타벅스 플래너</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>카드</span>
               <ul>
                 <li>실물 카드</li>
                 <li>e-Gift 카드</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>메뉴 이야기</span>
               <ul>
                 <li>나이트로 콜드브루</li>
@@ -197,8 +197,8 @@ const BottomNav = () => (
       <li>
         <a>STORE</a>
         <NavContents>
-          <div class="grid_wrapper">
-            <div class="grid">
+          <div className="grid_wrapper">
+            <div className="grid">
               <span>매장 찾기</span>
               <ul>
                 <li>퀵 검색</li>
@@ -206,16 +206,16 @@ const BottomNav = () => (
                 <li>My 매장</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>드라이브 스루 매장</span>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>스타벅스 리저브 매장</span>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>커뮤니티 스토어 매장</span>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>매장 이야기</span>
               <ul>
                 <li>청담스타</li>
@@ -229,11 +229,11 @@ const BottomNav = () => (
       <li>
         <a>RESPONSIBILITY</a>
         <NavContents>
-          <div class="grid_wrapper">
-            <div class="grid">
+          <div className="grid_wrapper">
+            <div className="grid">
               <span>사회 공헌 캠페인</span>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>지역 사회 참여 활동</span>
               <ul>
                 <li>희망배달 캠페인</li>
@@ -244,7 +244,7 @@ const BottomNav = () => (
                 <li>우리 문화 지키기</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>환경 보호 활동</span>
               <ul>
                 <li>환경 발자국 줄이기</li>
@@ -252,7 +252,7 @@ const BottomNav = () => (
                 <li>커피 원두 재활용</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>윤리 구매</span>
               <ul>
                 <li>윤리적 원두 구매</li>
@@ -260,7 +260,7 @@ const BottomNav = () => (
                 <li>커피 농가 지원 활동</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>글로벌 사회 공헌</span>
               <ul>
                 <li>윤리 경영 보고서</li>
@@ -274,8 +274,8 @@ const BottomNav = () => (
       <li>
         <a>STARBUCKS REWARDS</a>
         <NavContents>
-          <div class="grid_wrapper">
-            <div class="grid">
+          <div className="grid_wrapper">
+            <div className="grid">
               <span>스타벅스 리워드</span>
               <ul>
                 <li>스타벅스 리워드 소개</li>
@@ -284,7 +284,7 @@ const BottomNav = () => (
                 <li>자주하는 질문</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>스타벅스 카드</span>
               <ul>
                 <li>스타벅스 카드 소개</li>
@@ -295,7 +295,7 @@ const BottomNav = () => (
                 <li>자주하는 질문</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>스타벅스 e-Gift Card</span>
               <ul>
                 <li>스타벅스 e-Gift Card 소개</li>
@@ -310,8 +310,8 @@ const BottomNav = () => (
       <li>
         <a>WHAT'S NEW</a>
         <NavContents>
-          <div class="grid_wrapper">
-            <div class="grid">
+          <div className="grid_wrapper">
+            <div className="grid">
               <span>프로모션 & 이벤트</span>
               <ul>
                 <li>전체</li>
@@ -320,7 +320,7 @@ const BottomNav = () => (
                 <li>온라인</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>새소식</span>
               <ul>
                 <li>전체</li>
@@ -330,17 +330,17 @@ const BottomNav = () => (
                 <li>스타벅스 카드 출시</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>매장별 이벤트</span>
               <ul>
                 <li>일반 매장</li>
                 <li>신규 매장</li>
               </ul>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>공지사항</span>
             </div>
-            <div class="grid">
+            <div className="grid">
               <span>월페이퍼</span>
             </div>
           </div>
