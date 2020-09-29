@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import "animate.css";
+import React, { useEffect, useState, useRef } from "react";
+import styled, { keyframes, css } from "styled-components";
 
 // img
 import autumn_bg from "../../images/2020_autumn1_bg.jpg";
@@ -14,10 +13,20 @@ import autumn_item02Name from "../../images/2020_autumn1_item02_name.png";
 import autumn_item03Name from "../../images/2020_autumn1_item03_name.png";
 import autumn_item04Name from "../../images/2020_autumn1_item04_name.png";
 
+const fadeIn = keyframes`
+    from {
+        opacity : 0;
+    }
+    to {
+        opacity : 1;
+    }
+`;
+
 const Content_1 = styled.section`
   background: url(${autumn_bg});
   width: 100%;
   // height: calc(100%-120px);
+  overflow: hidden;
   height: 646px;
   .wrapper {
     width: 1100px;
@@ -25,37 +34,49 @@ const Content_1 = styled.section`
     position: relative;
     .title {
       position: absolute;
-      width: 382px;
+      width: 100%;
       height: 134px;
       top: 5rem;
+      margin-left: 30px;
       background: url(${autumn_emblem}) no-repeat;
+      opacity: 0;
+      ${(props) =>
+        props.loaded &&
+        css`
+          animation: ${fadeIn} 1s linear 4.5s forwards;
+        `}
     }
     a {
       position: relative;
       top: 15rem;
       padding: 5px 20px;
+      margin-left: 50px;
       border: 2px solid white;
       border-radius: 5px;
       color: white;
       font-weight: bold;
       &:hover {
-        background: #111;
-        border: 2px solid #111;
+        background: #e2c383;
         color: black;
         text-decoration: underline;
       }
+      opacity: 0;
+      ${(props) =>
+        props.loaded &&
+        css`
+          animation: ${fadeIn} 1s linear 5.5s forwards;
+        `}
     }
+
     .item01 {
-      display: none;
-    }
-    .item01.animate__animated.animate__fadeIn.animate__delay-5s {
       display: block;
       position: absolute;
       width: 358px;
       height: 500px;
       top: 10rem;
       left: 17%;
-      animation: fadeIn;
+      opacity: 0;
+
       img {
         width: 100%;
       }
@@ -66,9 +87,11 @@ const Content_1 = styled.section`
         top: 20rem;
         left: -10rem;
       }
-      &:hover {
-        animation: fadeIn;
-      }
+      ${(props) =>
+        props.loaded &&
+        css`
+          animation: ${fadeIn} 1s linear 0.5s forwards;
+        `}
     }
     .item02 {
       position: absolute;
@@ -76,6 +99,7 @@ const Content_1 = styled.section`
       height: 134px;
       top: 9rem;
       left: 26rem;
+      opacity: 0;
       img {
         width: 100%;
       }
@@ -86,6 +110,11 @@ const Content_1 = styled.section`
         width: 132px;
         height: 134px;
       }
+      ${(props) =>
+        props.loaded &&
+        css`
+          animation: ${fadeIn} 1s linear 1.5s forwards;
+        `}
     }
     .item03 {
       position: absolute;
@@ -93,6 +122,7 @@ const Content_1 = styled.section`
       height: 134px;
       top: 10rem;
       left: 65%;
+      opacity: 0;
       img {
         width: 100%;
       }
@@ -103,13 +133,19 @@ const Content_1 = styled.section`
         width: 124px;
         height: 134px;
       }
+      ${(props) =>
+        props.loaded &&
+        css`
+          animation: ${fadeIn} 1s linear 2.5s forwards;
+        `}
     }
     .item04 {
       position: absolute;
       width: 304px;
       height: 134px;
       top: 5rem;
-      left: 83%;
+      right: -10%;
+      opacity: 0;
       img {
         width: 100%;
       }
@@ -119,6 +155,11 @@ const Content_1 = styled.section`
         width: 206px;
         height: 134px;
       }
+      ${(props) =>
+        props.loaded &&
+        css`
+          animation: ${fadeIn} 1s linear 3.5s forwards;
+        `}
     }
   }
 `;
@@ -132,18 +173,11 @@ const Content01 = () => {
   }, []);
 
   return (
-    <Content_1>
+    <Content_1 loaded={onLoaded}>
       <div className="wrapper">
         <div className="title" />
         <a>자세히 보기</a>
-        <div
-          className={
-            "item01 " +
-            (onLoaded
-              ? "animate__animated animate__fadeIn animate__delay-5s"
-              : "")
-          }
-        >
+        <div className="item01">
           <img src={autumn_item01} />
           <div className="itemName01">
             <img src={autumn_item01Name} />

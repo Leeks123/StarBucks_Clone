@@ -1,9 +1,26 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useRef, useState } from "react";
+import styled, { keyframes, css } from "styled-components";
 // img
 import bean_bg from "../../images/bean_bg.jpg";
 import bean_img from "../../images/bean_img.png";
 import bean_txt from "../../images/bean_txt.png";
+
+const fadeInLeft = keyframes`
+    from {
+        left : -20rem
+    }
+    to {
+        left:20rem;
+    }
+`;
+const fadeInRight = keyframes`
+    from {
+        left : 80rem;
+    }
+    to {
+        left:40rem;
+    }
+`;
 
 const Content_4 = styled.section`
   .wrapper {
@@ -11,39 +28,66 @@ const Content_4 = styled.section`
     img {
       position: relative;
       top : 3rem;
-      left : 20rem;
+    //   left : 20rem;
+    left : -20rem;
       padding : 30px;
+      ${(props) =>
+        props.scrolled &&
+        css`
+          animation: ${fadeInLeft} 1s linear 0s forwards;
+        `}
     }
     .bean_txt {
       position relative;
       top : -21rem;
-      left : 40rem;
+    //   left : 40rem;
+    left : 80rem;
       background: url(${bean_txt}) no-repeat;
       width: 453px;
       height: 129px;
+      ${(props) =>
+        props.scrolled &&
+        css`
+          animation: ${fadeInRight} 1s linear 0s forwards;
+        `}
     }
     a {
-        position : relative;
-        left : 40rem;
-        top : -17rem;
+      position : relative;
+    //   left : 40rem;
+    left : 80rem;
+      top : -17rem;
       padding: 10px 20px;
       border: 2px solid black;
       border-radius : 5px;
+      ${(props) =>
+        props.scrolled &&
+        css`
+          animation: ${fadeInRight} 1s linear 0s forwards;
+        `}
       &:hover {
-          background : black;
-          color : white;
-          text-decoration : underline;
-          font-weight : bold;
+        background : black;
+        color : white;
+        text-decoration : underline;
+        font-weight : bold;
       }
     }
   }
 `;
 const Content04 = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const topOffset = useRef();
+  const onScrolled = () => {
+    // console.log(topOffset.current.getBoundingClientRect().top);
+    const topPosition = topOffset.current.getBoundingClientRect().top;
+    if (topPosition < 450) {
+      setScrolled(true);
+    }
+  };
   return (
-    <Content_4>
-      <div className="wrapper">
+    <Content_4 onWheel={onScrolled} scrolled={scrolled}>
+      <div className="wrapper" ref={topOffset}>
         <img src={bean_img} />
-        <div className="bean_txt"></div>
+        <div className="bean_txt" />
         <a className="bean_more">자세히 보기</a>
       </div>
     </Content_4>

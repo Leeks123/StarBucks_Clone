@@ -14,6 +14,7 @@ const Content_8 = styled.section`
   height: 400px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
   .img01 {
     position: absolute;
     background: url(${store_img01}) no-repeat;
@@ -45,7 +46,7 @@ const Content_8 = styled.section`
     background: url(${store_img04}) no-repeat;
     width: 230px;
     height: 102px;
-    right: 0px;
+    right: -15px;
     bottom: 0;
   }
   .txt01 {
