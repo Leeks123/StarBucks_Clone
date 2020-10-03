@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 // icon
 import { IoIosArrowDropdown } from "react-icons/io";
 import { BsPlusCircle } from "react-icons/bs";
 
-const Content_2 = styled.section`
+const Content2 = styled.section`
   width: 100wv;
   height: 62px;
   margin-top: -62px;
@@ -40,6 +40,7 @@ const Content_2 = styled.section`
       box-sizing: border-box;
       padding: 12px 0px 16px 80px;
       display: flex;
+      position: relative;
       width: 50%;
       background: black;
       color: white;
@@ -62,6 +63,8 @@ const Content_2 = styled.section`
         }
       }
       .button {
+        position: absolute;
+        left: 80%;
         margin-left: 50px;
         margin-right: 10px;
       }
@@ -89,19 +92,45 @@ const Content_2 = styled.section`
   }
 `;
 
+const listData = {
+  1: "개인정보 처리방침 개정안내",
+  2: "스타벅스 카드 약관 개정안내",
+  3: "스타벅스 카드/홈페이지 이용안내",
+  4: "사이렌 오더 음료 기본 설정 변경 안내",
+};
 const Content02 = () => {
+  const [listCount, setListCount] = useState(1);
+  const listText = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setListCount((listCount) => {
+        if (listCount === 4) {
+          return 1;
+        }
+        return listCount + 1;
+      });
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    listText.current.innerText = listData[listCount];
+  }, [listCount]);
+
   return (
-    <Content_2>
+    <Content2>
       <div className="notice_back"></div>
       <div className="promo_back"></div>
       <div className="wrapper">
         <div className="notice">
           <div className="text">공지사항</div>
           <ul>
-            <li>개인정보 처리방침 개정안내</li>
+            <li ref={listText}></li>
+            {/* <li>개인정보 처리방침 개정안내</li>
             <li>스타벅스 카드 약관 개정안내</li>
             <li>스타벅스 카드/홈페이지 이용안내</li>
-            <li>사이렌 오더 음료 기본 설정 변경 안내</li>
+            <li>사이렌 오더 음료 기본 설정 변경 안내</li> */}
           </ul>
           <div className="button">
             <BsPlusCircle size={36} />
@@ -116,7 +145,7 @@ const Content02 = () => {
           </a>
         </div>
       </div>
-    </Content_2>
+    </Content2>
   );
 };
 

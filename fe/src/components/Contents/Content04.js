@@ -22,7 +22,7 @@ const fadeInRight = keyframes`
     }
 `;
 
-const Content_4 = styled.section`
+const Content4 = styled.section`
   .wrapper {
     background: url(${bean_bg}) no-repeat;
     img {
@@ -34,7 +34,7 @@ const Content_4 = styled.section`
       ${(props) =>
         props.scrolled &&
         css`
-          animation: ${fadeInLeft} 1s linear 0s forwards;
+          animation: ${fadeInLeft} 1.5s linear 0s forwards;
         `}
     }
     .bean_txt {
@@ -48,7 +48,7 @@ const Content_4 = styled.section`
       ${(props) =>
         props.scrolled &&
         css`
-          animation: ${fadeInRight} 1s linear 0s forwards;
+          animation: ${fadeInRight} 1.5s linear 0s forwards;
         `}
     }
     a {
@@ -62,7 +62,7 @@ const Content_4 = styled.section`
       ${(props) =>
         props.scrolled &&
         css`
-          animation: ${fadeInRight} 1s linear 0s forwards;
+          animation: ${fadeInRight} 1.5s linear 0s forwards;
         `}
       &:hover {
         background : black;
@@ -79,18 +79,20 @@ const Content04 = () => {
   const onScrolled = () => {
     // console.log(topOffset.current.getBoundingClientRect().top);
     const topPosition = topOffset.current.getBoundingClientRect().top;
-    if (topPosition < 450) {
+    if (topPosition < 550) {
       setScrolled(true);
     }
   };
   return (
-    <Content_4 onWheel={onScrolled} scrolled={scrolled}>
+    <Content4 onWheel={onScrolled} scrolled={scrolled}>
       <div className="wrapper" ref={topOffset}>
-        <img src={bean_img} />
+        <img src={bean_img} alt="" />
         <div className="bean_txt" />
-        <a className="bean_more">자세히 보기</a>
+        <a href="/" className="bean_more">
+          자세히 보기
+        </a>
       </div>
-    </Content_4>
+    </Content4>
   );
 };
 

@@ -13,7 +13,15 @@ const fadeInLeft = keyframes`
         left:0px;
     }
 `;
-const Content_6 = styled.section`
+const fadeIn = keyframes`
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+`;
+const Content6 = styled.section`
   height: 650px;
   padding-top: 50px;
   position: relative;
@@ -25,7 +33,7 @@ const Content_6 = styled.section`
     ${(props) =>
       props.scrolled &&
       css`
-        animation: ${fadeInLeft} 1s linear 0s forwards;
+        animation: ${fadeInLeft} 1.5s linear 0s forwards;
       `}
     .txt1 {
       position: absolute;
@@ -54,6 +62,12 @@ const Content_6 = styled.section`
     border: 2px solid white;
     border-radius: 5px;
     color: white;
+    opacity: 0;
+    ${(props) =>
+      props.scrolled &&
+      css`
+        animation: ${fadeIn} 2s linear 0s forwards;
+      `}
     &:hover {
       background: white;
       color: black;
@@ -71,21 +85,21 @@ const Content06 = () => {
   const [scrolled, setScrolled] = useState(false);
   const topOffset = useRef();
   const onScrolled = () => {
-    console.log(topOffset.current.getBoundingClientRect().top);
+    // console.log(topOffset.current.getBoundingClientRect().top);
     const topPosition = topOffset.current.getBoundingClientRect().top;
     if (topPosition < 450) {
       setScrolled(true);
     }
   };
   return (
-    <Content_6 onWheel={onScrolled} ref={topOffset} scrolled={scrolled}>
+    <Content6 onWheel={onScrolled} ref={topOffset} scrolled={scrolled}>
       <div className="txts">
         <div className="txt1" />
         <div className="txt2" />
       </div>
-      <a>자세히 보기</a>
+      <a href="/">자세히 보기</a>
       <img src={fav_prod} alt="fav_prod" />
-    </Content_6>
+    </Content6>
   );
 };
 

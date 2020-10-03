@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styled, { keyframes, css } from "styled-components";
 
 // img
@@ -22,7 +22,7 @@ const fadeIn = keyframes`
     }
 `;
 
-const Content_1 = styled.section`
+const Content1 = styled.section`
   background: url(${autumn_bg});
   width: 100%;
   // height: calc(100%-120px);
@@ -173,7 +173,7 @@ const Content01 = () => {
   }, []);
 
   return (
-    <Content_1 loaded={onLoaded}>
+    <Content1 loaded={onLoaded}>
       <div className="wrapper">
         <div className="title" />
         <a>자세히 보기</a>
@@ -202,7 +202,7 @@ const Content01 = () => {
           </div>
         </div>
       </div>
-    </Content_1>
+    </Content1>
   );
 };
 

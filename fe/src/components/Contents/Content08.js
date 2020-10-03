@@ -9,7 +9,7 @@ import store_bg from "../../images/store_bg.jpg";
 import store_txt01 from "../../images/store_txt01.png";
 import store_txt02 from "../../images/store_txt02.png";
 
-const Content_8 = styled.section`
+const Content8 = styled.section`
   background: url(${store_bg});
   height: 400px;
   position: relative;
@@ -85,15 +85,15 @@ const Content_8 = styled.section`
 `;
 const Content08 = () => {
   return (
-    <Content_8>
+    <Content8>
       <div className="img01" />
       <div className="img02" />
       <div className="img03" />
       <div className="img04" />
       <div className="txt01" />
       <div className="txt02" />
-      <a>매장 찾기</a>
-    </Content_8>
+      <a href="/">매장 찾기</a>
+    </Content8>
   );
 };
 
