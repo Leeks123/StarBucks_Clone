@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { BsFillPersonFill } from "react-icons/bs";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const StyledTopNav = styled.div`
   & > ul {
@@ -16,6 +18,32 @@ const StyledTopNav = styled.div`
       text-decoration: underline;
     }
   }
+  .personIcon,
+  .mapMarker {
+    display: none;
+  }
+  @media (max-width: 950px) {
+    position: relative;
+    ul {
+      display: block;
+      li {
+        display: none;
+      }
+      li:nth-child(2) {
+        display: block;
+        background: red;
+      }
+    }
+    display: flex;
+    .personIcon,
+    .mapMarker {
+      display: block;
+      position: relative;
+      right: 60px;
+
+      margin: 17px 10px;
+    }
+  }
 `;
 const TopNav = () => (
   <StyledTopNav>
@@ -25,6 +53,8 @@ const TopNav = () => (
       <li>Custommer Service & Ideas</li>
       <li>Find a Store</li>
     </ul>
+    <BsFillPersonFill className="personIcon" size="36" />
+    <FaMapMarkerAlt className="mapMarker" size="36" />
   </StyledTopNav>
 );
 

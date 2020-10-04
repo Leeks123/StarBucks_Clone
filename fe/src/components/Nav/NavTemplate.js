@@ -19,6 +19,11 @@ const StyledNavTemplate = styled.div`
     display: flex;
     justify-content: flex-end;
   }
+
+  @media (max-width: 950px) {
+    height: 70px;
+    border: 1px solid red;
+  }
 `;
 const StyledA = styled.a`
   position: absolute;
@@ -27,6 +32,14 @@ const StyledA = styled.a`
   background-image: url(${logo});
   width: 75px;
   height: 75px;
+
+  @media (max-width: 950px) {
+    top: 11px;
+    left: 11px;
+    width: 45px;
+    height: 45px;
+    background-size: cover;
+  }
 `;
 const wrapper = {
   width: "1100px",

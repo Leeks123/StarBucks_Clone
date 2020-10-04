@@ -16,6 +16,26 @@ const StyledNavSearch = styled.div`
     border: 0px;
     padding: 0px;
   }
+
+  @media (min-width: 670px) and (max-width: 950px) {
+    display: none;
+    width: 70vw;
+    height: 112px;
+
+    box-sizing: border-box;
+    // display: block;
+    padding: 31px;
+    margin: 0px;
+    background: #403a36;
+    border-radius: 0px;
+    & > input {
+      width: 315px;
+      height: 50px;
+      margin-right: 10px;
+      border: 0px;
+      padding: 0px;
+    }
+  }
 `;
 
 const NavSearch = () => {
