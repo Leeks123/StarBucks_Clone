@@ -3,7 +3,8 @@ import styled from "styled-components";
 import badge from "../../images/nStore_badge_pc.png";
 
 const StyledBadge = styled.div`
-  display: block;
+  // display: block;
+  display: none;
   position: fixed;
   top: 135px;
   right: 10px;

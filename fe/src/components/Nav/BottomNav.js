@@ -41,13 +41,16 @@ const StyledBottomNav = styled.div`
   @media (max-width: 950px) {
     display: block;
     position: relative;
+    top: 110px;
     left: 30vw;
     width: 70vw;
     height: 100vh;
     margin-right: 0;
+    border: 1px solid black;
     & > ul {
       position: absolute;
-      left: 70vw;
+      // left: 70vw;
+
       background: black;
       display: block;
 
@@ -57,33 +60,45 @@ const StyledBottomNav = styled.div`
       padding: 0px;
       margin: 0px;
       li {
-        white-space: nowrap;
-        height: 58px;
-        padding: 10px 30px 0px 30px;
+        border-bottom: 0.5px solid #aaaa;
         z-index: 20;
         a {
-          font: normal 13px Avenir, Arial, georgia;
-          color: #555;
+          font: normal 28px Avenir, Arial, georgia;
+          color: #fff;
           font-weight: bold;
         }
       }
       li:hover {
+        background: black;
         a {
           text-decoration: underline;
-          color: green;
+          color: white;
         }
         & > div {
-          display: block;
+          display: none;
         }
       }
     }
 
     .menuBar {
-      display: block;
+      display: none;
       position: absolute;
       top: -70px;
       right: 0px;
       margin: 16px;
+    }
+  }
+  @media (max-width: 670px) {
+    & > ul {
+      li {
+        box-sizing: border-box;
+        padding-top: 25px;
+        height: 72px;
+        a {
+          font: normal 18px Avenir, Arial, georgia;
+          font-weight: bold;
+        }
+      }
     }
   }
 `;

@@ -24,24 +24,64 @@ const StyledTopNav = styled.div`
   }
   @media (max-width: 950px) {
     position: relative;
+    width: 70vw;
     ul {
       display: block;
+      width: 70vw;
+      margin: 0;
+      height: 76px;
       li {
         display: none;
       }
       li:nth-child(2) {
+        box-sizing: border-box;
         display: block;
-        background: red;
+        position: fixed;
+        top: 112px;
+        right: -1px;
+        border: 0px;
+        border-top: 1px solid black;
+        padding: 10px 30px;
+        background: #403a36;
+        width: 70vw;
+        height: 76px;
+
+        font: normal 28px Avenir, Arial, georgia;
+        color: #fff;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
     display: flex;
     .personIcon,
     .mapMarker {
-      display: block;
-      position: relative;
-      right: 60px;
-
-      margin: 17px 10px;
+      display: none;
+    }
+  }
+  @media (max-width: 670px) {
+    ul {
+      li:nth-child(2) {
+        box-sizing: border-box;
+        padding-top: 25px;
+        height: 72px;
+        font: normal 18px Avenir, Arial, georgia;
+        font-weight: bold;
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    ul {
+      li:nth-child(2) {
+        box-sizing: border-box;
+        top: 70px;
+        padding-top: 15px;
+        height: 50px;
+        font: normal 14px Avenir, Arial, georgia;
+        font-weight: bold;
+      }
     }
   }
 `;

@@ -22,7 +22,6 @@ const StyledNavTemplate = styled.div`
 
   @media (max-width: 950px) {
     height: 70px;
-    border: 1px solid red;
   }
 `;
 const StyledA = styled.a`
