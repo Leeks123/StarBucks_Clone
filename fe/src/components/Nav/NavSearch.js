@@ -111,9 +111,12 @@ const NavSearch = () => {
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
+
   useEffect(() => {
     if (width < 950) {
       setClicked(true);
+    } else {
+      setClicked(false);
     }
   }, [width]);
 

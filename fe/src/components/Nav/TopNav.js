@@ -46,9 +46,8 @@ const StyledTopNav = styled.div`
         width: 70vw;
         height: 76px;
 
-        font: normal 28px Avenir, Arial, georgia;
+        font: bold 28px Avenir, Arial, georgia;
         color: #fff;
-        font-weight: bold;
 
         &:hover {
           text-decoration: underline;
@@ -66,7 +65,7 @@ const StyledTopNav = styled.div`
       li:nth-child(2) {
         box-sizing: border-box;
         padding-top: 25px;
-        height: 72px;
+        height: 74px;
         font: normal 18px Avenir, Arial, georgia;
         font-weight: bold;
       }

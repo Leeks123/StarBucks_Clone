@@ -13,7 +13,7 @@ const fadeInRight = keyframes`
     }
 `;
 
-const Content_7 = styled.section`
+const Content7 = styled.section`
   z-index: 2;
   position: relative;
   background: white;
@@ -71,11 +71,11 @@ const Content07 = () => {
     }
   };
   return (
-    <Content_7 onWheel={onScrolled} ref={topOffset} scrolled={scrolled}>
+    <Content7 onWheel={onScrolled} ref={topOffset} scrolled={scrolled}>
       <div className="reserve_left" />
       <div className="reserve_right" />
-      <a>EXPLORE OUR STORY</a>
-    </Content_7>
+      <a href="/">EXPLORE OUR STORY</a>
+    </Content7>
   );
 };
 

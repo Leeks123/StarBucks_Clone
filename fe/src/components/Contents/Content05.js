@@ -5,7 +5,7 @@ import reserve_logo from "../../images/reserve_logo.png";
 import reserve_img from "../../images/reserve_ukambani_visual.png";
 import reserve_txt from "../../images/reserve_ukambani.png";
 
-const Content_5 = styled.section`
+const Content5 = styled.section`
   background: #f4eed9;
   height: 342px;
   position: relative;
@@ -45,12 +45,12 @@ const Content_5 = styled.section`
 `;
 const Content05 = () => {
   return (
-    <Content_5>
-      <img src={reserve_logo} className="logo" />
-      <img src={reserve_txt} className="txt" />
-      <img src={reserve_img} className="img" />
-      <a>자세히 보기</a>
-    </Content_5>
+    <Content5>
+      <img src={reserve_logo} alt="" className="logo" />
+      <img src={reserve_txt} alt="" className="txt" />
+      <img src={reserve_img} alt="" className="img" />
+      <a href="/">자세히 보기</a>
+    </Content5>
   );
 };
 

@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonPlay,
-  ButtonNext,
-} from "pure-react-carousel";
+import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import award_01 from "../../images/footer_award_01.jpg";
 import award_02 from "../../images/footer_award_02.jpg";

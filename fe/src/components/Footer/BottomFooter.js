@@ -57,38 +57,40 @@ const BottomFooter = () => {
       <div className="termOfUse">
         <ul>
           <li>
-            <a id="green">개인정보처리방침</a>
+            <a id="green" href="/">
+              개인정보처리방침
+            </a>
           </li>
           <li>
-            <a>영상정보처리기기 운영관리 방침</a>
+            <a href="/">영상정보처리기기 운영관리 방침</a>
           </li>
           <li>
-            <a>홈페이지 이용약관</a>
+            <a href="/">홈페이지 이용약관</a>
           </li>
           <li>
-            <a>위치정보 이용약관</a>
+            <a href="/">위치정보 이용약관</a>
           </li>
           <li>
-            <a>스타벅스 카드 이용약관</a>
+            <a href="/">스타벅스 카드 이용약관</a>
           </li>
           <li>
-            <a>비회원 이용약관</a>
+            <a href="/">비회원 이용약관</a>
           </li>
           <li>
-            <a>윤리경영 핫라인</a>
+            <a href="/">윤리경영 핫라인</a>
           </li>
         </ul>
       </div>
       <div className="LookLikeButton">
         <ul>
           <li>
-            <a>찾아오시는 길</a>
+            <a href="/">찾아오시는 길</a>
           </li>
           <li>
-            <a>신규입점제의</a>
+            <a href="/">신규입점제의</a>
           </li>
           <li>
-            <a>사이트 맵</a>
+            <a href="/">사이트 맵</a>
           </li>
         </ul>
       </div>

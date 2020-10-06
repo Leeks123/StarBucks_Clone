@@ -137,7 +137,7 @@ const Content02 = () => {
           </div>
         </div>
         <div className="promotion">
-          <a>
+          <a href="/">
             <div className="text">스타벅스 프로모션</div>
             <div className="button">
               <IoIosArrowDropdown size={36} />

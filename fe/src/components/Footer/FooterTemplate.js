@@ -68,84 +68,84 @@ const FooterTemplate = () => {
         <div className="wrapper">
           <div className="grid">
             <span>
-              <a>COMPANY</a>
+              <a href="/">COMPANY</a>
             </span>
             <ul>
               <li>
-                <a>한눈에 보기</a>
+                <a href="/">한눈에 보기</a>
               </li>
               <li>
-                <a>스타벅스 사명</a>
+                <a href="/">스타벅스 사명</a>
               </li>
               <li>
-                <a>스타벅스 소개</a>
+                <a href="/">스타벅스 소개</a>
               </li>
               <li>
-                <a>국내 뉴스룸</a>
+                <a href="/">국내 뉴스룸</a>
               </li>
               <li>
-                <a>세계의 스타벅스</a>
+                <a href="/">세계의 스타벅스</a>
               </li>
               <li>
-                <a>글로벌 뉴스룸</a>
+                <a href="/">글로벌 뉴스룸</a>
               </li>
             </ul>
           </div>
           <div className="grid">
             <span>
-              <a>CORPORATE SALES</a>
+              <a href="/">CORPORATE SALES</a>
             </span>
             <ul>
               <li>
-                <a>단체 및 기업 구매 안내</a>
+                <a href="/">단체 및 기업 구매 안내</a>
               </li>
             </ul>
           </div>
           <div className="grid">
             <span>
-              <a>PARTNERSHIP</a>
+              <a href="/">PARTNERSHIP</a>
             </span>
             <ul>
               <li>
-                <a>신규 입점 제외</a>
+                <a href="/">신규 입점 제외</a>
               </li>
               <li>
-                <a>협력 고객사 등록신청</a>
+                <a href="/">협력 고객사 등록신청</a>
               </li>
             </ul>
           </div>
           <div className="grid">
             <span>
-              <a>ONLINE COMMUNITY</a>
+              <a href="/">ONLINE COMMUNITY</a>
             </span>
             <ul>
               <li>
-                <a>페이스북</a>
+                <a href="/">페이스북</a>
               </li>
               <li>
-                <a>트위터</a>
+                <a href="/">트위터</a>
               </li>
               <li>
-                <a>유튜브</a>
+                <a href="/">유튜브</a>
               </li>
               <li>
-                <a>블로그</a>
+                <a href="/">블로그</a>
               </li>
               <li>
-                <a>인스타그램</a>
+                <a href="/">인스타그램</a>
               </li>
             </ul>
           </div>
           <div className="grid">
             <span>
-              <a>RECRUIT</a>
+              <a href="/">RECRUIT</a>
             </span>
             <ul>
               <li>
-                <a>채용 소개</a>
+                <a href="/">채용 소개</a>
               </li>
               <li>
-                <a>채용 지원하기</a>
+                <a href="/">채용 지원하기</a>
               </li>
             </ul>
           </div>

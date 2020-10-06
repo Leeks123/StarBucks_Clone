@@ -15,7 +15,7 @@ const StyledBottomNav = styled.div`
     margin: 0px;
     li {
       white-space: nowrap;
-      height: 58px;
+      height: 60px;
       padding: 10px 30px 0px 30px;
       a {
         font: normal 13px Avenir, Arial, georgia;
@@ -45,8 +45,7 @@ const StyledBottomNav = styled.div`
     left: 30vw;
     width: 70vw;
     height: 100vh;
-    margin-right: 0;
-    border: 1px solid black;
+    margin-right: 0px;
     & > ul {
       position: absolute;
       // left: 70vw;
@@ -68,6 +67,7 @@ const StyledBottomNav = styled.div`
           font-weight: bold;
         }
       }
+
       li:hover {
         background: black;
         a {
@@ -101,6 +101,19 @@ const StyledBottomNav = styled.div`
       }
     }
   }
+  @media (max-width: 480px) {
+    top: 44px;
+    & > ul {
+      li {
+        box-sizing: border-box;
+        padding-top: 15px;
+        height: 50px;
+        a {
+          font: bold 15px Avenir, Arial, georgia;
+        }
+      }
+    }
+  }
 `;
 
 const NavContents = styled.div`
@@ -111,6 +124,7 @@ const NavContents = styled.div`
   width: 100vw;
   background: #2c2a29;
   color: white;
+  padding: 0 30px;
 
   .grid_wrapper {
     width: 1100px;
@@ -138,23 +152,70 @@ const NavContents = styled.div`
       }
     }
   }
-`;
+  @media (max-width: 950px) {
+    position: absolute;
 
-const MobileStyledBottomNav = styled.div``;
+    ${(props) =>
+      props.submenu !== 0
+        ? css`
+            display: block;
+            top: ${props.submenu * 70}px;
+          `
+        : css`
+            display: none;
+          `}
+    display: none;
+    top: 140px;
+    width: 70vw;
+    padding: 0;
+    .grid_wrapper {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+      .grid {
+        border-bottom: 0.5px solid #aaa;
+        height: 70px;
+        width: 100%;
+        span {
+          display: block;
+          font: bold 28px Avenir, Arial, georgia;
+          color: #fff;
+
+          padding: 15px 30px;
+        }
+        ul {
+          display: none;
+
+          li {
+          }
+        }
+      }
+    }
+  }
+`;
 
 const BottomNav = () => {
   const [menu, setMenu] = useState(false);
+  const [subMenu, setSubMenu] = useState(0);
+
   const onClicked = () => {
     setMenu(true);
     console.log(menu);
   };
+  const onClickMenu = (e) => {
+    const elem = e.target.parentElement;
+    subMenu === 0 ? setSubMenu(elem.id) : setSubMenu(0);
+    console.log(elem.id);
+  };
+  console.log("submenu", subMenu);
   return (
-    <StyledBottomNav>
+    <StyledBottomNav submenuClicked={subMenu}>
       <BiMenu className="menuBar" size="40" onClick={onClicked} />
       <ul>
-        <li>
-          <a>COFFEE</a>
-          <NavContents>
+        <li id={1} onClick={(e) => onClickMenu(e)}>
+          <a href="/">COFFEE</a>
+          <NavContents submenu={subMenu}>
             <div className="grid_wrapper">
               <div className="grid">
                 <span>커피</span>
@@ -209,8 +270,8 @@ const BottomNav = () => {
             </div>
           </NavContents>
         </li>
-        <li>
-          <a>MENU</a>
+        <li id={2} onClick={(e) => onClickMenu(e)}>
+          <a href="/">MENU</a>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">
@@ -271,8 +332,8 @@ const BottomNav = () => {
             </div>
           </NavContents>
         </li>
-        <li>
-          <a>STORE</a>
+        <li id={3} onClick={(e) => onClickMenu(e)}>
+          <a href="/">STORE</a>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">
@@ -303,8 +364,8 @@ const BottomNav = () => {
             </div>
           </NavContents>
         </li>
-        <li>
-          <a>RESPONSIBILITY</a>
+        <li id={4} onClick={(e) => onClickMenu(e)}>
+          <a href="/">RESPONSIBILITY</a>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">
@@ -348,8 +409,8 @@ const BottomNav = () => {
             </div>
           </NavContents>
         </li>
-        <li>
-          <a>STARBUCKS REWARDS</a>
+        <li id={5} onClick={(e) => onClickMenu(e)}>
+          <a href="/">STARBUCKS REWARDS</a>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">
@@ -384,8 +445,8 @@ const BottomNav = () => {
             </div>
           </NavContents>
         </li>
-        <li>
-          <a>WHAT'S NEW</a>
+        <li id={6} onClick={(e) => onClickMenu(e)}>
+          <a href="/">WHAT'S NEW</a>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">

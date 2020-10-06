@@ -4,7 +4,7 @@ import styled from "styled-components";
 // img
 import rewards_logo from "../../images/rewards-logo.png";
 
-const Content_3 = styled.section`
+const Content3 = styled.section`
 background: #1e3932;
 .wrapper {
     width : 1080px;
@@ -73,7 +73,7 @@ background: #1e3932;
 
 const Content03 = () => {
   return (
-    <Content_3>
+    <Content3>
       <div className="wrapper">
         <img src={rewards_logo} alt="rewards_logo" />
         <div className="reward_contents">
@@ -88,8 +88,10 @@ const Content03 = () => {
                 혜택을 즐기세요.
               </p>
               <div className="btns">
-                <a id="green">회원가입</a>
-                <a>로그인</a>
+                <a id="green" href="/">
+                  회원가입
+                </a>
+                <a href="/">로그인</a>
               </div>
             </div>
           </div>
@@ -101,11 +103,11 @@ const Content03 = () => {
               카드를 등록하여 스타벅스 리워드 회원이 되신 후, 첫 구매를 하시면
               무료 음료쿠폰을 드립니다!
             </p>
-            <a>e-Gift Card 선물하기</a>
+            <a href="/">e-Gift Card 선물하기</a>
           </div>
         </div>
       </div>
-    </Content_3>
+    </Content3>
   );
 };
 

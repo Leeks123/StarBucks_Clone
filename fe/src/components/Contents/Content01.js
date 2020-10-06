@@ -176,29 +176,29 @@ const Content01 = () => {
     <Content1 loaded={onLoaded}>
       <div className="wrapper">
         <div className="title" />
-        <a>자세히 보기</a>
+        <a href="/">자세히 보기</a>
         <div className="item01">
-          <img src={autumn_item01} />
+          <img src={autumn_item01} alt="" />
           <div className="itemName01">
-            <img src={autumn_item01Name} />
+            <img src={autumn_item01Name} alt="" />
           </div>
         </div>
         <div className="item02">
-          <img src={autumn_item02} />
+          <img src={autumn_item02} alt="" />
           <div className="itemName02">
-            <img src={autumn_item02Name} />
+            <img src={autumn_item02Name} alt="" />
           </div>
         </div>
         <div className="item03">
-          <img src={autumn_item03} />
+          <img src={autumn_item03} alt="" />
           <div className="itemName03">
-            <img src={autumn_item03Name} />
+            <img src={autumn_item03Name} alt="" />
           </div>
         </div>
         <div className="item04">
-          <img src={autumn_item04} />
+          <img src={autumn_item04} alt="" />
           <div className="itemName04">
-            <img src={autumn_item04Name} />
+            <img src={autumn_item04Name} alt="" />
           </div>
         </div>
       </div>
