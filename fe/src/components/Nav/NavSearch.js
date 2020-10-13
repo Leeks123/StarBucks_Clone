@@ -24,6 +24,8 @@ const StyledNavSearch = styled.div`
   }
 
   @media (max-width: 950px) {
+    display: none;
+    //
     border-radius: 0px;
     padding: 0px;
     margin: 0px;

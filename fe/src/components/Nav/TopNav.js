@@ -26,7 +26,8 @@ const StyledTopNav = styled.div`
     position: relative;
     width: 70vw;
     ul {
-      display: block;
+      // display: block;
+      display: none;
       width: 70vw;
       margin: 0;
       height: 76px;
@@ -57,7 +58,7 @@ const StyledTopNav = styled.div`
     display: flex;
     .personIcon,
     .mapMarker {
-      display: none;
+      display: block;
     }
   }
   @media (max-width: 670px) {

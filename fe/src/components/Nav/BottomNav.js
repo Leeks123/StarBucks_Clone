@@ -17,7 +17,7 @@ const StyledBottomNav = styled.div`
       white-space: nowrap;
       height: 60px;
       padding: 10px 30px 0px 30px;
-      a {
+      .menu {
         font: normal 13px Avenir, Arial, georgia;
         color: #555;
         font-weight: bold;
@@ -25,7 +25,7 @@ const StyledBottomNav = styled.div`
     }
     li:hover {
       background: #2c2a29;
-      a {
+      .menu {
         text-decoration: underline;
         color: green;
       }
@@ -39,7 +39,9 @@ const StyledBottomNav = styled.div`
   }
 
   @media (max-width: 950px) {
-    display: block;
+    overflow: scroll;
+    //
+    display: none;
     position: relative;
     top: 110px;
     left: 30vw;
@@ -48,7 +50,7 @@ const StyledBottomNav = styled.div`
     margin-right: 0px;
     & > ul {
       position: absolute;
-      // left: 70vw;
+      left: 1px;
 
       background: black;
       display: block;
@@ -61,7 +63,20 @@ const StyledBottomNav = styled.div`
       li {
         border-bottom: 0.5px solid #aaaa;
         z-index: 20;
-        a {
+        ${(props) =>
+          props.submenuClicked === 0
+            ? css`
+                & > div {
+                  display: none;
+                }
+              `
+            : css`
+                &:nth-child(${props.submenuClicked}) > div {
+                  display: block;
+                  top: ${props.submenuClicked * 70}px;
+                }
+              `}
+        .menu {
           font: normal 28px Avenir, Arial, georgia;
           color: #fff;
           font-weight: bold;
@@ -70,18 +85,33 @@ const StyledBottomNav = styled.div`
 
       li:hover {
         background: black;
-        a {
+        .menu {
           text-decoration: underline;
           color: white;
         }
-        & > div {
-          display: none;
+        ${(props) =>
+          props.submenuClicked === 0
+            ? css`
+                & > div {
+                  display: none;
+                }
+              `
+            : css`
+                & > div {
+                  display: none;
+                }
+                &:nth-child(${props.submenuClicked}) > div {
+                  display: block;
+                  top: ${props.submenuClicked * 70}px;
+                }
+              `}
+        
         }
       }
     }
 
     .menuBar {
-      display: none;
+      display: block;
       position: absolute;
       top: -70px;
       right: 0px;
@@ -94,9 +124,28 @@ const StyledBottomNav = styled.div`
         box-sizing: border-box;
         padding-top: 25px;
         height: 72px;
-        a {
+        ${(props) =>
+          props.submenuClicked === 0
+            ? css`
+                & > div {
+                  display: none;
+                }
+              `
+            : css`
+                &:nth-child(${props.submenuClicked}) > div {
+                  display: block;
+                  top: ${props.submenuClicked * 70}px;
+                }
+              `}
+        .menu {
           font: normal 18px Avenir, Arial, georgia;
           font-weight: bold;
+        }
+        &>div{
+          span {
+            font: normal 18px Avenir, Arial, georgia;
+            font-weight: bold;
+          }
         }
       }
     }
@@ -108,7 +157,38 @@ const StyledBottomNav = styled.div`
         box-sizing: border-box;
         padding-top: 15px;
         height: 50px;
-        a {
+        ${(props) =>
+          props.submenuClicked === 0
+            ? css`
+                & > div {
+                  display: none;
+                }
+              `
+            : css`
+                &:nth-child(${props.submenuClicked}) > div {
+                  display: block;
+                  top: ${props.submenuClicked * 50}px;
+                }
+              `}
+              &:hover {
+                ${(props) =>
+                  props.submenuClicked === 0
+                    ? css`
+                        & > div {
+                          display: none;
+                        }
+                      `
+                    : css`
+                        & > div {
+                          display: none;
+                        }
+                        &:nth-child(${props.submenuClicked}) > div {
+                          display: block;
+                          top: ${props.submenuClicked * 50}px;
+                        }
+                      `}
+              }
+        .menu {
           font: bold 15px Avenir, Arial, georgia;
         }
       }
@@ -155,17 +235,6 @@ const NavContents = styled.div`
   @media (max-width: 950px) {
     position: absolute;
 
-    ${(props) =>
-      props.submenu !== 0
-        ? css`
-            display: block;
-            top: ${props.submenu * 70}px;
-          `
-        : css`
-            display: none;
-          `}
-    display: none;
-    top: 140px;
     width: 70vw;
     padding: 0;
     .grid_wrapper {
@@ -186,9 +255,28 @@ const NavContents = styled.div`
         }
         ul {
           display: none;
-
-          li {
-          }
+        }
+      }
+    }
+  }
+  @media (max-width: 670px) {
+    .grid_wrapper {
+      .grid {
+        span {
+          font: 18px Avenir, Arial, georgia;
+          font-weight: bold;
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    .grid_wrapper {
+      .grid {
+        height: 50px;
+        span {
+          font: 15px Avenir, Arial, georgia;
+          padding-top: 15px;
         }
       }
     }
@@ -201,12 +289,12 @@ const BottomNav = () => {
 
   const onClicked = () => {
     setMenu(true);
-    console.log(menu);
+    console.log("onClicked", menu);
   };
   const onClickMenu = (e) => {
     const elem = e.target.parentElement;
-    subMenu === 0 ? setSubMenu(elem.id) : setSubMenu(0);
-    console.log(elem.id);
+    subMenu === elem.id ? setSubMenu(0) : setSubMenu(elem.id);
+    console.log("subMenu clicked", elem.id);
   };
   console.log("submenu", subMenu);
   return (
@@ -214,7 +302,7 @@ const BottomNav = () => {
       <BiMenu className="menuBar" size="40" onClick={onClicked} />
       <ul>
         <li id={1} onClick={(e) => onClickMenu(e)}>
-          <a href="/">COFFEE</a>
+          <span className="menu">COFFEE</span>
           <NavContents submenu={subMenu}>
             <div className="grid_wrapper">
               <div className="grid">
@@ -271,7 +359,7 @@ const BottomNav = () => {
           </NavContents>
         </li>
         <li id={2} onClick={(e) => onClickMenu(e)}>
-          <a href="/">MENU</a>
+          <span className="menu">MENU</span>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">
@@ -333,7 +421,7 @@ const BottomNav = () => {
           </NavContents>
         </li>
         <li id={3} onClick={(e) => onClickMenu(e)}>
-          <a href="/">STORE</a>
+          <span className="menu">STORE</span>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">
@@ -365,7 +453,7 @@ const BottomNav = () => {
           </NavContents>
         </li>
         <li id={4} onClick={(e) => onClickMenu(e)}>
-          <a href="/">RESPONSIBILITY</a>
+          <span className="menu">RESPONSIBILITY</span>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">
@@ -410,7 +498,7 @@ const BottomNav = () => {
           </NavContents>
         </li>
         <li id={5} onClick={(e) => onClickMenu(e)}>
-          <a href="/">STARBUCKS REWARDS</a>
+          <span className="menu">STARBUCKS REWARDS</span>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">
@@ -446,7 +534,7 @@ const BottomNav = () => {
           </NavContents>
         </li>
         <li id={6} onClick={(e) => onClickMenu(e)}>
-          <a href="/">WHAT'S NEW</a>
+          <span className="menu">WHAT'S NEW</span>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">
