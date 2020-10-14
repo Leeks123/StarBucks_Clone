@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { BsSearch } from "react-icons/bs";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { SidebarContext } from "../../context/SidebarContext";
 
 const StyledNavSearch = styled.div`
   display: block;
@@ -24,8 +25,14 @@ const StyledNavSearch = styled.div`
   }
 
   @media (max-width: 950px) {
-    display: none;
-    //
+    ${(props) =>
+      props.sidebarOpened && props.sidebarOpened === true
+        ? css`
+            display: block;
+          `
+        : css`
+            display: none;
+          `}
     border-radius: 0px;
     padding: 0px;
     margin: 0px;
@@ -103,6 +110,7 @@ const StyledNavSearch = styled.div`
 `;
 
 const NavSearch = () => {
+  const { sidebarOpened } = useContext(SidebarContext);
   const [clicked, setClicked] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -127,7 +135,7 @@ const NavSearch = () => {
   };
 
   return (
-    <StyledNavSearch>
+    <StyledNavSearch sidebarOpened={sidebarOpened}>
       <div className="wrapper">
         {clicked && <input placeholder="  통합검색" />}
         <div className="search_wrapper">

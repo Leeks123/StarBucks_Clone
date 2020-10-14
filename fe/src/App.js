@@ -3,13 +3,18 @@ import NavTemplate from "./components/Nav/NavTemplate";
 import ContentsTemplate from "./components/Contents/ContentsTemplate";
 import FooterTemplate from "./components/Footer/FooterTemplate";
 
+import SidebarProvider from "./context/SidebarContext.Provider";
+
 const App = () => {
   return (
-    <div>
-      <NavTemplate />
+    <>
+      <SidebarProvider>
+        <NavTemplate />
+      </SidebarProvider>
+
       <ContentsTemplate />
       <FooterTemplate />
-    </div>
+    </>
   );
 };
 

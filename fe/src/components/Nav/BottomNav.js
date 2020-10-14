@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled, { css } from "styled-components";
 import { BiMenu } from "react-icons/bi";
+import { SidebarContext } from "../../context/SidebarContext";
 
 const StyledBottomNav = styled.div`
   display: flex;
@@ -36,12 +37,11 @@ const StyledBottomNav = styled.div`
   }
   .menuBar {
     display: none;
+
   }
 
   @media (max-width: 950px) {
     overflow: scroll;
-    //
-    display: none;
     position: relative;
     top: 110px;
     left: 30vw;
@@ -51,10 +51,16 @@ const StyledBottomNav = styled.div`
     & > ul {
       position: absolute;
       left: 1px;
-
+      
       background: black;
-      display: block;
-
+      ${(props) =>
+        props.sidebarOpen && props.sidebarOpen === true
+          ? css`
+              display: block;
+            `
+          : css`
+              display: none;
+            `}
       width: 100%;
       height: 100vh;
       list-style-type: none;
@@ -111,10 +117,19 @@ const StyledBottomNav = styled.div`
     }
 
     .menuBar {
-      display: block;
-      position: absolute;
-      top: -70px;
-      right: 0px;
+      display:block;
+      ${(props) =>
+        props.sidebarOpen && props.sidebarOpen === true
+          ? css`
+              display: none;
+              visibility: hidden !important;
+            `
+          : css`
+              display: block;
+            `}
+      position : fixed;
+      right :5px;
+      top : 0px;
       margin: 16px;
     }
   }
@@ -284,12 +299,14 @@ const NavContents = styled.div`
 `;
 
 const BottomNav = () => {
+  const { sidebarOpened, sidebarToggle } = useContext(SidebarContext);
   const [menu, setMenu] = useState(false);
   const [subMenu, setSubMenu] = useState(0);
 
   const onClicked = () => {
     setMenu(true);
-    console.log("onClicked", menu);
+    sidebarToggle();
+    console.log("sibebarButton clicked", menu);
   };
   const onClickMenu = (e) => {
     const elem = e.target.parentElement;
@@ -298,7 +315,7 @@ const BottomNav = () => {
   };
   console.log("submenu", subMenu);
   return (
-    <StyledBottomNav submenuClicked={subMenu}>
+    <StyledBottomNav submenuClicked={subMenu} sidebarOpen={sidebarOpened}>
       <BiMenu className="menuBar" size="40" onClick={onClicked} />
       <ul>
         <li id={1} onClick={(e) => onClickMenu(e)}>

@@ -162,6 +162,103 @@ const Content1 = styled.section`
         `}
     }
   }
+
+  @media (max-width: 950px) {
+    .wrapper {
+      .title {
+      }
+      a {
+      }
+      .item01 {
+        img {
+        }
+        .itemName01 {
+        }
+      }
+      .item02 {
+        img {
+        }
+        .itemName02 {
+        }
+      }
+      .item03 {
+        img {
+        }
+        .itemName01 {
+        }
+      }
+      .item04 {
+        img {
+        }
+        .itemName04 {
+        }
+      }
+    }
+  }
+  @media (max-width: 670px) {
+    .wrapper {
+      .title {
+      }
+      a {
+      }
+      .item01 {
+        img {
+        }
+        .itemName01 {
+        }
+      }
+      .item02 {
+        img {
+        }
+        .itemName02 {
+        }
+      }
+      .item03 {
+        img {
+        }
+        .itemName01 {
+        }
+      }
+      .item04 {
+        img {
+        }
+        .itemName04 {
+        }
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    .wrapper {
+      .title {
+      }
+      a {
+      }
+      .item01 {
+        img {
+        }
+        .itemName01 {
+        }
+      }
+      .item02 {
+        img {
+        }
+        .itemName02 {
+        }
+      }
+      .item03 {
+        img {
+        }
+        .itemName01 {
+        }
+      }
+      .item04 {
+        img {
+        }
+        .itemName04 {
+        }
+      }
+    }
+  }
 `;
 
 const Content01 = () => {

@@ -32,6 +32,9 @@ const StyledContents = styled.div`
       height: 85%;
     }
   }
+  @media (max-width: 950px) {
+    padding-top: 70px;
+  }
 `;
 
 const ContentsTemplate = () => {

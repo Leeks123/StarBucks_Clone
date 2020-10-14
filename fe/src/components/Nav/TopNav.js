@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useContext } from "react";
+import styled, { css } from "styled-components";
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { SidebarContext } from "../../context/SidebarContext";
 
 const StyledTopNav = styled.div`
   & > ul {
@@ -18,16 +19,14 @@ const StyledTopNav = styled.div`
       text-decoration: underline;
     }
   }
-  .personIcon,
-  .mapMarker {
+  .icons {
     display: none;
   }
   @media (max-width: 950px) {
     position: relative;
     width: 70vw;
     ul {
-      // display: block;
-      display: none;
+      display: block;
       width: 70vw;
       margin: 0;
       height: 76px;
@@ -35,8 +34,15 @@ const StyledTopNav = styled.div`
         display: none;
       }
       li:nth-child(2) {
+        ${(props) =>
+          props.sidebarOpened && props.sidebarOpened === true
+            ? css`
+                display: block;
+              `
+            : css`
+                display: none;
+              `}
         box-sizing: border-box;
-        display: block;
         position: fixed;
         top: 112px;
         right: -1px;
@@ -55,10 +61,15 @@ const StyledTopNav = styled.div`
         }
       }
     }
-    display: flex;
-    .personIcon,
-    .mapMarker {
+    .icons {
       display: block;
+      position: absolute;
+      padding: 17px;
+      right: 40px;
+      top: 0px;
+      svg {
+        padding-right: 20px;
+      }
     }
   }
   @media (max-width: 670px) {
@@ -85,17 +96,23 @@ const StyledTopNav = styled.div`
     }
   }
 `;
-const TopNav = () => (
-  <StyledTopNav>
-    <ul>
-      <li>Sign In</li>
-      <li>My StarBucks</li>
-      <li>Custommer Service & Ideas</li>
-      <li>Find a Store</li>
-    </ul>
-    <BsFillPersonFill className="personIcon" size="36" />
-    <FaMapMarkerAlt className="mapMarker" size="36" />
-  </StyledTopNav>
-);
+const TopNav = () => {
+  const { sidebarOpened } = useContext(SidebarContext);
+
+  return (
+    <StyledTopNav sidebarOpened={sidebarOpened}>
+      <ul>
+        <li>Sign In</li>
+        <li>My StarBucks</li>
+        <li>Custommer Service & Ideas</li>
+        <li>Find a Store</li>
+      </ul>
+      <div className="icons">
+        <BsFillPersonFill className="personIcon" size="36" />
+        <FaMapMarkerAlt className="mapMarker" size="36" />
+      </div>
+    </StyledTopNav>
+  );
+};
 
 export default TopNav;
