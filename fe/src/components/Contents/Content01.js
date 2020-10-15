@@ -25,7 +25,6 @@ const fadeIn = keyframes`
 const Content1 = styled.section`
   background: url(${autumn_bg});
   width: 100%;
-  // height: calc(100%-120px);
   overflow: hidden;
   height: 646px;
   .wrapper {

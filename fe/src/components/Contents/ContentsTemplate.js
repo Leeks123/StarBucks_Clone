@@ -17,9 +17,10 @@ import fav_bg from "../../images/fav_prod_bg.jpg";
 
 const StyledContents = styled.div`
   overflow: hidden;
-  padding-top: 120px;
+  // padding-top: 120px;
   .favBg {
     position: fixed;
+    top: 125px;
     left: -150px;
     right: 0px;
     width: 100wv;

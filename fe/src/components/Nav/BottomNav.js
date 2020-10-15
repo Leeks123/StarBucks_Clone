@@ -36,17 +36,17 @@ const StyledBottomNav = styled.div`
     }
   }
   .menuBar {
-    display: none;
-
+    display : none;
   }
 
   @media (max-width: 950px) {
-    overflow: scroll;
-    position: relative;
-    top: 110px;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0px;
+    padding-top : 188px;
+    bottom : 0px;
     left: 30vw;
     width: 70vw;
-    height: 100vh;
     margin-right: 0px;
     & > ul {
       position: absolute;
@@ -115,23 +115,14 @@ const StyledBottomNav = styled.div`
         }
       }
     }
-
     .menuBar {
-      display:block;
-      ${(props) =>
-        props.sidebarOpen && props.sidebarOpen === true
-          ? css`
-              display: none;
-              visibility: hidden !important;
-            `
-          : css`
-              display: block;
-            `}
-      position : fixed;
-      right :5px;
-      top : 0px;
-      margin: 16px;
+      display : block;
+      position : absolute;
+      top : 0;
+      z-index : 30;
+      margin : 17px;
     }
+    
   }
   @media (max-width: 670px) {
     & > ul {
@@ -166,7 +157,6 @@ const StyledBottomNav = styled.div`
     }
   }
   @media (max-width: 480px) {
-    top: 44px;
     & > ul {
       li {
         box-sizing: border-box;
@@ -253,6 +243,7 @@ const NavContents = styled.div`
     width: 70vw;
     padding: 0;
     .grid_wrapper {
+      overflow: scroll;
       display: block;
       box-sizing: border-box;
       width: 100%;

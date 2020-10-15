@@ -6,7 +6,7 @@ const SidebarProvider = ({ children }) => {
     setSidebar((prevState) => {
       return {
         ...prevState,
-        sidebarOpened: !prevState.sidebar,
+        sidebarOpened: !prevState.sidebarOpened,
       };
     });
   };
@@ -16,7 +16,6 @@ const SidebarProvider = ({ children }) => {
     sidebarToggle,
   };
   const [sidebar, setSidebar] = useState(initialState);
-  console.log("provider", sidebar);
   return (
     <SidebarContext.Provider value={sidebar}>
       {children}
