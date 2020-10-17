@@ -23,6 +23,7 @@ const fadeIn = keyframes`
 `;
 
 const Content1 = styled.section`
+  position: relative;
   background: url(${autumn_bg});
   width: 100%;
   overflow: hidden;

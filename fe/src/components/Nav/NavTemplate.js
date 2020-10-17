@@ -7,17 +7,28 @@ import logo from "../../images/logo.png";
 
 import { SidebarContext } from "../../context/SidebarContext";
 
-const StyledNavTemplate = styled.div`
+const Wrapper = styled.div`
   position: fixed;
+  width: 100%;
+  height: 120px;
+  z-index: 30;
+  background: #f6f5f0;
+
+  @media (max-width: 950px) {
+    height: 70px;
+  }
+`;
+const StyledNavTemplate = styled.div`
+  // position: ;
   float: inline-start;
   background: #f6f5f0;
-  left: 0;
   height: 120px;
-  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
   box-sizing: content-box;
   z-index: 10;
   & .nav_wrapper {
+    position: relative;
     display: flex;
     justify-content: flex-end;
   }
@@ -29,7 +40,7 @@ const StyledNavTemplate = styled.div`
 const StyledA = styled.a`
   position: absolute;
   top: 22px;
-  left: 22px;
+  left: 17px;
   background-image: url(${logo});
   width: 75px;
   height: 75px;
@@ -42,11 +53,6 @@ const StyledA = styled.a`
     background-size: cover;
   }
 `;
-const wrapper = {
-  width: "1100px",
-  height: "120px",
-  margin: "0 auto",
-};
 
 const Dim = styled.div`
   display: none;
@@ -66,7 +72,7 @@ const Dim = styled.div`
     position: fixed;
     top: 0px;
     left: 1px;
-    z-index: 30;
+    z-index: 50;
     background-color: black;
     opacity: 0.5;
   }
@@ -82,7 +88,7 @@ const NavTemplate = () => {
   return (
     <>
       <Dim className="dim" sidebar={sidebarOpened} onClick={onClicked} />
-      <div style={wrapper}>
+      <Wrapper>
         <StyledNavTemplate>
           <div className="nav_wrapper">
             <StyledA />
@@ -91,7 +97,7 @@ const NavTemplate = () => {
           </div>
           <BottomNav />
         </StyledNavTemplate>
-      </div>
+      </Wrapper>
     </>
   );
 };

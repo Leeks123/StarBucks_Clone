@@ -17,7 +17,7 @@ import fav_bg from "../../images/fav_prod_bg.jpg";
 
 const StyledContents = styled.div`
   overflow: hidden;
-  // padding-top: 120px;
+  padding-top: 120px;
   .favBg {
     position: fixed;
     top: 125px;
@@ -35,6 +35,9 @@ const StyledContents = styled.div`
   }
   @media (max-width: 950px) {
     padding-top: 70px;
+    .favBg {
+      top: 70px;
+    }
   }
 `;
 

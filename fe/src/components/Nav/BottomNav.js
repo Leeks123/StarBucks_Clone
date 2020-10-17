@@ -5,6 +5,7 @@ import { SidebarContext } from "../../context/SidebarContext";
 
 const StyledBottomNav = styled.div`
   display: flex;
+  position : relative;
   justify-content: flex-end;
   width: 100%;
   & > ul {
@@ -34,9 +35,6 @@ const StyledBottomNav = styled.div`
         display: block;
       }
     }
-  }
-  .menuBar {
-    display : none;
   }
 
   @media (max-width: 950px) {
@@ -116,14 +114,28 @@ const StyledBottomNav = styled.div`
       }
     }
     .menuBar {
-      display : block;
+      ${(props) =>
+        props.sidebarOpen && props.sidebarOpen === true
+          ? css`
+              display: none;
+            `
+          : css`
+              display: block;
+            `}
       position : absolute;
-      top : 0;
+      top : 0px;
+      right : 0px;
       z-index : 30;
       margin : 17px;
     }
     
   }
+  @media (min-width:950px){
+    .menuBar {
+      display : none;
+    }
+  }
+
   @media (max-width: 670px) {
     & > ul {
       li {
@@ -307,7 +319,10 @@ const BottomNav = () => {
   console.log("submenu", subMenu);
   return (
     <StyledBottomNav submenuClicked={subMenu} sidebarOpen={sidebarOpened}>
-      <BiMenu className="menuBar" size="40" onClick={onClicked} />
+      <div className="menuBar">
+        <BiMenu size="40" onClick={onClicked} />
+      </div>
+
       <ul>
         <li id={1} onClick={(e) => onClickMenu(e)}>
           <span className="menu">COFFEE</span>
