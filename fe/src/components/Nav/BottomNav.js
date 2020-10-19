@@ -41,7 +41,7 @@ const StyledBottomNav = styled.div`
     overflow-y: scroll;
     position: fixed;
     top: 0px;
-    padding-top : 188px;
+    padding-top : 186px;
     bottom : 0px;
     left: 30vw;
     width: 70vw;
@@ -137,6 +137,7 @@ const StyledBottomNav = styled.div`
   }
 
   @media (max-width: 670px) {
+    padding-top : 186px;
     & > ul {
       li {
         box-sizing: border-box;
@@ -169,6 +170,7 @@ const StyledBottomNav = styled.div`
     }
   }
   @media (max-width: 480px) {
+    padding-top : 120px;
     & > ul {
       li {
         box-sizing: border-box;

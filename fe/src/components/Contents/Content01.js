@@ -29,7 +29,8 @@ const Content1 = styled.section`
   overflow: hidden;
   height: 646px;
   .wrapper {
-    width: 1100px;
+    max-width: 1100px;
+    height: 100%;
     margin: 0 auto;
     position: relative;
     .title {
@@ -70,22 +71,29 @@ const Content1 = styled.section`
 
     .item01 {
       display: block;
-      position: absolute;
-      width: 358px;
-      height: 500px;
-      top: 10rem;
-      left: 17%;
+      position: relative;
+      max-width: 100%;
+      height: 100%;
+      padding: 0 auto;
+
       opacity: 0;
 
-      img {
-        width: 100%;
+      & > img {
+        max-width: 32.5%;
+        position: absolute;
+        height: auto;
+        bottom: 16px;
+        left: 17%;
       }
       .itemName01 {
-        position: absolute;
-        width: 190px;
-        height: 134px;
-        top: 20rem;
-        left: -10rem;
+        max-width: 100%;
+        & > img {
+          position: absolute;
+          max-width: 17.2%;
+          height: auto;
+          bottom: 150px;
+          left: 30px;
+        }
       }
       ${(props) =>
         props.loaded &&
@@ -94,22 +102,33 @@ const Content1 = styled.section`
         `}
     }
     .item02 {
+      display : block
       position: absolute;
-      width: 382px;
-      height: 134px;
-      top: 9rem;
-      left: 26rem;
+      max-width: 100%;
+      height: 100%;
+
       opacity: 0;
-      img {
-        width: 100%;
-      }
-      .itemName02 {
+      & > img {
+        max-width: 34.7%;
         position: absolute;
-        top: -1rem;
-        left: 4.5rem;
-        width: 132px;
-        height: 134px;
+        height: auto;
+        bottom :75px;
+        left : 38%;
       }
+      
+      .itemName02 {
+        max-width : 100%;
+        & > img {
+          position: absolute;
+          max-width: 12%;
+          height: auto;
+          // top : 80.4%;
+          bottom : 55px;
+          left : 45%;
+        }
+      }
+     
+
       ${(props) =>
         props.loaded &&
         css`
@@ -117,22 +136,37 @@ const Content1 = styled.section`
         `}
     }
     .item03 {
+      display : block
       position: absolute;
-      width: 328px;
-      height: 134px;
-      top: 10rem;
-      left: 65%;
+      max-width: 100%;
+      height: 100%;
+
       opacity: 0;
-      img {
-        width: 100%;
+      .item03_wrapper {
+        position : absolute;
+        max-width : 29.8%;
+        height : auto;
+        bottom : 10%;
+        left : 63%;
+        &>img {
+          max-width: 100%;
+          position: relative;
+          height: auto;
+        }
+        
+        .itemName03 {
+          max-width : 60%;
+          position : relative;
+          left : 15px;
+          & > img {
+            position: relative;
+            max-width: 80%;
+            // width : 80%
+            height: auto;
+          }
+        }
       }
-      .itemName03 {
-        position: absolute;
-        top: -3rem;
-        left: 1.5rem;
-        width: 124px;
-        height: 134px;
-      }
+      
       ${(props) =>
         props.loaded &&
         css`
@@ -140,20 +174,28 @@ const Content1 = styled.section`
         `}
     }
     .item04 {
+      display : block
       position: absolute;
-      width: 304px;
-      height: 134px;
-      top: 5rem;
-      right: -10%;
+      max-width: 100%;
+      height: 100%;
+
       opacity: 0;
       img {
-        width: 100%;
+        max-width: 30.9%;
+        position: absolute;
+        height: auto;
+        bottom :25px;
+        right : -10%;
       }
       .itemName04 {
-        position: absolute;
-        top: 27rem;
-        width: 206px;
-        height: 134px;
+        max-width : 100%;
+        & > img {
+          position: absolute;
+          max-width: 18.7%;
+          height: auto;
+          left : 79%;
+          bottom : 45px;
+        }
       }
       ${(props) =>
         props.loaded &&
@@ -162,42 +204,22 @@ const Content1 = styled.section`
         `}
     }
   }
-
-  @media (max-width: 950px) {
-    .wrapper {
-      .title {
-      }
-      a {
-      }
-      .item01 {
-        img {
-        }
-        .itemName01 {
-        }
-      }
-      .item02 {
-        img {
-        }
-        .itemName02 {
-        }
-      }
-      .item03 {
-        img {
-        }
-        .itemName01 {
-        }
-      }
-      .item04 {
-        img {
-        }
-        .itemName04 {
-        }
-      }
-    }
-  }
   @media (max-width: 670px) {
     .wrapper {
+      max-width : 100%;
       .title {
+        position: absolute;
+        max-width: 100%;
+        height: 134px;
+        margin-left : 0;
+        
+        background: url(${autumn_emblem}) no-repeat;
+        opacity: 0;
+        ${(props) =>
+          props.loaded &&
+          css`
+            animation: ${fadeIn} 1s linear 4.5s forwards;
+          `}
       }
       a {
       }
@@ -287,9 +309,11 @@ const Content01 = () => {
           </div>
         </div>
         <div className="item03">
-          <img src={autumn_item03} alt="" />
-          <div className="itemName03">
-            <img src={autumn_item03Name} alt="" />
+          <div className="item03_wrapper">
+            <div className="itemName03">
+              <img src={autumn_item03Name} alt="" />
+            </div>
+            <img src={autumn_item03} alt="" />
           </div>
         </div>
         <div className="item04">
