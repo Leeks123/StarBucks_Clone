@@ -25,6 +25,7 @@ const fadeIn = keyframes`
 const Content1 = styled.section`
   position: relative;
   background: url(${autumn_bg});
+  background-size : cover;
   width: 100%;
   overflow: hidden;
   height: 646px;
@@ -205,46 +206,110 @@ const Content1 = styled.section`
     }
   }
   @media (max-width: 670px) {
+
+    min-height: 1500px;
     .wrapper {
       max-width : 100%;
       .title {
-        position: absolute;
-        max-width: 100%;
-        height: 134px;
-        margin-left : 0;
-        
-        background: url(${autumn_emblem}) no-repeat;
-        opacity: 0;
+        max-width : 100%;
+        background-size : contain;
+        background-position : center;
+        margin : 0;
+        top : 3rem;
         ${(props) =>
           props.loaded &&
           css`
-            animation: ${fadeIn} 1s linear 4.5s forwards;
+            animation: ${fadeIn} 1s linear 0.5s forwards;
           `}
       }
       a {
+        margin : 0;
+        margin-left : -59px;
+        top : 1475px;
+        left : 50%;
+        ${(props) =>
+          props.loaded &&
+          css`
+            animation: ${fadeIn} 1s linear 5.5s forwards;
+          `}
       }
       .item01 {
-        img {
+      max-width: 100%;
+      height: 100%;
+      padding: 0 auto;
+        & > img {
+          max-width: 57.2%;
+          top : 11%;
+          left : 47%;
         }
         .itemName01 {
+          width: 100%;
+          & > img {
+            max-width: 70%;
+            top : 21%;
+            left : 6%;
+          }
         }
       }
       .item02 {
-        img {
+        & > img {
+          max-width: 67%;
+          top : 30%;
+          left : 2%;
         }
+        
         .itemName02 {
+          max-width : 100%;
+          & > img {
+            position: absolute;
+            max-width: 12%;
+            height: auto;
+            // top : 80.4%;
+            bottom : 55px;
+            left : 45%;
+          }
         }
       }
       .item03 {
-        img {
-        }
-        .itemName01 {
+        max-width : 100%;
+        .item03_wrapper {
+          max-width : 83%;
+          height : auto;
+          bottom : 22%;
+          left : 45%;
+          &>img {
+            max-width: 100%;
+            left : 20%;
+          }
+          
+          .itemName03 {
+            max-width : 100%;
+            position : absolute;
+            left : -20%;
+            top : 20%;
+            & > img {
+              position: relative;
+              max-width: 80%;
+              // width : 80%
+              height: auto;
+            }
+          }
         }
       }
       .item04 {
         img {
+          max-width: 52.9%;
+          left : 10%;
         }
         .itemName04 {
+          max-width : 100%;
+          & > img {
+            position: absolute;
+            max-width: 18.7%;
+            height: auto;
+            left : 79%;
+            bottom : 45px;
+          }
         }
       }
     }
