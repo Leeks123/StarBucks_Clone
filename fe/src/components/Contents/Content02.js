@@ -4,9 +4,10 @@ import styled from "styled-components";
 // icon
 import { IoIosArrowDropdown } from "react-icons/io";
 import { BsPlusCircle } from "react-icons/bs";
+import { HiSpeakerphone } from "react-icons/hi";
 
 const Content2 = styled.section`
-  width: 100wv;
+  max-width: 100wv;
   height: 62px;
   margin-top: -62px;
   margin-bottom: 62px;
@@ -15,7 +16,7 @@ const Content2 = styled.section`
     display: inline-block;
     position: relative;
     width: 50%;
-    height: 62px;
+    height: 100%;
     top: 62px;
     margin: 0;
     z-index: -1;
@@ -32,13 +33,14 @@ const Content2 = styled.section`
     position: relative;
     bottom: 3px;
     z-index: 0;
-    width: 1080px;
+    max-width: 1080px;
     display: flex;
+    justify-content: spance-between;
     height: 62px;
     margin: 0 auto;
     .notice {
       box-sizing: border-box;
-      padding: 12px 0px 16px 80px;
+      padding: 12px 0px 16px 20px;
       display: flex;
       position: relative;
       width: 50%;
@@ -49,24 +51,25 @@ const Content2 = styled.section`
         font-size: 16px;
         font-weight: bold;
       }
+      .speaker {
+        display: none;
+      }
       ul {
         overflow: hidden;
         margin: 0;
         margin-top: 10px;
+        padding: 0;
         li {
           padding-left: 10px;
           margin-bottom: 5px;
           list-style: none;
         }
-        &:hover {
-          transform: translateY(-24px);
-        }
       }
       .button {
         position: absolute;
         left: 80%;
-        margin-left: 50px;
-        margin-right: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
       }
     }
     .promotion {
@@ -75,17 +78,95 @@ const Content2 = styled.section`
       background: white;
       color: #666;
       a {
-        margin: 12px 0 12px 80px;
-        width: 234px;
+        color: black;
+        text-decoration: none;
+        margin: 12px 0 12px 50px;
+        width: 100%;
         display: flex;
+        justify-content: space-between;
         cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
         .text {
           padding-top: 8px;
           font-size: 16px;
           font-weight: bold;
         }
         .button {
-          margin-left: 60px;
+          margin-right: 50px;
+        }
+      }
+    }
+  }
+  @media (max-width: 960px) {
+    height: 80px;
+    .notice_back {
+      width: 60%;
+    }
+    .promo_back {
+      width: 40%;
+      left: 60wv;
+    }
+    .wrapper {
+      height: 100%;
+      .notice {
+        width: 60%;
+      }
+      .promotion {
+        width: 40%;
+      }
+    }
+  }
+  @media (max-width: 650px) {
+    height: 220px;
+    .notice_back,
+    .promo_back {
+      width: 100%;
+      height: 50%;
+    }
+    .promo_back {
+      top: 58px;
+    }
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      bottom: 164px;
+      display: block;
+      .notice {
+        padding: 40px 0 0 30px;
+        height: 50%;
+        width: 100%;
+        .text {
+          display: none;
+        }
+        .speaker {
+          display: block;
+        }
+        ul {
+          margin-left: 25px;
+          li {
+            font-size: 18px;
+          }
+        }
+        .button {
+        }
+      }
+      .promotion {
+        height: 50%;
+        width: 100%;
+        & > a {
+          vertical-align: center;
+          margin-top: 30px;
+          justify-content: space-around;
+          .text {
+            margin-left: 10px;
+            font-size: 2em;
+          }
+          .button {
+            margin-top: 10px;
+          }
         }
       }
     }
@@ -125,6 +206,7 @@ const Content02 = () => {
       <div className="wrapper">
         <div className="notice">
           <div className="text">공지사항</div>
+          <HiSpeakerphone className="speaker" size={36} />
           <ul>
             <li ref={listText}></li>
             {/* <li>개인정보 처리방침 개정안내</li>

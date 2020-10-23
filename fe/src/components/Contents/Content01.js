@@ -207,7 +207,7 @@ const Content1 = styled.section`
   }
   @media (max-width: 670px) {
 
-    min-height: 1500px;
+    height: 1550px;
     .wrapper {
       max-width : 100%;
       .title {
@@ -215,7 +215,6 @@ const Content1 = styled.section`
         background-size : contain;
         background-position : center;
         margin : 0;
-        top : 3rem;
         ${(props) =>
           props.loaded &&
           css`
@@ -243,11 +242,11 @@ const Content1 = styled.section`
           left : 47%;
         }
         .itemName01 {
-          width: 100%;
+          max-width: 70%;
           & > img {
-            max-width: 70%;
+            max-width: 100%;
             top : 21%;
-            left : 6%;
+            left : 12%;
           }
         }
       }
@@ -262,11 +261,10 @@ const Content1 = styled.section`
           max-width : 100%;
           & > img {
             position: absolute;
-            max-width: 12%;
+            max-width: 100%;
             height: auto;
-            // top : 80.4%;
-            bottom : 55px;
-            left : 45%;
+            top : 45%;
+            left : 60%;
           }
         }
       }
@@ -275,7 +273,7 @@ const Content1 = styled.section`
         .item03_wrapper {
           max-width : 83%;
           height : auto;
-          bottom : 22%;
+          bottom : 17%;
           left : 45%;
           &>img {
             max-width: 100%;
@@ -285,11 +283,11 @@ const Content1 = styled.section`
           .itemName03 {
             max-width : 100%;
             position : absolute;
-            left : -20%;
-            top : 20%;
+            left : -35%;
+            top : 25%;
             & > img {
               position: relative;
-              max-width: 80%;
+              max-width: 100%;
               // width : 80%
               height: auto;
             }
@@ -300,48 +298,99 @@ const Content1 = styled.section`
         img {
           max-width: 52.9%;
           left : 10%;
+          bottom : -2%;
         }
         .itemName04 {
           max-width : 100%;
           & > img {
             position: absolute;
-            max-width: 18.7%;
+            max-width: 100%;
             height: auto;
-            left : 79%;
-            bottom : 45px;
+            left : 50%;
+            bottom : 11%;
           }
         }
       }
     }
   }
   @media (max-width: 480px) {
+    height: 1200px;
     .wrapper {
       .title {
       }
       a {
+        top : 1155px;
       }
       .item01 {
-        img {
+        &>img {
+          max-width: 50.2%;
+          top : 15%;
+          left : 52%;
         }
         .itemName01 {
+          max-width: 100%;
+          & > img {
+            max-width: 50%;
+            top : 25%;
+            left : 10%;
+          }
         }
       }
+      
       .item02 {
-        img {
+        & > img {
+          max-width: 67%;
+          top : 32%;
+          left : 2%;
         }
+        
         .itemName02 {
+          max-width : 100%;
+          & > img {
+            max-width: 40%;
+            top : 42%;
+            left : 55%;
+          }
         }
       }
       .item03 {
-        img {
-        }
-        .itemName01 {
+        max-width : 100%;
+        .item03_wrapper {
+          max-width : 83%;
+          height : auto;
+          bottom : 19%;
+          left : 45%;
+          &>img {
+            max-width: 100%;
+            left : 20%;
+          }
+          
+          .itemName03 {
+            max-width : 70%;
+            position : absolute;
+            left : -55%;
+            top : 25%;
+            & > img {
+              position: relative;
+              max-width: 100%;
+              height: auto;
+            }
+          }
         }
       }
       .item04 {
         img {
+          max-width: 52.9%;
+          left : 10%;
+          bottom : 0%;
         }
         .itemName04 {
+          max-width : 100%;
+          & > img {
+            max-width: 50%;
+            left : 45%;
+            bottom : 11%;
+          }
         }
       }
     }

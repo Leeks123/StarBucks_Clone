@@ -6,13 +6,14 @@ import rewards_logo from "../../images/rewards-logo.png";
 
 const Content3 = styled.section`
 background: #1e3932;
+width : 100%;
 .wrapper {
-    width : 1080px;
+    max-width : 1080px;
     margin : 0 auto;
     display: flex;
 
     height: 167px;
-    padding: 35px;
+    padding: 35px 0;
     color: white;
     a {
       border: 2px solid white;
@@ -67,6 +68,21 @@ background: #1e3932;
           p {
               margin : 0px;
           }
+      }
+    }
+    @media (max-width : 1030px){
+      .wrapper {
+        &>img {
+
+        }
+        .reward_contents {
+          .reward_text {
+
+          }
+          .ecard_text {
+            
+          }
+        }
       }
     }
 `;
