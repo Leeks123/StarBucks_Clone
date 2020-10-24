@@ -72,6 +72,19 @@ const Content4 = styled.section`
       }
     }
   }
+
+  @media (max-width : 960px) {
+
+  }
+  @media (max-width : 810px) {
+    
+  }
+  @media (max-width : 660px) {
+    
+  }
+  @media (max-width : 500px) {
+    
+  }
 `;
 const Content04 = () => {
   const [scrolled, setScrolled] = useState(false);

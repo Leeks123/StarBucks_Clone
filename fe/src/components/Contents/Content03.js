@@ -5,11 +5,11 @@ import styled from "styled-components";
 import rewards_logo from "../../images/rewards-logo.png";
 
 const Content3 = styled.section`
-background: #1e3932;
-width : 100%;
-.wrapper {
-    max-width : 1080px;
-    margin : 0 auto;
+  background: #1e3932;
+  width: 100%;
+  .wrapper {
+    max-width: 1080px;
+    margin: 0 auto;
     display: flex;
 
     height: 167px;
@@ -19,6 +19,8 @@ width : 100%;
       border: 2px solid white;
       border-radius: 5px;
       padding: 10px 18px;
+      color: white;
+      text-decoration: none;
       &:hover {
         text-decoration: underline;
       }
@@ -28,63 +30,168 @@ width : 100%;
       height: 152px;
     }
     .reward_contents {
-        width : 100%;
+      width: 100%;
       padding: 0 40px;
-     
+
       .reward_text {
-          border-bottom : 0.5px solid white;
-          h2{
-              margin : 0px;
-              font-size : 26px;
+        border-bottom: 0.5px solid white;
+        h2 {
+          margin: 0px;
+          font-size: 26px;
+        }
+        .reward_text_login {
+          display: flex;
+          justify-content: space-between;
+          p {
+            margin-right: 50px;
+            margin: 0;
+            padding: 16px 0;
           }
-          .reward_text_login{
-              display : flex;
-              justify-content : space-between;
-              p {
-                  margin-right : 50px;
-                  margin : 0;
-                  padding : 16px 0;
-              }
-              .btns {
-                padding : 22px 0 16px 0;
-                #green {
-                    background : #00704a;
-                    border : 1px solid #00704a;
-                }
-                a {
-                    margin : auto 0;
-                    margin-left : 10px;
-                    position : relative;
-                    right : 0;
-                    font-weight : bold;
-                  }
-              }
+          .btns {
+            padding: 22px 0 16px 0;
+            #green {
+              background: #00704a;
+              border: 1px solid #00704a;
+            }
+            a {
+              margin: auto 0;
+              margin-left: 10px;
+              position: relative;
+              right: 0;
+              font-weight: bold;
+            }
           }
+        }
       }
       .ecard_text {
-          display : flex;
-          justify-content : space-between;
-          padding : 16px 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 0;
+        p {
+          margin: 0px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1030px) {
+    max-width: 100%;
+    .wrapper {
+      max-width: 900px;
+      height: 423px;
+      margin: 0 auto;
+      // padding: 60px 40px 40px 40px;
+      position: relative;
+      & > img {
+        width: 248px;
+        height: 215px;
+        margin: 40px 0 0 35px;
+      }
+      .reward_contents {
+        padding: 0;
+        max-width: 52%;
+        position: absolute;
+        left: 45%;
+        margin-top: 20px;
+        margin-right: 20px;
+        .reward_text {
+          h2 {
+            display: block;
+            width: 272px;
+          }
+          .reward_text_login {
+            display: block;
+            p {
+              display: block;
+              width: 272px;
+            }
+            .btns {
+              padding: 10px 0 26px 0;
+
+              #green {
+                margin-left: 0px;
+              }
+            }
+          }
+        }
+        .ecard_text {
+          display: block;
+          width: 300px;
           p {
-              margin : 0px;
+            padding-bottom: 30px;
           }
-      }
-    }
-    @media (max-width : 1030px){
-      .wrapper {
-        &>img {
-
-        }
-        .reward_contents {
-          .reward_text {
-
-          }
-          .ecard_text {
-            
+          & > a {
+            margin-top: 20px;
           }
         }
       }
     }
+  }
+  @media (max-width: 640px) {
+    height: 696px;
+    padding: 40px 0 50px 0;
+    .wrapper {
+      display: block;
+      height: 100%;
+      padding: 0 30px;
+      position: relative;
+      & > img {
+        position: relative;
+        left: 50%;
+        margin: 0;
+        margin-left: -124px;
+      }
+      .reward_contents {
+        position: relative;
+        left: 0%;
+        max-width: 100%;
+        .reward_text {
+          width: 100%;
+          h2 {
+            margin: 0 auto;
+            text-align: center;
+          }
+          .reward_text_login {
+            p {
+              width: 300px;
+              margin: 0 auto;
+              text-align: center;
+              strong {
+                display: block;
+              }
+            }
+            .btns {
+              width: 77.25%;
+              margin: 0 auto;
+              display: flex;
+              & > a {
+                display: block;
+                width: 50%;
+                text-align: center;
+              }
+            }
+          }
+        }
+        .ecard_text {
+          width: 70%;
+          margin: 0 auto;
+          p {
+            width: 76%;
+            margin: 0 auto;
+            padding-bottom: 10px;
+            word-break: keep-all;
+            text-align: center;
+          }
+          & > a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            margin-left: -20px;
+          }
+        }
+      }
+    }
+  }
 `;
 
 const Content03 = () => {
@@ -107,7 +214,9 @@ const Content03 = () => {
                 <a id="green" href="/">
                   회원가입
                 </a>
-                <a href="/">로그인</a>
+                <a id="none" href="/">
+                  로그인
+                </a>
               </div>
             </div>
           </div>

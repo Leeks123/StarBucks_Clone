@@ -57,6 +57,7 @@ const Content1 = styled.section`
       border-radius: 5px;
       color: white;
       font-weight: bold;
+      text-decoration : none;
       &:hover {
         background: #e2c383;
         color: black;
