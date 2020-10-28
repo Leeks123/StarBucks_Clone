@@ -10,7 +10,7 @@ const fadeInLeft = keyframes`
         left : -400px;
     }
     to {
-        left:0px;
+        left:0%;
     }
 `;
 const fadeIn = keyframes`
@@ -27,7 +27,7 @@ const Content6 = styled.section`
   position: relative;
   .txts {
     position: relative;
-    width: 400px;
+    width: 33.3vw;
     height: 100%;
     left: -400px;
     ${(props) =>
@@ -39,8 +39,9 @@ const Content6 = styled.section`
       position: absolute;
       left: 8.5rem;
       background: url(${fav_txt1}) no-repeat;
-      width: 260px;
-      height: 240px;
+      background-size: contain;
+      width: 21.6vw;
+      height: 20vw;
       margin: 0;
     }
     .txt2 {
@@ -48,8 +49,9 @@ const Content6 = styled.section`
       top: 16rem;
       left: 2rem;
       background: url(${fav_txt2}) no-repeat;
-      width: 24rem;
-      height: 12rem;
+      background-size: contain;
+      width: 32vw;
+      height: 16vw;
       margin: 0;
     }
   }
@@ -57,7 +59,7 @@ const Content6 = styled.section`
   a {
     position: absolute;
     top: 32rem;
-    left: 17rem;
+    left: 22.6vw;
     padding: 10px 20px;
     border: 2px solid white;
     border-radius: 5px;
@@ -77,8 +79,22 @@ const Content6 = styled.section`
   }
   img {
     position: absolute;
-    top: 0;
+    top: 10%;
     right: 3rem;
+    width: 56vw;
+  }
+
+  @media (max-width: 950px) {
+    .txts {
+      .txt1 {
+      }
+      .txt2 {
+      }
+    }
+    a {
+    }
+    img {
+    }
   }
 `;
 const Content06 = () => {

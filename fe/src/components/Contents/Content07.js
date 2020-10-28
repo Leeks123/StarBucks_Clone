@@ -18,12 +18,13 @@ const Content7 = styled.section`
   position: relative;
   background: white;
   width: 100%;
-  height: 500px;
+  height: 41.6vw;
   padding: 100px 0;
   .reserve_left {
     position: absolute;
     left: 10%;
     background: url(${reserve_visual}) no-repeat;
+    background-size: contain;
     width: 35%;
     height: 506px;
   }
@@ -32,6 +33,7 @@ const Content7 = styled.section`
     top: 37%;
     left: 100%;
     background: url(${reserve_text}) no-repeat;
+    background-size: contain;
     width: 42%;
     height: 85px;
     ${(props) =>
@@ -57,6 +59,15 @@ const Content7 = styled.section`
     &:hover {
       background-color: #c19d55;
       color: white;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .reserve_left {
+    }
+    .reserve_right {
+    }
+    a {
     }
   }
 `;

@@ -46,6 +46,7 @@ const StyledBottomNav = styled.div`
     left: 30vw;
     width: 70vw;
     margin-right: 0px;
+    
     & > ul {
       position: absolute;
       left: 1px;

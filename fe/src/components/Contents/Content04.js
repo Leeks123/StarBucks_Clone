@@ -19,7 +19,7 @@ const fadeInLeft_990 = keyframes`
         left : -16% 
     }
     to {
-        left:16%;
+        left:8%;
     }
 `;
 const fadeInRight = keyframes`
@@ -35,19 +35,19 @@ const fadeInRight_990 = keyframes`
       left : 106%;
     }
     to {
-      left:50%;
+      left:45%;
     }
 `;
 
 const Content4 = styled.section`
   .wrapper {
     background: url(${bean_bg}) no-repeat;
-    background-size : cover;
+    background-size: cover;
     img {
       position: relative;
-      top : 3rem;
-      left : -20rem;
-      padding : 30px;
+      top: 3rem;
+      left: -20rem;
+      padding: 30px;
       ${(props) =>
         props.scrolled &&
         css`
@@ -55,11 +55,11 @@ const Content4 = styled.section`
         `}
     }
     .bean_txt {
-      position relative;
-      top : -21rem;
-      left : 80rem;
+      position: relative;
+      top: -21rem;
+      left: 80rem;
       background: url(${bean_txt}) no-repeat;
-      background-size : contain;
+      background-size: contain;
       width: 453px;
       height: 129px;
       ${(props) =>
@@ -69,34 +69,34 @@ const Content4 = styled.section`
         `}
     }
     a {
-      position : relative;
-      left : 80rem;
-      top : -17rem;
+      position: relative;
+      left: 80rem;
+      top: -17rem;
       padding: 10px 20px;
       border: 2px solid black;
-      border-radius : 5px;
-      color : black;
-      text-decoration : none;
+      border-radius: 5px;
+      color: black;
+      text-decoration: none;
       ${(props) =>
         props.scrolled &&
         css`
           animation: ${fadeInRight} 1.5s linear 0s forwards;
         `}
       &:hover {
-        background : black;
-        color : white;
-        text-decoration : underline;
-        font-weight : bold;
+        background: black;
+        color: white;
+        text-decoration: underline;
+        font-weight: bold;
       }
     }
   }
 
-  @media (max-width : 990px) {
+  @media (max-width: 990px) {
     .wrapper {
       img {
-        top : 3rem;
-        left : 3rem;
-        width : 210px;
+        top: 3rem;
+        left: 3rem;
+        width: 210px;
         ${(props) =>
           props.scrolled &&
           css`
@@ -104,9 +104,9 @@ const Content4 = styled.section`
           `}
       }
       .bean_txt {
-        width : 450px;
-        top : -21rem;
-        left : 42.3%;
+        width: 450px;
+        top: -21rem;
+        left: 42.3%;
         ${(props) =>
           props.scrolled &&
           css`
@@ -114,64 +114,62 @@ const Content4 = styled.section`
           `}
       }
       a {
-        left : 42.3%;
-        top : -17rem;
+        left: 42.3%;
+        top: -17rem;
         ${(props) =>
           props.scrolled &&
           css`
-            animation: ${fadeInRight} 1.5s linear 0s forwards;
+            animation: ${fadeInRight_990} 1.5s linear 0s forwards;
           `}
       }
     }
   }
-  @media (max-width : 810px) {
+  @media (max-width: 810px) {
     .wrapper {
       img {
-        left : 2rem;
+        left: 2rem;
       }
       .bean_txt {
-        width : 370px;
-        top : -18rem;
+        width: 370px;
+        top: -18rem;
       }
-      
     }
-    
   }
-  @media (max-width : 660px) {
-   .wrapper {
-    height : 165vw;
-     img {
-       width : 33.4%;
-       padding : 30px 33.3%;
-       left : 0;
-     }
-     .bean_txt {
-      background : url(${bean_txt_m}) no-repeat;
-      background-position : center;
-      background-size : contain;
-      width : 100%;
-      height : 21.6%;
-      top : 7%;
-      left : 0;
-     }
-     a {
-      top : 17%;
-      left : 50%;
-      padding : 20px 70px;
-      font-size : 20px;
-      margin-left : -117px;
-     }
-   } 
-  }
-  @media (max-width : 500px) {
-    .wrapper{
+  @media (max-width: 660px) {
+    .wrapper {
+      height: 165vw;
+      img {
+        width: 33.4%;
+        padding: 30px 33.3%;
+        left: 0;
+      }
+      .bean_txt {
+        background: url(${bean_txt_m}) no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 100%;
+        height: 21.6%;
+        top: 7%;
+        left: 0;
+      }
       a {
-        top : 13%;
-        left : 50%;
-        padding : 10px 20px;
-        font-size : 15px;
-        margin-left : -56.5px
-       }
+        top: 17%;
+        left: 50%;
+        padding: 20px 70px;
+        font-size: 20px;
+        margin-left: -117px;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .wrapper {
+      a {
+        top: 13%;
+        left: 50%;
+        padding: 10px 20px;
+        font-size: 15px;
+        margin-left: -56.5px;
+      }
     }
   }
 `;

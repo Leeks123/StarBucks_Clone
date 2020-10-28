@@ -72,6 +72,14 @@ const Dim = styled.div`
     position: fixed;
     top: 0px;
     left: 1px;
+    ${(props) =>
+      props.sidebar && props.sidebar === true
+        ? css`
+            z-index: 50;
+          `
+        : css`
+            z-index: -50;
+          `}
     z-index: 50;
     background-color: black;
     opacity: 0.5;

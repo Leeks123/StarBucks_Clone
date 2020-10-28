@@ -42,6 +42,43 @@ const Content5 = styled.section`
       font-weight: bold;
     }
   }
+  @media (max-width: 1000px) {
+    height: 150vw;
+    .logo {
+      position: relative;
+      top: 5%;
+      left: 0;
+      width: 16%;
+      padding: 0 42%;
+      height: auto;
+    }
+    .txt {
+      position: relative;
+      top: 10%;
+      left: 0%;
+      width: 30%;
+      height: auto;
+      padding: 10px 35%;
+    }
+    .img {
+      position: relative;
+      left: 0;
+      top: 15%;
+      width: 100vw;
+      height: auto;
+    }
+    a {
+      position: relative;
+      left: 50%;
+      top: 20%;
+      padding: 20px 70px;
+      font-size: 20px;
+      color: black;
+      text-decoration: none;
+      width: 230px;
+      margin-left: -115px;
+    }
+  }
 `;
 const Content05 = () => {
   return (

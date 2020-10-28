@@ -82,6 +82,21 @@ const Content8 = styled.section`
       text-decoration: underline;
     }
   }
+
+  @media (max-width: 960px) {
+    .img01 {
+    }
+    .img02 {
+    }
+    .img03 {
+    }
+    .img04 {
+    }
+    .txt01 {
+    }
+    .txt02 {
+    }
+  }
 `;
 const Content08 = () => {
   return (

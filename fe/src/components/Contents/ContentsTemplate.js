@@ -24,7 +24,7 @@ const StyledContents = styled.div`
     left: -150px;
     right: 0px;
     width: 100wv;
-    height: 100%;
+    height: 110%;
     z-index: -20;
 
     img {
