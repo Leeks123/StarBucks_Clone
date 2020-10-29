@@ -3,6 +3,7 @@ import styled, { keyframes, css } from "styled-components";
 // img
 import reserve_visual from "../../images/reserve_visual_pc.png";
 import reserve_text from "../../images/reserve_text_pc.png";
+import reserve_text_m from "../../images/reserve_text_mobile.png";
 
 const fadeInRight = keyframes`
     from {
@@ -63,11 +64,25 @@ const Content7 = styled.section`
   }
 
   @media (max-width: 960px) {
+    height: 160vw;
     .reserve_left {
+      width: 90vw;
+      height: 100vw;
+      left: 5vw;
+      background-size: center;
     }
     .reserve_right {
+      background: url(${reserve_text_m}) no-repeat;
+      background-size: contain;
+      width: 70vw;
+      height: 48vw;
+      top: 62%;
+      left: 15vw;
     }
     a {
+      left: 50%;
+      top: 99%;
+      margin: -135px;
     }
   }
 `;

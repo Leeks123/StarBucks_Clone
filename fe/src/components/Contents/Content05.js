@@ -35,6 +35,8 @@ const Content5 = styled.section`
     padding: 10px 20px;
     border: 2px solid black;
     border-radius: 5px;
+    text-decoration: none;
+    color: black;
     &:hover {
       background: black;
       color: white;
@@ -68,14 +70,14 @@ const Content5 = styled.section`
       height: auto;
     }
     a {
-      position: relative;
+      // position: relative;
       left: 50%;
-      top: 20%;
+      top: 83%;
       padding: 20px 70px;
       font-size: 20px;
       color: black;
       text-decoration: none;
-      width: 230px;
+      width: 93px;
       margin-left: -115px;
     }
   }

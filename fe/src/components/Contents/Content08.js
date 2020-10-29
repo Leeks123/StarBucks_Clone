@@ -8,6 +8,8 @@ import store_img04 from "../../images/store_exp_img04.png";
 import store_bg from "../../images/store_bg.jpg";
 import store_txt01 from "../../images/store_txt01.png";
 import store_txt02 from "../../images/store_txt02.png";
+import store_txt01_m from "../../images/store_txt01_m.png";
+import store_txt02_m from "../../images/store_txt02_m.png";
 
 const Content8 = styled.section`
   background: url(${store_bg});
@@ -84,17 +86,56 @@ const Content8 = styled.section`
   }
 
   @media (max-width: 960px) {
+    height: 750px;
+
     .img01 {
+      width: 200px;
+      height: 199px;
+      background-size: contain;
+      left: 47%;
+      top: 19%;
     }
     .img02 {
+      width: 300px;
+      height: 255px;
+      background-size: contain;
+      left: 18%;
     }
     .img03 {
+      width: 280px;
+      height: 115px;
+      background-size: contain;
+      top: 33%;
+      left: 18%;
     }
     .img04 {
+      width: 170px;
+      height: 75px;
+      background-size: contain;
     }
     .txt01 {
+      width: 380px;
+      height: 96px;
+      left: 50%;
+      top: 24rem;
+      margin-left: -190px;
+      background: url(${store_txt01_m}) no-repeat;
+      background-size: contain;
     }
     .txt02 {
+      width: 440px;
+      height: 104px;
+      left: 50%;
+      top: 32rem;
+      margin-left: -220px;
+      background: url(${store_txt02_m}) no-repeat;
+      background-size: contain;
+    }
+    a {
+      top: 40rem;
+      left: 50%;
+      padding: 15px 40px;
+      margin-left: -72px;
     }
   }
 `;

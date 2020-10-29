@@ -4,6 +4,8 @@ import styled, { css, keyframes } from "styled-components";
 import fav_txt1 from "../../images/fav_prod_txt01.png";
 import fav_txt2 from "../../images/fav_prod_txt02.png";
 import fav_prod from "../../images/fav_20_autumn1.png";
+import fav_txt1_m from "../../images/menu_txt01_m.png";
+import fav_txt2_m from "../../images/menu_txt02_m.png";
 
 const fadeInLeft = keyframes`
     from {
@@ -85,15 +87,41 @@ const Content6 = styled.section`
   }
 
   @media (max-width: 950px) {
+    height: 780px;
     .txts {
+      left: 0;
+      width: 100vw;
       .txt1 {
+        width: 350px;
+        height: 72px;
+        background: url(${fav_txt1_m}) no-repeat;
+        background-size: contain;
+        top: 39%;
+        left: 50%;
+        margin-left: -175px;
       }
       .txt2 {
+        width: 440px;
+        height: 129px;
+        background: url(${fav_txt2_m}) no-repeat;
+        background-size: contain;
+        top: 54%;
+        left: 50%;
+        margin-left: -220px;
       }
     }
     a {
+      top: 41rem;
+      left: 50%;
+      margin-left: -58px;
+      opacity: 1;
     }
     img {
+      width: 90vw;
+      right: 0;
+      left: 50%;
+      margin-left: -45vw;
+      top: 0.5rem;
     }
   }
 `;

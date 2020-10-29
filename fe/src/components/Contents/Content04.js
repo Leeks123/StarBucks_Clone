@@ -153,7 +153,7 @@ const Content4 = styled.section`
         left: 0;
       }
       a {
-        top: 17%;
+        top: 15%;
         left: 50%;
         padding: 20px 70px;
         font-size: 20px;
@@ -164,7 +164,7 @@ const Content4 = styled.section`
   @media (max-width: 500px) {
     .wrapper {
       a {
-        top: 13%;
+        top: 11%;
         left: 50%;
         padding: 10px 20px;
         font-size: 15px;
