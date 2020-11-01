@@ -7,12 +7,14 @@ import BottomFooter from "./BottomFooter";
 const StyledFooter = styled.div`
   z-index: -20;
   width: 100vw;
-  height: 100vh-120px;
+  height: 800px;
   background: #2c2a29;
   padding: 32px 0px;
   box-sizing: border-box;
   & a {
-    &:hover {
+    color: white;
+    text-decoration: none;
+    l &:hover {
       text-decoration: underline;
     }
   }
@@ -21,6 +23,10 @@ const StyledFooter = styled.div`
     li {
       list-style: none;
     }
+  }
+  @media (max-width: 660px) {
+    height: 1450px;
+    padding: 0;
   }
 `;
 const TopFooter = styled.div`
@@ -49,17 +55,51 @@ const TopFooter = styled.div`
       }
     }
   }
+  @media (max-width: 660px) {
+    margin: 0;
+    width: 100vw;
+    .wrapper {
+      display: block;
+      & span {
+        display: block;
+        background-color: #645952;
+        height: 17px;
+        padding: 16.5px 0;
+        padding-left: 10px;
+        font-size: 14px;
+      }
+      ul {
+        margin: 0;
+        & li {
+          background-color: #8c8279;
+          height: 17px;
+          padding: 16.5px 0;
+        }
+        & a {
+          font-size: 14px;
+          color: #e6dbd3;
+
+          margin-left: 10px;
+        }
+      }
+    }
+  }
 `;
 const MidFooter = styled.div`
   .wrapper {
     width: 620px;
-
     margin: 0 auto;
   }
   height: 80px;
   padding: 10px;
   background: #282828;
   box-sizing: border-box;
+
+  @media (max-width: 660px) {
+    .wrapper {
+      width: 100%;
+    }
+  }
 `;
 const FooterTemplate = () => {
   return (

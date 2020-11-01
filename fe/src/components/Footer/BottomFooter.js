@@ -49,6 +49,44 @@ const StyledDiv = styled.div`
       text-align: center;
     }
   }
+  @media (max-width: 660px) {
+    width: 310px;
+    height: 290px;
+    margin: 0 auto;
+    .termOfUse {
+      ul {
+        margin: 0;
+        width: 100%;
+        display: block;
+        overflow : 
+        &::first-child {
+          color: #00b050;
+        }
+        li {
+          display : inline-block;
+          padding: 5px 5px;
+          color: #cccccc;
+          font-size: 12px;
+          a {
+            white-space : normal;
+          }
+        }
+      }
+    }
+    .LookLikeButton {
+      ul {
+        margin : 10px 0;
+        li {
+          border: 2px solid white;
+          padding: 5px 14px;
+        }
+      }
+    }
+    .copyrightAndSoOn {
+      padding: 10px 50px;
+      
+    }
+  }
 `;
 
 const BottomFooter = () => {

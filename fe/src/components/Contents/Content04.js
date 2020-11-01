@@ -142,6 +142,7 @@ const Content4 = styled.section`
         width: 33.4%;
         padding: 30px 33.3%;
         left: 0;
+        animation: none;
       }
       .bean_txt {
         background: url(${bean_txt_m}) no-repeat;
@@ -151,6 +152,7 @@ const Content4 = styled.section`
         height: 21.6%;
         top: 7%;
         left: 0;
+        animation: none;
       }
       a {
         top: 15%;
@@ -158,6 +160,7 @@ const Content4 = styled.section`
         padding: 20px 70px;
         font-size: 20px;
         margin-left: -117px;
+        animation: none;
       }
     }
   }

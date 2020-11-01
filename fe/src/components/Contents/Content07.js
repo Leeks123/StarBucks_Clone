@@ -70,6 +70,7 @@ const Content7 = styled.section`
       height: 100vw;
       left: 5vw;
       background-size: center;
+      animation: none;
     }
     .reserve_right {
       background: url(${reserve_text_m}) no-repeat;
@@ -78,11 +79,13 @@ const Content7 = styled.section`
       height: 48vw;
       top: 62%;
       left: 15vw;
+      animation: none;
     }
     a {
       left: 50%;
       top: 99%;
       margin: -135px;
+      animation: none;
     }
   }
 `;
