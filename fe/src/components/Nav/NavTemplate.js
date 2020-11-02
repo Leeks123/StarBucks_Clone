@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+
 import styled, { css } from "styled-components";
 import TopNav from "./TopNav";
 import BottomNav from "./BottomNav";
@@ -44,6 +46,7 @@ const StyledA = styled.a`
   background-image: url(${logo});
   width: 75px;
   height: 75px;
+  z-index: 20;
 
   @media (max-width: 950px) {
     top: 11px;
@@ -86,7 +89,8 @@ const Dim = styled.div`
   }
 `;
 
-const NavTemplate = () => {
+const NavTemplate = ({ match }) => {
+  console.log(match);
   const { sidebarOpened, sidebarToggle } = useContext(SidebarContext);
 
   const onClicked = () => {
@@ -99,11 +103,15 @@ const NavTemplate = () => {
       <Wrapper>
         <StyledNavTemplate>
           <div className="nav_wrapper">
-            <StyledA />
+            <Link to="/">
+              <StyledA />
+            </Link>
             <TopNav />
             <NavSearch />
           </div>
-          <BottomNav />
+          <Link to="/">
+            <BottomNav />
+          </Link>
         </StyledNavTemplate>
       </Wrapper>
     </>

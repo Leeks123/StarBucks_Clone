@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Route, Link, Switch } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { BiMenu } from "react-icons/bi";
 import { SidebarContext } from "../../context/SidebarContext";
@@ -23,6 +24,9 @@ const StyledBottomNav = styled.div`
         font: normal 13px Avenir, Arial, georgia;
         color: #555;
         font-weight: bold;
+      }
+      span:hover {
+        text-decoration:underline;
       }
     }
     li:hover {
@@ -304,7 +308,7 @@ const NavContents = styled.div`
   }
 `;
 
-const BottomNav = () => {
+const BottomNav = ({ match }) => {
   const { sidebarOpened, sidebarToggle } = useContext(SidebarContext);
   const [menu, setMenu] = useState(false);
   const [subMenu, setSubMenu] = useState(0);
@@ -320,6 +324,7 @@ const BottomNav = () => {
     console.log("subMenu clicked", elem.id);
   };
   console.log("submenu", subMenu);
+
   return (
     <StyledBottomNav submenuClicked={subMenu} sidebarOpen={sidebarOpened}>
       <div className="menuBar">
@@ -332,12 +337,24 @@ const BottomNav = () => {
           <NavContents submenu={subMenu}>
             <div className="grid_wrapper">
               <div className="grid">
-                <span>커피</span>
+                <Link to={`/coffee`}>
+                  <span>커피</span>
+                </Link>
                 <ul>
-                  <li>스타벅스 원두</li>
-                  <li>스타벅스 비아</li>
-                  <li>스타벅스 오리가미</li>
+                  <Link to={`/coffee/beans`}>
+                    <li>스타벅스 원두</li>
+                  </Link>
+                  <Link to={`/coffee/via`}>
+                    <li>스타벅스 비아</li>
+                  </Link>
+                  <Link to={`/coffee/origami`}>
+                    <li>스타벅스 오리가미</li>
+                  </Link>
                 </ul>
+                <Switch>
+                  <Route path="/coffee" />
+                  <Route exact path="/coffee/:product" />
+                </Switch>
               </div>
               <div className="grid">
                 <span>나와 어울리는 커피</span>
