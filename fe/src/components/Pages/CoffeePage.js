@@ -1,15 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-import Content01 from "../Contents/Content01";
-
-const Div = styled.div`
-  width: 100vw;
-  height: 1000px;
-  background-color: red;
+const StyledContents = styled.div`
+  height: 100vh;
+  padding-top: 120px;
+  @media (max-width: 950px) {
+    padding-top: 70px;
+  }
 `;
+
 const CoffeePage = () => {
-  return <Content01 />;
+  return (
+    <div>
+      <StyledContents>
+        <div className="favBg">hellow fucnkfjdklfjiwjgiajigjsijfisjfijseij</div>
+      </StyledContents>
+    </div>
+  );
 };
 
 export default CoffeePage;

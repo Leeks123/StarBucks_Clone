@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import NavTemplate from "./components/Nav/NavTemplate";
 import ContentsTemplate from "./components/Contents/ContentsTemplate";
@@ -14,23 +14,32 @@ import EnjoyPage from "./components/Pages/EnjoyPage";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <>
       <SidebarProvider>
-        <Route path="/">
-          <NavTemplate />
-        </Route>
+        <NavTemplate />
       </SidebarProvider>
 
       <Switch>
-        <Route exact path="/" component={ContentsTemplate} />
-        <Route path="/coffee" compoenent={CoffeePage} />
-        <Route path="/like" compoenent={LikePage} />
-        <Route path="/find_store" compoenent={FindStorePage} />
-        <Route path="/enjoy" compoenent={EnjoyPage} />
+        <Route path="/" exact render={ContentsTemplate} />
+        <Route exact path="/coffee" render={CoffeePage} />
+        <Route path="/coffee/:product" render={CoffeePage} />
+        <Route path="/like" render={LikePage} />
+        <Route path="/find_store" render={FindStorePage} />
+        <Route path="/enjoy" render={EnjoyPage} />
+        <Route path="/enjoy/:method" render={EnjoyPage} />
+        <Route
+          render={({ location }) => (
+            <div>
+              <h2>이 페이지는 존재하지 않습니다:</h2>
+              <p>{location.pathname}</p>
+            </div>
+          )}
+        />
       </Switch>
+
       {/* <ContentsTemplate /> */}
       <FooterTemplate />
-    </BrowserRouter>
+    </>
   );
 };
 

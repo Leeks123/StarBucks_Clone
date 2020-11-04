@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Route, Link, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { BiMenu } from "react-icons/bi";
 import { SidebarContext } from "../../context/SidebarContext";
@@ -308,7 +308,14 @@ const NavContents = styled.div`
   }
 `;
 
-const BottomNav = ({ match }) => {
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  & > li {
+    color: #999;
+  }
+`;
+const BottomNav = ({ location, match, history }) => {
   const { sidebarOpened, sidebarToggle } = useContext(SidebarContext);
   const [menu, setMenu] = useState(false);
   const [subMenu, setSubMenu] = useState(0);
@@ -337,27 +344,30 @@ const BottomNav = ({ match }) => {
           <NavContents submenu={subMenu}>
             <div className="grid_wrapper">
               <div className="grid">
-                <Link to={`/coffee`}>
+                <StyledLink to="/coffee">
                   <span>커피</span>
-                </Link>
+                </StyledLink>
+
                 <ul>
-                  <Link to={`/coffee/beans`}>
+                  <StyledLink to="/coffee/beans">
                     <li>스타벅스 원두</li>
-                  </Link>
-                  <Link to={`/coffee/via`}>
+                  </StyledLink>
+                  <StyledLink to="/coffee/via">
                     <li>스타벅스 비아</li>
-                  </Link>
-                  <Link to={`/coffee/origami`}>
+                  </StyledLink>
+                  <StyledLink to="/coffee/origami">
                     <li>스타벅스 오리가미</li>
-                  </Link>
+                  </StyledLink>
                 </ul>
-                <Switch>
+                {/* <Switch>
                   <Route path="/coffee" />
                   <Route exact path="/coffee/:product" />
-                </Switch>
+                </Switch> */}
               </div>
               <div className="grid">
-                <span>나와 어울리는 커피</span>
+                <StyledLink to="/like">
+                  <span>나와 어울리는 커피</span>
+                </StyledLink>
               </div>
               <div className="grid">
                 <span>스타벅스 리저브</span>
@@ -379,13 +389,25 @@ const BottomNav = ({ match }) => {
                 </ul>
               </div>
               <div className="grid">
-                <span>최상의 커피를 즐기는 법</span>
+                <StyledLink to="/enjoy">
+                  <span>최상의 커피를 즐기는 법</span>
+                </StyledLink>
                 <ul>
-                  <li>커피 프레스</li>
-                  <li>푸어 오버</li>
-                  <li>아이스 푸어오버</li>
-                  <li>커피 메이커</li>
-                  <li>리저브를 매장에서 다양하게 즐기는 법</li>
+                  <StyledLink to="/enjoy/press">
+                    <li>커피 프레스</li>
+                  </StyledLink>
+                  <StyledLink to="/enjoy/pourover">
+                    <li>푸어 오버</li>
+                  </StyledLink>
+                  <StyledLink to="/enjoy/icepourover">
+                    <li>아이스 푸어오버</li>
+                  </StyledLink>
+                  <StyledLink to="/enjoy/maker">
+                    <li>커피 메이커</li>
+                  </StyledLink>
+                  <StyledLink to="/enjoy/reserve">
+                    <li>리저브를 매장에서 다양하게 즐기는 법</li>
+                  </StyledLink>
                 </ul>
               </div>
               <div className="grid">
@@ -464,16 +486,21 @@ const BottomNav = ({ match }) => {
           </NavContents>
         </li>
         <li id={3} onClick={(e) => onClickMenu(e)}>
-          <span className="menu">STORE</span>
+          <StyledLink to="/find_store">
+            <span className="menu">STORE</span>
+          </StyledLink>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">
-                <span>매장 찾기</span>
-                <ul>
-                  <li>퀵 검색</li>
-                  <li>지역 검색</li>
-                  <li>My 매장</li>
-                </ul>
+                <StyledLink to="/find_store">
+                  <span>매장 찾기</span>
+
+                  <ul>
+                    <li>퀵 검색</li>
+                    <li>지역 검색</li>
+                    <li>My 매장</li>
+                  </ul>
+                </StyledLink>
               </div>
               <div className="grid">
                 <span>드라이브 스루 매장</span>

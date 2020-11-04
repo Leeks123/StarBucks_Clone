@@ -39,7 +39,7 @@ const StyledNavTemplate = styled.div`
     height: 70px;
   }
 `;
-const StyledA = styled.a`
+const StyledA = styled.div`
   position: absolute;
   top: 22px;
   left: 17px;
@@ -89,8 +89,7 @@ const Dim = styled.div`
   }
 `;
 
-const NavTemplate = ({ match }) => {
-  console.log(match);
+const NavTemplate = () => {
   const { sidebarOpened, sidebarToggle } = useContext(SidebarContext);
 
   const onClicked = () => {
@@ -109,9 +108,7 @@ const NavTemplate = ({ match }) => {
             <TopNav />
             <NavSearch />
           </div>
-          <Link to="/">
-            <BottomNav />
-          </Link>
+          <BottomNav />
         </StyledNavTemplate>
       </Wrapper>
     </>
