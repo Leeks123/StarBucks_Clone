@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/StarBucks_clone/precache-manifest.c9cff6f41125594ef6e74cfd7dc90ccc.js"
+  "/StarBucks_clone/precache-manifest.bb60620f09bab5440affe3b810dd825a.js"
 );
 
 self.addEventListener('message', (event) => {

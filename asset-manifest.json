@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/StarBucks_clone/static/css/main.dd7517ba.chunk.css",
-    "main.js": "/StarBucks_clone/static/js/main.8b1617d6.chunk.js",
-    "main.js.map": "/StarBucks_clone/static/js/main.8b1617d6.chunk.js.map",
+    "main.js": "/StarBucks_clone/static/js/main.1a361e7f.chunk.js",
+    "main.js.map": "/StarBucks_clone/static/js/main.1a361e7f.chunk.js.map",
     "runtime-main.js": "/StarBucks_clone/static/js/runtime-main.d5660f18.js",
     "runtime-main.js.map": "/StarBucks_clone/static/js/runtime-main.d5660f18.js.map",
     "static/css/2.1a0a2c47.chunk.css": "/StarBucks_clone/static/css/2.1a0a2c47.chunk.css",
     "static/js/2.43311cf5.chunk.js": "/StarBucks_clone/static/js/2.43311cf5.chunk.js",
     "static/js/2.43311cf5.chunk.js.map": "/StarBucks_clone/static/js/2.43311cf5.chunk.js.map",
     "index.html": "/StarBucks_clone/index.html",
-    "precache-manifest.c9cff6f41125594ef6e74cfd7dc90ccc.js": "/StarBucks_clone/precache-manifest.c9cff6f41125594ef6e74cfd7dc90ccc.js",
+    "precache-manifest.bb60620f09bab5440affe3b810dd825a.js": "/StarBucks_clone/precache-manifest.bb60620f09bab5440affe3b810dd825a.js",
     "service-worker.js": "/StarBucks_clone/service-worker.js",
     "static/css/2.1a0a2c47.chunk.css.map": "/StarBucks_clone/static/css/2.1a0a2c47.chunk.css.map",
     "static/css/main.dd7517ba.chunk.css.map": "/StarBucks_clone/static/css/main.dd7517ba.chunk.css.map",
@@ -43,6 +43,6 @@
     "static/css/2.1a0a2c47.chunk.css",
     "static/js/2.43311cf5.chunk.js",
     "static/css/main.dd7517ba.chunk.css",
-    "static/js/main.8b1617d6.chunk.js"
+    "static/js/main.1a361e7f.chunk.js"
   ]
 }
