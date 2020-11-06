@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e32e72553f01d12f224f1e01427a2921",
+    "revision": "e78178006d0f8a7ddf52a1908f015639",
     "url": "/Starbucks_clone/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Starbucks_clone/static/css/2.1a0a2c47.chunk.css"
   },
   {
-    "revision": "eb5884c325a7ef532847",
+    "revision": "713ac91e01ebe2b32407",
     "url": "/Starbucks_clone/static/css/main.dd7517ba.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Starbucks_clone/static/js/2.4799b10d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "eb5884c325a7ef532847",
-    "url": "/Starbucks_clone/static/js/main.97d65c05.chunk.js"
+    "revision": "713ac91e01ebe2b32407",
+    "url": "/Starbucks_clone/static/js/main.308327a6.chunk.js"
   },
   {
     "revision": "5cdb3b6d6e67e2c1d622",

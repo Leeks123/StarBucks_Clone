@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Starbucks_clone/static/css/main.dd7517ba.chunk.css",
-    "main.js": "/Starbucks_clone/static/js/main.97d65c05.chunk.js",
-    "main.js.map": "/Starbucks_clone/static/js/main.97d65c05.chunk.js.map",
+    "main.js": "/Starbucks_clone/static/js/main.308327a6.chunk.js",
+    "main.js.map": "/Starbucks_clone/static/js/main.308327a6.chunk.js.map",
     "runtime-main.js": "/Starbucks_clone/static/js/runtime-main.baac8db8.js",
     "runtime-main.js.map": "/Starbucks_clone/static/js/runtime-main.baac8db8.js.map",
     "static/css/2.1a0a2c47.chunk.css": "/Starbucks_clone/static/css/2.1a0a2c47.chunk.css",
     "static/js/2.4799b10d.chunk.js": "/Starbucks_clone/static/js/2.4799b10d.chunk.js",
     "static/js/2.4799b10d.chunk.js.map": "/Starbucks_clone/static/js/2.4799b10d.chunk.js.map",
     "index.html": "/Starbucks_clone/index.html",
-    "precache-manifest.cb91abec1ec1e6530b6e478636d81cf9.js": "/Starbucks_clone/precache-manifest.cb91abec1ec1e6530b6e478636d81cf9.js",
+    "precache-manifest.234c46b613482d72559b073ef7b7bf1e.js": "/Starbucks_clone/precache-manifest.234c46b613482d72559b073ef7b7bf1e.js",
     "service-worker.js": "/Starbucks_clone/service-worker.js",
     "static/css/2.1a0a2c47.chunk.css.map": "/Starbucks_clone/static/css/2.1a0a2c47.chunk.css.map",
     "static/css/main.dd7517ba.chunk.css.map": "/Starbucks_clone/static/css/main.dd7517ba.chunk.css.map",
@@ -43,6 +43,6 @@
     "static/css/2.1a0a2c47.chunk.css",
     "static/js/2.4799b10d.chunk.js",
     "static/css/main.dd7517ba.chunk.css",
-    "static/js/main.97d65c05.chunk.js"
+    "static/js/main.308327a6.chunk.js"
   ]
 }

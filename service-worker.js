@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Starbucks_clone/precache-manifest.cb91abec1ec1e6530b6e478636d81cf9.js"
+  "/Starbucks_clone/precache-manifest.234c46b613482d72559b073ef7b7bf1e.js"
 );
 
 self.addEventListener('message', (event) => {
