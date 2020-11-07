@@ -49,6 +49,14 @@ const StyledBottomNav = styled.div`
     bottom : 0px;
     left: 30vw;
     width: 70vw;
+    ${(props) =>
+      props.sidebarOpen && props.sidebarOpen === true
+        ? css`
+            height: 100vh;
+          `
+        : css`
+            height: 0vh;
+          `}
     margin-right: 0px;
     
     & > ul {
@@ -330,7 +338,6 @@ const BottomNav = ({ location, match, history }) => {
     subMenu === elem.id ? setSubMenu(0) : setSubMenu(elem.id);
     console.log("subMenu clicked", elem.id);
   };
-  console.log("submenu", subMenu);
 
   return (
     <StyledBottomNav submenuClicked={subMenu} sidebarOpen={sidebarOpened}>

@@ -21,6 +21,7 @@ const App = () => {
 
       <Switch>
         <Route path="/" exact render={ContentsTemplate} />
+        <Route path="/Starbucks_clone" exact render={ContentsTemplate} />
         <Route exact path="/coffee" render={CoffeePage} />
         <Route path="/coffee/:product" render={CoffeePage} />
         <Route path="/like" render={LikePage} />

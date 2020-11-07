@@ -1,0 +1,132 @@
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Checkbox, Collapse, Button } from "antd";
+import { DownCircleOutlined } from "@ant-design/icons";
+import "antd/dist/antd.css";
+
+const { Panel } = Collapse;
+
+const Wrapper = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: white;
+
+  & > .ant-collapse.ant-collapse-icon-position-right {
+    background: white;
+    .ant-collapse-item {
+      .ant-collapse-header {
+        padding: 30px;
+        font-weight: bold;
+        font-size: 16px;
+        span {
+          padding-top: 5px;
+          padding-right: 10px;
+          svg {
+            width: 42px;
+            height: 42px;
+          }
+        }
+      }
+      .ant-collapse-content.ant-collapse-content-active {
+        button {
+          font-size: 14px;
+          font-weight: bold;
+          padding: 0 50px;
+          vertical-align: center;
+          margin-right: 20px;
+          border-radius: 5px;
+          background-color: #f4f4f1;
+        }
+      }
+    }
+  }
+`;
+
+const CoffeePage_CategoryCheck = () => {
+  const [checkedList, setCheckedList] = useState(["blonde"]);
+  const [indeterminate, setIndeterminate] = useState(true);
+  const [checkAll, setCheckAll] = useState(false);
+  const [buttons, setButtons] = useState([true, false, false]);
+
+  const options = [
+    { label: "블론드 로스트", value: "blonde" },
+    { label: "미디엄 로스트", value: "medium" },
+    { label: "다크 로스트", value: "dark" },
+    { label: "플레이버", value: "flavor" },
+  ];
+
+  const onCheckBoxChange = (checkedList) => {
+    console.log("onCheckBoxChange", checkedList);
+    setCheckedList(checkedList);
+    setIndeterminate(
+      !!checkedList.length && checkedList.length < options.length
+    );
+    setCheckAll(checkedList.length === options.length);
+  };
+
+  const onCheckAllChange = (e) => {
+    console.log(options);
+    setCheckedList(
+      e.target.checked ? ["blonde", "medium", "dark", "flavor"] : []
+    );
+    setIndeterminate(false);
+    setCheckAll(e.target.checked);
+  };
+
+  const onButtonClicked = (e) => {
+    let arrBtn = e.target.parentNode.children;
+    let newBtnstate = buttons;
+    for (let i in buttons) {
+      if (i === e.target.id) {
+        newBtnstate[i] = true;
+        arrBtn[i].style.backgroundColor = "#006633";
+        arrBtn[i].style.color = "white";
+      } else {
+        newBtnstate[i] = false;
+        arrBtn[i].style.backgroundColor = "white";
+        arrBtn[i].style.color = "#006633";
+      }
+    }
+    setButtons(newBtnstate);
+  };
+  return (
+    <Wrapper>
+      <Collapse
+        bordered={true}
+        expandIcon={({ isActive }) => (
+          <DownCircleOutlined rotate={isActive ? 180 : 0} />
+        )}
+        expandIconPosition={"right"}
+      >
+        <Panel header="분류 보기">
+          <Button size={"large"} id={0} onClick={onButtonClicked}>
+            스타벅스 원두
+          </Button>
+          <Button size={"large"} id={1} onClick={onButtonClicked}>
+            스타벅스 비아
+          </Button>
+          <Button size={"large"} id={2} onClick={onButtonClicked}>
+            스타벅스 오리가미
+          </Button>
+          <br />
+          <br />
+          <Checkbox
+            indeterminate={indeterminate}
+            onChange={onCheckAllChange}
+            checked={checkAll}
+          >
+            Check all
+          </Checkbox>
+          <Checkbox.Group
+            options={options}
+            value={checkedList}
+            onChange={onCheckBoxChange}
+          />
+        </Panel>
+      </Collapse>
+    </Wrapper>
+  );
+};
+
+export default CoffeePage_CategoryCheck;
