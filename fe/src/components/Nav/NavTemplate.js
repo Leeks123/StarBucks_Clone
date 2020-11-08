@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   height: 120px;
   z-index: 30;
   background: #f6f5f0;
+  box-sizing: border-box;
 
   @media (max-width: 950px) {
     height: 70px;

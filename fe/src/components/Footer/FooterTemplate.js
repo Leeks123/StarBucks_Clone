@@ -61,6 +61,7 @@ const TopFooter = styled.div`
     .wrapper {
       display: block;
       & span {
+        box-sizing: content-box;
         display: block;
         background-color: #645952;
         height: 17px;
@@ -71,6 +72,7 @@ const TopFooter = styled.div`
       ul {
         margin: 0;
         & li {
+          box-sizing: content-box;
           background-color: #8c8279;
           height: 17px;
           padding: 16.5px 0;

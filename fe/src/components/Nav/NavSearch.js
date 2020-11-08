@@ -59,7 +59,7 @@ const StyledNavSearch = styled.div`
           display: none;
         }
         span {
-          padding: 10.5px 0;
+          padding: 5px 0;
           display: block;
           font-size: 24px;
           color: white;

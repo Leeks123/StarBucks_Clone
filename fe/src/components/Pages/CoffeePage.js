@@ -16,6 +16,9 @@ const Wrapper = styled.div`
       padding-top: 70px;
     }
   }
+  @media (max-width: 1100px) {
+    margin: 0 20px;
+  }
 `;
 
 const Title = styled.h2`

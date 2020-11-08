@@ -12,7 +12,7 @@ const Content3 = styled.section`
     margin: 0 auto;
     display: flex;
 
-    height: 167px;
+    height: 250px;
     padding: 35px 0;
     color: white;
     a {
@@ -36,6 +36,7 @@ const Content3 = styled.section`
       .reward_text {
         border-bottom: 0.5px solid white;
         h2 {
+          color: white;
           margin: 0px;
           font-size: 26px;
         }
@@ -77,7 +78,7 @@ const Content3 = styled.section`
     max-width: 100%;
     .wrapper {
       max-width: 900px;
-      height: 423px;
+      height: 520px;
       margin: 0 auto;
       // padding: 60px 40px 40px 40px;
       position: relative;
@@ -127,7 +128,7 @@ const Content3 = styled.section`
     }
   }
   @media (max-width: 640px) {
-    height: 696px;
+    height: 790px;
     padding: 40px 0 50px 0;
     .wrapper {
       display: block;

@@ -9,6 +9,7 @@ const StyledTopNav = styled.div`
     display: flex;
     list-style-type: none;
     padding: 0;
+    margin-top: 20px;
     li {
       padding: 0 15px;
       height: 20px;
@@ -66,7 +67,7 @@ const StyledTopNav = styled.div`
       position: absolute;
       padding: 17px;
       right: 40px;
-      top: 0px;
+      top: -5px;
       svg {
         padding-right: 20px;
       }
@@ -108,8 +109,8 @@ const TopNav = () => {
         <li>Find a Store</li>
       </ul>
       <div className="icons">
-        <BsFillPersonFill className="personIcon" size="36" />
-        <FaMapMarkerAlt className="mapMarker" size="36" />
+        <BsFillPersonFill className="personIcon" size="43" />
+        <FaMapMarkerAlt className="mapMarker" size="43" />
       </div>
     </StyledTopNav>
   );

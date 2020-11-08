@@ -8,16 +8,16 @@ import { HiSpeakerphone } from "react-icons/hi";
 
 const Content2 = styled.section`
   max-width: 100wv;
-  height: 62px;
-  margin-top: -62px;
-  margin-bottom: 62px;
+  height: 64px;
+  margin-top: -64px;
+  margin-bottom: 64px;
   .notice_back,
   .promo_back {
     display: inline-block;
     position: relative;
     width: 50%;
     height: 100%;
-    top: 62px;
+    top: 64px;
     margin: 0;
     z-index: -1;
   }
@@ -31,12 +31,12 @@ const Content2 = styled.section`
   }
   .wrapper {
     position: relative;
-    bottom: 3px;
+    bottom: 6px;
     z-index: 0;
     max-width: 1080px;
     display: flex;
     justify-content: spance-between;
-    height: 62px;
+    height: 64px;
     margin: 0 auto;
     .notice {
       box-sizing: border-box;

@@ -47,6 +47,7 @@ const Content5 = styled.section`
   @media (max-width: 1000px) {
     height: 150vw;
     .logo {
+      box-sizing: content-box;
       position: relative;
       top: 5%;
       left: 0;
@@ -70,6 +71,7 @@ const Content5 = styled.section`
       height: auto;
     }
     a {
+      box-sizing: content-box;
       // position: relative;
       left: 50%;
       top: 83%;

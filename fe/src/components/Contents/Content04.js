@@ -105,7 +105,7 @@ const Content4 = styled.section`
       }
       .bean_txt {
         width: 450px;
-        top: -21rem;
+        top: -15rem;
         left: 42.3%;
         ${(props) =>
           props.scrolled &&
@@ -115,7 +115,7 @@ const Content4 = styled.section`
       }
       a {
         left: 42.3%;
-        top: -17rem;
+        top: -12rem;
         ${(props) =>
           props.scrolled &&
           css`
@@ -131,7 +131,7 @@ const Content4 = styled.section`
       }
       .bean_txt {
         width: 370px;
-        top: -18rem;
+        top: -15rem;
       }
     }
   }
@@ -139,6 +139,7 @@ const Content4 = styled.section`
     .wrapper {
       height: 165vw;
       img {
+        box-sizing: content-box;
         width: 33.4%;
         padding: 30px 33.3%;
         left: 0;

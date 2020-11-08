@@ -18,7 +18,7 @@ const StyledBottomNav = styled.div`
     margin: 0px;
     li {
       white-space: nowrap;
-      height: 60px;
+      height: 62px;
       padding: 10px 30px 0px 30px;
       .menu {
         font: normal 13px Avenir, Arial, georgia;
