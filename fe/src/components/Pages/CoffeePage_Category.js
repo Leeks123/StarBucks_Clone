@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Col } from "antd";
+import { Row } from "antd";
 import bean_icon from "../../images/bean_icon_blond.png";
 import Product from "./CoffeePage_Product";
 
-import { bean, via, origami } from "../../data/CoffePageData";
+import { beans, via, origami } from "../../data/CoffePageData";
 
 const Wrapper = styled.div`
   margin-top: 60px;
@@ -25,24 +25,22 @@ const Wrapper = styled.div`
   }
 `;
 
-const style = { background: "#0092ff", padding: "8px 0", height: "300px" };
-const CoffeePage_Category = ({ title }) => {
-  console.log(bean);
+const CoffeePage_Category = ({ category, type }) => {
+  const renderCategory =
+    category === "beans" ? beans : category === "via" ? via : origami;
+
   return (
     <Wrapper>
       <dl>
         <dt>
-          <span>블론드</span>
+          <span>{type}</span>
         </dt>
         <dd>
           <Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
-            <Product title="hello" img="hello" />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            {renderCategory[type] &&
+              renderCategory[type].map((product, i) => (
+                <Product title={product.title} img={product.img} key={i} />
+              ))}
           </Row>
         </dd>
       </dl>

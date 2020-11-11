@@ -1,31 +1,31 @@
-import bean_blond_01 from "../images/products/product_bean_blond01.png";
-import bean_blond_02 from "../images/products/product_bean_blond02.png";
-import bean_medium_01 from "../images/products/product_bean_medium01.png";
-import bean_medium_02 from "../images/products/product_bean_medium02.png";
-import bean_medium_03 from "../images/products/product_bean_medium03.png";
-import bean_medium_04 from "../images/products/product_bean_medium04.png";
-import bean_medium_05 from "../images/products/product_bean_medium05.png";
-import bean_medium_06 from "../images/products/product_bean_medium06.png";
-import bean_medium_07 from "../images/products/product_bean_medium07.png";
-import bean_medium_08 from "../images/products/product_bean_medium08.png";
-import bean_medium_09 from "../images/products/product_bean_medium09.png";
-import bean_dark_01 from "../images/products/product_bean_dark01.png";
-import bean_dark_02 from "../images/products/product_bean_dark02.png";
-import bean_dark_03 from "../images/products/product_bean_dark03.png";
-import bean_dark_04 from "../images/products/product_bean_dark04.png";
-import bean_dark_05 from "../images/products/product_bean_dark05.png";
+import bean_blond_01 from "../images/products/product_bean_blond01.jpg";
+import bean_blond_02 from "../images/products/product_bean_blond02.jpg";
+import bean_medium_01 from "../images/products/product_bean_medium01.jpg";
+import bean_medium_02 from "../images/products/product_bean_medium02.jpg";
+import bean_medium_03 from "../images/products/product_bean_medium03.jpg";
+import bean_medium_04 from "../images/products/product_bean_medium04.jpg";
+import bean_medium_05 from "../images/products/product_bean_medium05.jpg";
+import bean_medium_06 from "../images/products/product_bean_medium06.jpg";
+import bean_medium_07 from "../images/products/product_bean_medium07.jpg";
+import bean_medium_08 from "../images/products/product_bean_medium08.jpg";
+import bean_medium_09 from "../images/products/product_bean_medium09.jpg";
+import bean_dark_01 from "../images/products/product_bean_dark01.jpg";
+import bean_dark_02 from "../images/products/product_bean_dark02.jpg";
+import bean_dark_03 from "../images/products/product_bean_dark03.jpg";
+import bean_dark_04 from "../images/products/product_bean_dark04.jpg";
+import bean_dark_05 from "../images/products/product_bean_dark05.jpg";
 
-import via_medium_01 from "../images/products/product_via_medium01.png";
-import via_medium_02 from "../images/products/product_via_medium02.png";
-import via_medium_03 from "../images/products/product_via_medium03.png";
-import via_medium_04 from "../images/products/product_via_medium04.png";
-import via_medium_05 from "../images/products/product_via_medium05.png";
-import via_dark_01 from "../images/products/product_via_dark01.png";
-import via_dark_02 from "../images/products/product_via_dark02.png";
-import via_flavor_01 from "../images/products/product_via_flavor01.png";
-import via_flavor_02 from "../images/products/product_via_flavor02.png";
+import via_medium_01 from "../images/products/product_via_medium01.jpg";
+import via_medium_02 from "../images/products/product_via_medium02.jpg";
+import via_medium_03 from "../images/products/product_via_medium03.jpg";
+import via_medium_04 from "../images/products/product_via_medium04.jpg";
+import via_medium_05 from "../images/products/product_via_medium05.jpg";
+import via_dark_01 from "../images/products/product_via_dark01.jpg";
+import via_dark_02 from "../images/products/product_via_dark02.jpg";
+import via_flavor_01 from "../images/products/product_via_flavor01.jpg";
+import via_flavor_02 from "../images/products/product_via_flavor02.jpg";
 
-const bean = {
+const beans = {
   blond: [
     {
       title: "크리스마스 블론드 로스트 250g",
@@ -151,4 +151,4 @@ const origami = {
   flavor: [],
 };
 
-export { bean, via, origami };
+export { beans, via, origami };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Checkbox, Collapse, Button } from "antd";
 import { DownCircleOutlined } from "@ant-design/icons";
@@ -43,33 +43,52 @@ const Wrapper = styled.div`
   }
 `;
 
-const CoffeePage_CategoryCheck = () => {
-  const [checkedList, setCheckedList] = useState(["blonde"]);
+const CoffeePage_CategoryCheck = ({
+  category,
+  type,
+  onCategoryChange,
+  onTypeChange,
+}) => {
+  const [checkedList, setCheckedList] = useState();
   const [indeterminate, setIndeterminate] = useState(true);
   const [checkAll, setCheckAll] = useState(false);
   const [buttons, setButtons] = useState([true, false, false]);
 
+  useEffect(() => {
+    // prop으로 받아오는 초기세팅
+    if (category === "beans") {
+      setButtons([true, false, false]);
+    } else if (category === "via") {
+      setButtons([false, true, false]);
+    } else if (category === "origami") {
+      setButtons([false, false, true]);
+    }
+    onCheckBoxChange(type);
+    onCategoryChange(buttons);
+    onTypeChange(type);
+  }, [category]);
+
   const options = [
-    { label: "블론드 로스트", value: "blonde" },
+    { label: "블론드 로스트", value: "blond" },
     { label: "미디엄 로스트", value: "medium" },
     { label: "다크 로스트", value: "dark" },
     { label: "플레이버", value: "flavor" },
   ];
 
   const onCheckBoxChange = (checkedList) => {
-    console.log("onCheckBoxChange", checkedList);
     setCheckedList(checkedList);
     setIndeterminate(
       !!checkedList.length && checkedList.length < options.length
     );
     setCheckAll(checkedList.length === options.length);
+    onTypeChange(checkedList);
   };
 
   const onCheckAllChange = (e) => {
-    console.log(options);
     setCheckedList(
-      e.target.checked ? ["blonde", "medium", "dark", "flavor"] : []
+      e.target.checked ? ["blond", "medium", "dark", "flavor"] : []
     );
+    onTypeChange(e.target.checked ? ["blond", "medium", "dark", "flavor"] : []);
     setIndeterminate(false);
     setCheckAll(e.target.checked);
   };
@@ -89,7 +108,9 @@ const CoffeePage_CategoryCheck = () => {
       }
     }
     setButtons(newBtnstate);
+    onCategoryChange(newBtnstate);
   };
+  const buttonClickedStyle = { backgroundColor: "#006633", color: "white" };
   return (
     <Wrapper>
       <Collapse
@@ -98,8 +119,9 @@ const CoffeePage_CategoryCheck = () => {
           <DownCircleOutlined rotate={isActive ? 180 : 0} />
         )}
         expandIconPosition={"right"}
+        defaultActiveKey={["1"]}
       >
-        <Panel header="분류 보기">
+        <Panel header="분류 보기" key="1">
           <Button size={"large"} id={0} onClick={onButtonClicked}>
             스타벅스 원두
           </Button>

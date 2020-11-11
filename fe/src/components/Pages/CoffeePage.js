@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { withRouter } from "react-router-dom";
 
-import Category_check from "./CoffeePage_CategoryCheck";
+import CategoryCheck from "./CoffeePage_CategoryCheck";
 import Category from "./CoffeePage_Category";
 
 const Wrapper = styled.div`
@@ -30,16 +31,51 @@ const Title = styled.h2`
   }
 `;
 
-const CoffeePage = () => {
+const CoffeePage = ({ match }) => {
+  const [category, setCategory] = useState("beans");
+  const [types, setTypes] = useState(["blond", "medium", "dark", "flavor"]);
+
+  useEffect(() => {
+    console.log("match.params", match.params);
+
+    // if (match.params) {
+    //   setCategory(match.params);
+    // }
+  });
+
+  console.log("state", category);
+
+  const onCategoryChange = (btnState) => {
+    if (btnState[0] === true) {
+      setCategory("beans");
+    } else if (btnState[1] === true) {
+      setCategory("via");
+    } else if (btnState[2] === true) {
+      setCategory("origami");
+    }
+  };
+  const onTypeChange = (checkedList) => {
+    setTypes(checkedList);
+  };
+
   return (
-    <Wrapper>
-      <div className="wrapper">
-        <Title>커피</Title>
-        <Category_check />
-        <Category />
-      </div>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <div className="wrapper">
+          <Title>커피</Title>
+          <CategoryCheck
+            category={category}
+            type={types}
+            onCategoryChange={onCategoryChange}
+            onTypeChange={onTypeChange}
+          />
+          {types.map((type) => (
+            <Category category={category} type={type} />
+          ))}
+        </div>
+      </Wrapper>
+    </>
   );
 };
 
-export default CoffeePage;
+export default withRouter(CoffeePage);
