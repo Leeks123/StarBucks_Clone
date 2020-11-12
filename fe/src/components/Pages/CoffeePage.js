@@ -32,18 +32,14 @@ const Title = styled.h2`
 `;
 
 const CoffeePage = ({ match }) => {
-  const [category, setCategory] = useState("beans");
+  const [category, setCategory] = useState(
+    match.params.product ? match.params.product : "beans"
+  );
   const [types, setTypes] = useState(["blond", "medium", "dark", "flavor"]);
 
   useEffect(() => {
-    console.log("match.params", match.params);
-
-    // if (match.params) {
-    //   setCategory(match.params);
-    // }
-  });
-
-  console.log("state", category);
+    match.params.product && setCategory(match.params.product);
+  }, [match.params]);
 
   const onCategoryChange = (btnState) => {
     if (btnState[0] === true) {

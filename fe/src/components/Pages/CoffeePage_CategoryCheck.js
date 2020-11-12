@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Checkbox, Collapse, Button } from "antd";
 import { DownCircleOutlined } from "@ant-design/icons";
@@ -54,8 +54,10 @@ const CoffeePage_CategoryCheck = ({
   const [checkAll, setCheckAll] = useState(false);
   const [buttons, setButtons] = useState([true, false, false]);
 
+  const buttonsPannel = useRef(null);
+
+  // prop으로 받아오는 초기세팅
   useEffect(() => {
-    // prop으로 받아오는 초기세팅
     if (category === "beans") {
       setButtons([true, false, false]);
     } else if (category === "via") {
@@ -64,9 +66,36 @@ const CoffeePage_CategoryCheck = ({
       setButtons([false, false, true]);
     }
     onCheckBoxChange(type);
-    onCategoryChange(buttons);
-    onTypeChange(type);
   }, [category]);
+
+  useEffect(() => {
+    onBoxColoring(buttons);
+  }, [buttons]);
+
+  const onBoxColoring = (btnsState) => {
+    const dom = buttonsPannel.current;
+    const btnsDom = dom.getElementsByTagName("button");
+    btnsState.forEach((state, i) => {
+      if (state === true) {
+        btnsDom[i].style.backgroundColor = "#006633";
+        btnsDom[i].style.color = "white";
+      } else {
+        btnsDom[i].style.backgroundColor = "white";
+        btnsDom[i].style.color = "#006633";
+      }
+    });
+  };
+  const onButtonClicked = (e) => {
+    let newBtnstate = buttons;
+    for (let i in buttons) {
+      if (i === e.target.id) {
+        newBtnstate[i] = true;
+      } else {
+        newBtnstate[i] = false;
+      }
+    }
+    onCategoryChange(newBtnstate);
+  };
 
   const options = [
     { label: "블론드 로스트", value: "blond" },
@@ -93,26 +122,8 @@ const CoffeePage_CategoryCheck = ({
     setCheckAll(e.target.checked);
   };
 
-  const onButtonClicked = (e) => {
-    let arrBtn = e.target.parentNode.children;
-    let newBtnstate = buttons;
-    for (let i in buttons) {
-      if (i === e.target.id) {
-        newBtnstate[i] = true;
-        arrBtn[i].style.backgroundColor = "#006633";
-        arrBtn[i].style.color = "white";
-      } else {
-        newBtnstate[i] = false;
-        arrBtn[i].style.backgroundColor = "white";
-        arrBtn[i].style.color = "#006633";
-      }
-    }
-    setButtons(newBtnstate);
-    onCategoryChange(newBtnstate);
-  };
-  const buttonClickedStyle = { backgroundColor: "#006633", color: "white" };
   return (
-    <Wrapper>
+    <Wrapper ref={buttonsPannel}>
       <Collapse
         bordered={true}
         expandIcon={({ isActive }) => (
@@ -150,5 +161,4 @@ const CoffeePage_CategoryCheck = ({
     </Wrapper>
   );
 };
-
 export default CoffeePage_CategoryCheck;
