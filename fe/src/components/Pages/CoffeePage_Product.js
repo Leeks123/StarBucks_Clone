@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Col } from "antd";
+import { Link, withRouter } from "react-router-dom";
 
 const Wrapper = styled.div`
   height: 270px;
@@ -13,15 +14,17 @@ const Wrapper = styled.div`
   }
 `;
 
-const CoffeePage_Product = ({ title, img }) => {
+const CoffeePage_Product = ({ title, type, img, match }) => {
   return (
     <Col xs={12} sm={8} md={6}>
       <Wrapper>
-        <img src={img} alt={title} />
+        <Link to={`${match.url}/${type}/${title}`}>
+          <img src={img} alt={title} />
+        </Link>
         <p>{title}</p>
       </Wrapper>
     </Col>
   );
 };
 
-export default CoffeePage_Product;
+export default withRouter(CoffeePage_Product);

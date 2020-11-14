@@ -39,7 +39,12 @@ const CoffeePage_Category = ({ category, type }) => {
           <Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
             {renderCategory[type] &&
               renderCategory[type].map((product, i) => (
-                <Product title={product.title} img={product.img} key={i} />
+                <Product
+                  title={product.title}
+                  type={type}
+                  img={product.img}
+                  key={i}
+                />
               ))}
           </Row>
         </dd>

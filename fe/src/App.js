@@ -8,6 +8,7 @@ import FooterTemplate from "./components/Footer/FooterTemplate";
 import SidebarProvider from "./context/SidebarContext.Provider";
 
 import CoffeePage from "./components/Pages/CoffeePage";
+import ProductPage from "./components/Pages/ProductPage";
 import LikePage from "./components/Pages/LikePage";
 import FindStorePage from "./components/Pages/FindStorePage";
 import EnjoyPage from "./components/Pages/EnjoyPage";
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/" exact render={ContentsTemplate} />
         <Route path="/Starbucks_clone" exact render={ContentsTemplate} />
         <Route exact path="/coffee" render={() => <CoffeePage />} />
+        <Route path="/coffee/:product/:type/:title" component={ProductPage} />
         <Route path="/coffee/:product" render={() => <CoffeePage />} />
         <Route path="/like" render={LikePage} />
         <Route path="/find_store" render={FindStorePage} />
