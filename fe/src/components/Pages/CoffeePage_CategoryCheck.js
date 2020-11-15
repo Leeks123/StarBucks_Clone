@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Checkbox, Collapse, Button } from "antd";
 import { DownCircleOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
+import { useHistory } from "react-router-dom";
 
 const { Panel } = Collapse;
 
@@ -48,6 +49,7 @@ const CoffeePage_CategoryCheck = ({
   type,
   onCategoryChange,
   onTypeChange,
+  match,
 }) => {
   const [checkedList, setCheckedList] = useState();
   const [indeterminate, setIndeterminate] = useState(true);
@@ -55,6 +57,8 @@ const CoffeePage_CategoryCheck = ({
   const [buttons, setButtons] = useState([true, false, false]);
 
   const buttonsPannel = useRef(null);
+
+  const history = useHistory();
 
   // prop으로 받아오는 초기세팅
   useEffect(() => {
@@ -94,7 +98,16 @@ const CoffeePage_CategoryCheck = ({
         newBtnstate[i] = false;
       }
     }
+    let path = "";
+    if (newBtnstate[0] === true) {
+      path = "/coffee/beans";
+    } else if (newBtnstate[1] === true) {
+      path = "/coffee/via";
+    } else {
+      path = "/coffee/origami";
+    }
     onCategoryChange(newBtnstate);
+    history.push(path);
   };
 
   const options = [
@@ -122,6 +135,7 @@ const CoffeePage_CategoryCheck = ({
     setCheckAll(e.target.checked);
   };
 
+  console.log("category checks", buttons);
   return (
     <Wrapper ref={buttonsPannel}>
       <Collapse
@@ -136,6 +150,7 @@ const CoffeePage_CategoryCheck = ({
           <Button size={"large"} id={0} onClick={onButtonClicked}>
             스타벅스 원두
           </Button>
+
           <Button size={"large"} id={1} onClick={onButtonClicked}>
             스타벅스 비아
           </Button>

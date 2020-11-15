@@ -54,6 +54,8 @@ const CoffeePage = ({ match }) => {
     setTypes(checkedList);
   };
 
+  console.log("coffee page rendering", category);
+
   return (
     <>
       <Wrapper>

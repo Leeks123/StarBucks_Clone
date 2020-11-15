@@ -351,7 +351,7 @@ const BottomNav = ({ location, match, history }) => {
           <NavContents submenu={subMenu}>
             <div className="grid_wrapper">
               <div className="grid">
-                <StyledLink to="/coffee">
+                <StyledLink to="/coffee/beans">
                   <span>커피</span>
                 </StyledLink>
 
