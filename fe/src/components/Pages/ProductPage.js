@@ -108,7 +108,86 @@ const Wrapper = styled.div`
     @media (max-width: 950px) {
       padding-top: 70px;
     }
+    @media (max-width: 860px) {
+      .upperBox {
+        .shortDesc {
+          .type {
+            height: 90px;
+          }
+        }
+      }
+    }
     @media (max-width: 640px) {
+      .upperBox {
+        display: block;
+        position: relative;
+        img {
+          width: 100%;
+          position: relative;
+          top: 45vw;
+        }
+        .shortDesc {
+          position: relative;
+          top: -97.3vw;
+          .type {
+            height: 70px;
+            margin: 10px 0;
+            .typeName {
+              span {
+              }
+            }
+            .typeDesc {
+              span {
+              }
+            }
+          }
+        }
+      }
+      .bottomBox {
+        display: block;
+        .longDesc {
+          width: 100%;
+        }
+        .TasteNote {
+          width: 100%;
+          margin-left: 0px;
+          margin-top: 30px;
+          h4 {
+          }
+          p {
+          }
+          .tastingNote {
+          }
+          .enjoyWith {
+          }
+        }
+      }
+    }
+    @media (max-width: 520px) {
+      .upperBox {
+        img {
+          top: 50vw;
+        }
+        .shortDesc {
+          .type {
+            margin: 10px 0;
+            padding: 10px;
+            display: block;
+            height: 80px;
+            .typeName {
+              margin: 0;
+            }
+            .typeDesc {
+              margin-top: 0;
+              padding-top: 0;
+              span {
+                padding-left: 50px;
+                border: 0px;
+              }
+            }
+          }
+        }
+      }
     }
   }
   @media (max-width: 1100px) {
@@ -200,23 +279,27 @@ const ProductPage = ({ match }) => {
       <div className="wrapper">
         <h1>스타벅스 원두</h1>
         <div className="upperBox">
-          <ReactImageMagnify
-            {...{
-              smallImage: {
-                alt: "Wristwatch by Ted Baker London",
-                src: productData.img,
-                width: magnifySize[0],
-                height: magnifySize[1],
-              },
-              largeImage: {
-                src: productData.img,
-                width: magnifySize[0] * 2,
-                height: magnifySize[1] * 2,
-              },
-              enlargedImagePosition: "over",
-              className: "magnify",
-            }}
-          />
+          {windowWidth > 640 ? (
+            <ReactImageMagnify
+              {...{
+                smallImage: {
+                  alt: "Wristwatch by Ted Baker London",
+                  src: productData.img,
+                  width: magnifySize[0],
+                  height: magnifySize[1],
+                },
+                largeImage: {
+                  src: productData.img,
+                  width: magnifySize[0] * 2,
+                  height: magnifySize[1] * 2,
+                },
+                enlargedImagePosition: "over",
+                className: "magnify",
+              }}
+            />
+          ) : (
+            <img src={productData.img} />
+          )}
           <div className="shortDesc">
             <h2>{productData.title}</h2>
             <span>{productData.title_en}</span>
