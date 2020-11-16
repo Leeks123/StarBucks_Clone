@@ -26,7 +26,7 @@ const App = () => {
         <Route exact path="/coffee" render={() => <CoffeePage />} />
         <Route path="/coffee/:product/:type/:title" component={ProductPage} />
         <Route path="/coffee/:product" render={() => <CoffeePage />} />
-        <Route path="/like" render={LikePage} />
+        <Route path="/like" render={() => <LikePage />} />
         <Route path="/find_store" render={FindStorePage} />
         <Route path="/enjoy" render={EnjoyPage} />
         <Route path="/enjoy/:method" render={EnjoyPage} />
