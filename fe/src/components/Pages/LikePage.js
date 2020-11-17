@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import styled, {keyframes} from "styled-components";
 
 import find_wrap_bg from "../../images/like/findWrap_bg.jpg";
 
@@ -59,39 +59,142 @@ const StyledContents = styled.div`
   }
   .find_wrap {
     background: url(${find_wrap_bg}) no-repeat;
-    background-position: contain;
+    background-size: cover;
+    height : 700px;
     .find_frame {
-      border: 1px solid red;
-
-      width: 96%;
+      max-width: 1100px;
+      height : 100%;
       margin: 0 auto;
-      height: 585px;
+
+      .find_section {
+        border : 1px solid red;
+
+        width : 100%;
+        height : 100%;
+        position :relative;
+        & >img {
+          position : relative;
+          top : 85px;
+          left : 50%;
+          margin-left : -262px;
+        }
+        .find_taste {
+          position : relative;
+          top : 150px;
+          display : flex;
+          justify-content : space-around;
+          margin : 30px;
+          .taste_item {
+            img {
+              width : 100%;
+              margin : 0;
+            }
+            p {
+              text-align : center;
+              margin-top : 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1100px) {
+    .find_wrap {
+      .find_frame {
+        .find_section {
+          & >img {
+          }
+          .find_taste {
+            .taste_item {
+              width : 20.1%;
+              img {
+              }
+              p {
+              }
+            }
+          }
+        }
+      }
     }
   }
   @media (max-width: 950px) {
     padding-top: 70px;
+    .find_wrap {
+      .find_frame {
+        .find_section {
+          & >img {
+          }
+          .find_taste {
+            margin : 10px;
+            .taste_item {
+              width : 21.1%;
+              img {
+              }
+              p {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 640px) {
+    .find_wrap {
+      .find_frame {
+        .find_section {
+          & >img {
+            top : 50px;
+          }
+          .find_taste {
+            top : 100px;
+            flex-wrap :wrap;
+            width : 57.5%;
+            margin : 10px auto;
+            .taste_item {
+              width : 39.9%;
+              img {
+              }
+              p {
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
 const LikePage = () => {
+  const [flavor,setFlavor] = useState(0);
+  const [feel,setFeel] = useState(0);
+  const [strength,setStrength] = useState(0); 
+
+  const onClickFn = {
+    0 : (e)=>{setFlavor(e.target.id)},
+    1 : (e)=>{setFeel(e.target.id)},
+    2 : (e)=>{setStrength(e.target.id)},
+  }
   return (
     <StyledContents>
       <h1>나와 어울리는 커피</h1>
       <h4>여러분에게 잘 맞는 커피를 찾기 위한 3가지 질문입니다.</h4>
       <div className="find_wrap">
         <div className="find_frame">
-          <div className="find_section01">
-            <img />
-            <div className="find_taste"></div>
+          {tasteImg.map((section,i)=>(
+          <div className="find_section" key={i}>
+            <img src={section.ttl} alt="ttl"/>
+              <div className="find_taste"> 
+                {section.tastes.map((taste,j)=>(
+                  <div className="taste_item" id={j} onClick={onClickFn[i]}>
+                    <img src={taste.img} id={j} alt="taste"/>
+                    <p id={j}>{taste.desc}</p>
+                  </div>
+                ))}
+              </div>
           </div>
-          <div className="find_section01">
-            <img />
-            <div className="find_taste"></div>
-          </div>
-          <div className="find_section01">
-            <img />
-            <div className="find_taste"></div>
-          </div>
+          ))}
+          
+          
         </div>
       </div>
     </StyledContents>
