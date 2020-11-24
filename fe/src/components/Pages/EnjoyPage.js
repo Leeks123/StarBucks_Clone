@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import { Tabs } from 'antd';
-import EnjoyPage_press from "./EnjoyPage_press";
+import Method from "./EnjoyPage_method";
+
+import Data from "../../data/EnjoyPageData";
 
 const { TabPane } = Tabs;
 
 const StyledContents = styled.div`
-
-border : 1px solid red;
   max-width : 1100px;
   margin : 0 auto;
-  height: 100vh;
   padding-top: 120px;
 
   h2 {
@@ -54,13 +53,13 @@ border : 1px solid red;
   }
   @media (max-width: 950px) {
     padding-top: 70px;
+    margin : 0 4%;
+    width : 92%;
   }
  
-  }
 `;
 
-const EnjoyPage = () => {
- 
+const EnjoyPage = () => { 
 
   const onTabsChange = (key)=>{
     console.log(key);
@@ -68,19 +67,12 @@ const EnjoyPage = () => {
   return (
     <StyledContents>  
       <h2>최상의 커피를 즐기는 법</h2>    
-      <Tabs defaultActiveKey="1" type="card" tabBarGutter={0} onTabClick={onTabsChange} >
-        <TabPane tab="커피 프레스" key="1">
-          <EnjoyPage_press/>
-        </TabPane>
-        <TabPane tab="푸어 오버" key="2">
-          Content of card tab 2
-        </TabPane>
-        <TabPane tab="아이스 푸어 오버" key="3">
-          Content of card tab 3
-        </TabPane>
-        <TabPane tab="커피 메이커" key="4">
-          Content of card tab 4
-        </TabPane>
+      <Tabs defaultActiveKey="0" type="card" tabBarGutter={0} onTabClick={onTabsChange} >
+        {Data.map((method,i)=>(
+          <TabPane tab={method.top.title} key={i}>
+            <Method top={method.top} video={method.video} bottom={method.bottom}/>
+          </TabPane>
+        ))}
         <TabPane tab="리저브를 매장에서 다양하게 즐기는 법" key="5">
           Content of card tab 5
         </TabPane>
