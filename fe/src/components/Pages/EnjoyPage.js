@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import { Tabs } from 'antd';
 import Method from "./EnjoyPage_method";
+import Reserve from "./EnjoyPage_reserve";
 
 import Data from "../../data/EnjoyPageData";
 
@@ -44,6 +45,11 @@ const StyledContents = styled.div`
         }
       }
     }
+    .ant-tabs-tab:nth-child(5) {
+      &.ant-tabs-tab-active {
+        background-color : #B06546;
+      }
+    }
     
   }
   
@@ -73,8 +79,8 @@ const EnjoyPage = () => {
             <Method top={method.top} video={method.video} bottom={method.bottom}/>
           </TabPane>
         ))}
-        <TabPane tab="리저브를 매장에서 다양하게 즐기는 법" key="5">
-          Content of card tab 5
+        <TabPane id="reserve" tab="리저브를 매장에서 다양하게 즐기는 법" key="5">
+          <Reserve/>
         </TabPane>
       </Tabs>
     </StyledContents>

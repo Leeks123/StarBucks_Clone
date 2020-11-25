@@ -29,7 +29,6 @@ const App = () => {
         <Route path="/like" render={() => <LikePage />} />
         <Route path="/find_store" render={FindStorePage} />
         <Route path="/enjoy" render={EnjoyPage} />
-        <Route path="/enjoy/:method" render={EnjoyPage} />
         <Route
           render={({ location }) => (
             <div>

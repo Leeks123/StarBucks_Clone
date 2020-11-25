@@ -4,9 +4,6 @@ import styled from "styled-components";
 
 import tip from "../../images/enjoy/icon_coffee_info_tip.png";
 
-const Wrapper = styled.div`
-    // padding : 37px;
-`;
 const Top = styled.div`
     margin : 67px 37px;
     padding : 0px 50px;
@@ -19,10 +16,23 @@ const Top = styled.div`
         font-size : 14px;
     }
 `;
+const Youtube = styled.iframe`
+    width : 100%;
+    height : 600px;
 
+    @media (max-width : 960px){
+        height : 530px;
+    }
+    @media (max-width : 640px){
+        height : 350px;
+    }
+    @media (max-width : 600px){
+        height : 300px;
+    }
+`;
 const Bottom = styled.div`
     background-color : #f4f4f2;
-    padding : 20px 0px 80px 0px;
+    padding : 40px 0px 80px 0px;
     ul {
         margin : 0px;
         padding : 0;
@@ -137,12 +147,12 @@ const Bottom = styled.div`
 
 const EnjoyPage_method = ({top,video,bottom}) => {
     return (
-        <Wrapper>
+        <>
             <Top icon={top.icon}>
                 <h3>{top.title}</h3>
                 <p>{top.desc}</p>
             </Top>
-            <div className="video"></div>
+            <Youtube title="video" src={video.src} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>
             <Bottom>
                 <ul className="list">
                     {bottom.map((section,i)=>(
@@ -165,7 +175,7 @@ const EnjoyPage_method = ({top,video,bottom}) => {
                     ))}
                 </ul>
             </Bottom>
-        </Wrapper>
+        </>
     );
 };
 

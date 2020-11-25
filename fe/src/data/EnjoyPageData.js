@@ -41,7 +41,7 @@ const press = {
         desc : "커피 프레스를 이용해서 커피를 만들면 커피 필터에 의해 천연 오일이 유지될 뿐 아니라 커피의 모든 풍미가 추출됩니다. 풍부하고 깊은 일관된 풍미 또한 사라지지 않습니다.",
         icon : icon_press
     },
-    video : {},
+    video : {src : "https://www.youtube.com/embed/qNIngFRL-Z0"},
     bottom : [
         {
             img :press1,
@@ -77,7 +77,7 @@ const pourover = {
         desc : "푸어 오버는 놀랍도록 쉽고 간편하게 깔끔하고 완전한 풍미와 바디감을 지닌 한 컵의 커피를 만들 수 있는 방법입니다.",
         icon :icon_pourover
     },
-    video : {},
+    video : {src : "https://www.youtube.com/embed/Y6_X0UoEsBQ"},
     bottom : [
         {
             img :pourover1,
@@ -118,7 +118,7 @@ const icepourover = {
         desc : "아이스 브루드는 한 번에 깊고 풍부한 풍미를 내는 아이스 커피 한 피처를 만드는 쉽고 간단한 방법입니다.",
         icon :icon_icepourover,
     },
-    video : {},
+    video : {src : "https://www.youtube.com/embed/0fj5LeX4WqE"},
     bottom : [
         {
             img :icepourover1,
@@ -165,7 +165,7 @@ const coffemaker = {
         desc : "드립 커피는 간편하게 훌륭한 커피를 만들 수 있는 방법입니다. 커피 브루어에 적합하게 그라인딩된 커피와 깨끗한 물을 이용해서 환상적인 커피를 만들 수 있습니다.",
         icon :icon_coffeemaker,
     },
-    video : {},
+    video : {src : "https://www.youtube.com/embed/mT2ZJnLyjXg"},
     bottom : [
         {
             img :maker1,
