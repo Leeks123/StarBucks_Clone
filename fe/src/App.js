@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/coffee/:product/:type/:title" component={ProductPage} />
         <Route path="/coffee/:product" render={() => <CoffeePage />} />
         <Route path="/like" render={() => <LikePage />} />
-        <Route path="/find_store" render={FindStorePage} />
+        <Route path="/find_store" render={()=><FindStorePage/>} />
         <Route path="/enjoy" render={EnjoyPage} />
         <Route
           render={({ location }) => (

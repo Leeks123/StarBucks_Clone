@@ -493,9 +493,9 @@ const BottomNav = ({ location, match, history }) => {
           </NavContents>
         </li>
         <li id={3} onClick={(e) => onClickMenu(e)}>
-          <StyledLink to="/find_store">
-            <span className="menu">STORE</span>
-          </StyledLink>
+            <StyledLink to="/find_store">
+              <span className="menu">STORE</span>
+            </StyledLink>
           <NavContents>
             <div className="grid_wrapper">
               <div className="grid">
