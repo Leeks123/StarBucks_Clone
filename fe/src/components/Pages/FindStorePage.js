@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import styled from "styled-components";
 import { NaverMap } from 'react-naver-maps';
 import dotenv from "dotenv";
 
 import SearchBox from "./FindStorePage_SearchBox";
-import CafeMarker from "./FindStorePage_CafeMarker"
+import CafeMarker from "./FindStorePage_CafeMarker";
 
 dotenv.config();
 
 const StyledContents = styled.div`
-  height: 150vh;
+  height: 450vh;
   padding-top: 120px;
   @media (max-width: 950px) {
     padding-top: 70px;
@@ -17,14 +17,7 @@ const StyledContents = styled.div`
 `;
 const FindStorePage = () => {
   const navermaps = window.naver.maps;
-
-  // fetch("/map-geocode/v2/geocode?query=분당구 불정로 6&coordinate=127.1054328,37.3595963", {
-  //   headers: {
-  //     "X-Ncp-Apigw-Api-Key": process.env.REACT_APP_Map_Api_Key,
-  //     "X-Ncp-Apigw-Api-Key-Id": process.env.REACT_APP_Map_Api_Key_Id
-  //   }
-  // }).then((res)=> {
-  //   console.log(res);});
+  const [dragged,setDragged] = useState(false);
 
   useEffect(()=>{
     navermaps.Service.geocode({
@@ -37,9 +30,12 @@ const FindStorePage = () => {
           items = result.items; // 검색 결과의 배열
           console.log(items);
     });
-  },[])
+  })
   
-  console.log("findStore component loaded");
+  const DragFn = (state)=>{
+    console.log("hello")
+    setDragged(state);
+  }
 
   return (
     <StyledContents>
@@ -51,8 +47,9 @@ const FindStorePage = () => {
         }}
         defaultCenter={{ lat: 37.554722, lng: 126.970833 }} // 지도 초기 위치
         defaultZoom={13} // 지도 초기 확대 배율
+        onDragend={(e)=>{setDragged(true)}}
       >
-        <CafeMarker />
+        <CafeMarker dragged={dragged} DragFn={DragFn}/>
       </NaverMap>
       <SearchBox/>
     </StyledContents>
