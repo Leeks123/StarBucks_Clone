@@ -59,7 +59,7 @@ const Gwangju = [
     {store_name : "신세계광주신관B1" ,address : "광주광역시 서구 죽봉대로 6",type:"normal"},
 ]
 
-const Gangnam = [
+const Seoul = [
     {store_name : "대치삼성프라자" ,address : "서울특별시 강남구 영동대로 237",type:"normal"},
     {store_name : "코엑스아셈타워" ,address : "서울특별시 강남구 영동대로 517",type:"normal"},
     {store_name : "도산가로수길" ,address : "서울특별시 강남구 도산대로 134",type:"normal"},
@@ -143,4 +143,21 @@ const Gangnam = [
     {store_name : "역삼아레나빌딩" ,address : "서울특별시 강남구 언주로 425",type:"normal"},
 ]
 
-export {Gwangju,Gangnam};
+const listData = {
+    1 : {
+        header : "STEP 1 : 시/도를 선택해 주세요.",
+        region : ["서울","경기","광주","대구","대전","부산","울산","인천","강원","경남","경북","전남","전북","충남","충북","제주",]
+    },
+    2 : {
+        header : "STEP 2 : 구/군을 선택해 주세요.",
+        region : {
+            "서울" : 
+                ["전체","강남구","강동구","강북구","강서구","관악구","광진구","구로구","금천구","노원구","도봉구","동대문구","동작구","마포구","서대문구","서초구","성동구","성북구","송파구","양천구","영등포구","용산구","은평구","종로구","중구","중랑구"]
+            ,
+            "광주" : 
+                ["전체","광산구","남구","동구","북구","서구"]
+            
+        }
+    }
+}
+export {Gwangju,Seoul,listData};

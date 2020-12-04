@@ -9,7 +9,7 @@ import CafeMarker from "./FindStorePage_CafeMarker";
 dotenv.config();
 
 const StyledContents = styled.div`
-  height: 450vh;
+  height: 100vh;
   padding-top: 120px;
   @media (max-width: 950px) {
     padding-top: 70px;
