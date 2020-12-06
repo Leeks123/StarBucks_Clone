@@ -3,7 +3,9 @@ import styled, {css} from "styled-components";
 import {IoIosArrowBack} from "react-icons/io";
 import { Tabs,Collapse,Input,Card } from 'antd';
 
-import {listData,Seoul,Gwangju} from "../../data/FindStoreData";
+import { listData,Seoul,Gwangju } from "../../data/FindStoreData";
+import { setState } from "../../modules/mapMarker"
+import  { useDispatch } from "react-redux";
 
 import pinDT from "../../images/findStore/pin_general_DT.png";
 import pinGE from "../../images/findStore/pin_general.png";
@@ -19,9 +21,9 @@ const Wrapper = styled.div`
 position : absolute;
 left : 20px;
 top : 150px;
- border : 1px solid red;
- width : 300px;
- background-color : white;
+width : 300px;
+background-color : white;
+
 .ant-tabs-nav {
     margin : 0;
     .ant-tabs-nav-list {
@@ -78,7 +80,7 @@ top : 150px;
     ul {
         display : grid;
         grid-template-columns : 1fr 1fr;
-        
+        grid-template-rows: repeat(auto-fill, minmax(50px, auto));
         ${props=>props.step===3 && css`
             display : block;
         `}
@@ -102,6 +104,7 @@ top : 150px;
         .store {
             display : flex;
             justify-content : space-between;
+            
             padding : 0;
             padding-bottom : 5px;
             margin-bottom : 15px;
@@ -117,7 +120,7 @@ top : 150px;
 }
 `;
 
-const FindStorePage_SearchBox = () => {
+const FindStorePage_SearchBox = ({reduxUpdate}) => {
     const [step,setStep] = useState(1);
     const [city,setCity] = useState("");
     const [district,setDistrict] = useState("");
@@ -137,7 +140,6 @@ const FindStorePage_SearchBox = () => {
         setStep(1);
     }
     const dataFilter = (city,district)=>{
-        console.log(city,district);
         if(city==="서울"){
             if(district==="전체"){
                 return Seoul;
@@ -155,15 +157,20 @@ const FindStorePage_SearchBox = () => {
         }
     }
     const clickStep2 = (e)=>{
-        console.log(e.target.innerText);
         setDistrict(e.target.innerText);
         setStep(3);
     }
+    const dispatch = useDispatch();
+
     useEffect(()=>{
         if(district!==""){
             setFilteredData(dataFilter(city,district));
         }
         // 리덕스로 넘기기
+        console.log('redux로 넘기기');
+        dispatch(setState(city,district,dataFilter(city,district)));
+        reduxUpdate(district);
+
     },[district])
 
     return (
