@@ -63,25 +63,25 @@ const Wrapper = styled.div`
 
 `;
 
-const FindStorePage_MarkerDesc= ({position,PosFn,dragged,DragFn}) => {
+const FindStorePage_MarkerDesc= ({position,PosFn,dragged,DragFn,desc}) => {
     const onCloseClick = ()=>{
         PosFn(null);
     }
     
     if(dragged){
-        DragFn(false);
+        DragFn(!dragged);
         PosFn(null);
     }
 
     return (
         <Wrapper x={position[0]} y={position[1]}>
             <header>
-                <span>{"dksjfkldsjfklsd"}</span>
+                <span>{desc.store_name}</span>
                 <AiOutlineCloseCircle onClick={onCloseClick}/>
             </header>
             <div className="desc_wrapper">
                 <div className="desc">
-                    <div className="address"><GoLocation size="20"/><p>dfkjdskfjddsfjkldsjfkldsjfkljsdklskfjsdkjfkdsjfkds</p></div>
+                    <div className="address"><GoLocation size="20"/><p>{desc.address}</p></div>
                     <div className="phone"><AiOutlinePhone size="20"/><p>1522-3232</p></div>
                 </div>
                 <div className="more">more</div>

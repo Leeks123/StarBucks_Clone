@@ -4,11 +4,10 @@ import { NaverMap } from 'react-naver-maps';
 import dotenv from "dotenv";
 
 import SearchBox from "./FindStorePage_SearchBox";
-import CafeMarker from "./FindStorePage_CafeMarker";
+import CafeMarker from "../Pages/FindStorePage_CafeMarker";
 
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { updateGeoCodes } from "../../modules/mapMarker";
-import  { useDispatch } from "react-redux";
 
 dotenv.config();
 
@@ -27,50 +26,51 @@ const FindStorePage = () => {
   const dispatch = useDispatch();
 
   const [dragged,setDragged] = useState(false);
-  // const [geoCodes,setGeoCodes] = useState([]);
+  const [geoCodes,setGeoCodes] = useState(pinList.geoCodes);
   const [reduxUpdate,setReduxUpdate] = useState("");
-  const [loaded,setLoaded] = useState(false);
+  const [forRender,setForRender] = useState(0);
+  const [center,setCenter] = useState({ lat: 37.554722, lng: 126.970833 });
 
   let pos = []
-  const update = (item)=>pos.push(item);
-  useEffect(()=>{
-    const getGeoCode = (address)=>{
-          navermaps.Service.geocode({
-            address: address
-          }, function(status, response) {
-            if (status !== navermaps.Service.Status.OK) {
-                return alert('Something wrong!');
-            }
-            var result = response.result, // 검색 결과의 컨테이너
-                items = result.items; // 검색 결과의 배열
-                update(items[0].point)
-          });
-    }
+  const update = (item)=>{
+    let x = Number.parseFloat(item.x);
+    let y = Number.parseFloat(item.y);
+    item.x = y;
+    item.y = x;
+    return pos.push(item)
+  };
+  const getGeoCode = (address)=>{
+    navermaps.Service.geocode({
+      address: address
+    }, function(status, response) {
+      if (status !== navermaps.Service.Status.OK) {
+          return alert('Something wrong!');
+      }
+      var result = response.result, // 검색 결과의 컨테이너
+          items = result.items; // 검색 결과의 배열
+          update(items[0].point)
+    });
+  }
 
+  useEffect(()=>{
     pinList.filteredData.forEach((item)=>{
       getGeoCode(item.address);
-      // console.log("geoCode",pos);
     })
-
-    console.log("useEffect",pos);
+    console.log("useEffect",pos,reduxUpdate);
     dispatch(updateGeoCodes(pos));
+
+    setGeoCodes(pos); 
   },[reduxUpdate])
-
-  // useEffect(()=>{
-  //   if(pos.length===pinList.filteredData.length){
-  //     setLoaded(true);
-  //   }
-  // },[reduxUpdate])
-
-  useEffect(()=>{
-    setLoaded(!loaded);
-  },[pinList.geoCodes])
 
   const DragFn = (state)=>{
     setDragged(state);
   }
 
-  console.log("rendered",pinList.geoCodes);
+  const pinRender = (i)=>{
+    setForRender((i+1)%10);
+  }
+
+  console.log("findPage rendered",reduxUpdate,geoCodes,dragged,forRender)
   return (
     <StyledContents>
       <NaverMap 
@@ -79,17 +79,16 @@ const FindStorePage = () => {
           width: '100%', // 네이버지도 가로 길이
           height: '85vh' // 네이버지도 세로 길이
         }}
-        defaultCenter={{ lat: 37.554722, lng: 126.970833 }} // 지도 초기 위치
+        center={center} // 지도 초기 위치
         defaultZoom={13} // 지도 초기 확대 배율
-        onDragend={(e)=>{setDragged(true)}}
+        onDragend={(e)=>{setDragged(true);pinRender(forRender+1)}}
       >
-        
-        {pinList.geoCodes.map((item,i)=>(
-          <CafeMarker key={i} dragged={dragged} DragFn={DragFn} pos={item}  />
-        ))}
+        {geoCodes.map((pos,i)=>{
+         return  <CafeMarker key={i} dragged={dragged} DragFn={DragFn} pos={pos} id={i} />
+        })}
         
       </NaverMap>
-      <SearchBox reduxUpdate={setReduxUpdate}/>
+      <SearchBox reduxUpdate={setReduxUpdate} />
     </StyledContents>
   );
 };

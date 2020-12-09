@@ -128,8 +128,8 @@ const FindStorePage_SearchBox = ({reduxUpdate}) => {
 
     const reset = ()=>{
         setStep(1);
-        setCity("")
-        setDistrict("")
+        // setCity("")
+        // setDistrict("")
         console.log("reset")
     }
     const clickStep1 = (e)=>{
@@ -156,21 +156,21 @@ const FindStorePage_SearchBox = ({reduxUpdate}) => {
             return [];
         }
     }
+    const dispatch = useDispatch();
+
     const clickStep2 = (e)=>{
         setDistrict(e.target.innerText);
         setStep(3);
     }
-    const dispatch = useDispatch();
 
     useEffect(()=>{
         if(district!==""){
             setFilteredData(dataFilter(city,district));
+            // 리덕스로 넘기기
+            console.log('redux로 넘기기');
+            dispatch(setState(city,district,dataFilter(city,district)));
+            reduxUpdate(district);
         }
-        // 리덕스로 넘기기
-        console.log('redux로 넘기기');
-        dispatch(setState(city,district,dataFilter(city,district)));
-        reduxUpdate(district);
-
     },[district])
 
     return (
