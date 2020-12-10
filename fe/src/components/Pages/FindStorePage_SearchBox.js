@@ -5,7 +5,8 @@ import { Tabs,Collapse,Input,Card } from 'antd';
 
 import { listData,Seoul,Gwangju } from "../../data/FindStoreData";
 import { setState } from "../../modules/mapMarker"
-import  { useDispatch } from "react-redux";
+import  { useDispatch } from "react-redux"
+import {setStoreListClicked } from "../../modules/mapMarker";
 
 import pinDT from "../../images/findStore/pin_general_DT.png";
 import pinGE from "../../images/findStore/pin_general.png";
@@ -163,6 +164,10 @@ const FindStorePage_SearchBox = ({reduxUpdate}) => {
         setStep(3);
     }
 
+    const storelistClicked = (e)=>{
+        dispatch(setStoreListClicked(e.target.innerText));
+    }
+
     useEffect(()=>{
         if(district!==""){
             setFilteredData(dataFilter(city,district));
@@ -201,9 +206,9 @@ const FindStorePage_SearchBox = ({reduxUpdate}) => {
                                         {step===1 ? listData[step].region.map((i)=>(<li onClick={clickStep1}>{i}</li>)):
                                             step===2 && listData[step].region[city] ? listData[step].region[city].map((i)=>(<li onClick={clickStep2}>{i}</li>)):
                                                 step===3 ? filteredData.map((data)=>(
-                                                    <li className="store">
+                                                    <li className="store" >
                                                         <div className="desc">
-                                                            <h4>{data.store_name}</h4>
+                                                            <h4 onClick={storelistClicked}>{data.store_name}</h4>
                                                             <p>{data.address}</p>
                                                             <p>1522-3232</p>
                                                         </div>

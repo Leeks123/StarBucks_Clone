@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from "styled-components";
 import {GoLocation} from "react-icons/go";
 import {AiOutlinePhone,AiOutlineCloseCircle} from "react-icons/ai";
