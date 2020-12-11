@@ -19,7 +19,8 @@ const Content7 = styled.section`
   position: relative;
   background: white;
   width: 100%;
-  height: 41.6vw;
+  // height: 41.6vw;
+  height: 53.6vw;
   padding: 100px 0;
   .reserve_left {
     position: absolute;
@@ -64,7 +65,7 @@ const Content7 = styled.section`
   }
 
   @media (max-width: 960px) {
-    height: 160vw;
+    height: 180vw;
     .reserve_left {
       width: 90vw;
       height: 100vw;
@@ -77,15 +78,22 @@ const Content7 = styled.section`
       background-size: contain;
       width: 70vw;
       height: 48vw;
-      top: 62%;
+      // top: 62%;
+      top : 62%;
       left: 15vw;
       animation: none;
     }
     a {
       left: 50%;
-      top: 99%;
+      top : 103%;
       margin: -135px;
       animation: none;
+    }
+  }
+  @media (max-width: 460px) {
+    height: 200vw;
+    a {
+      top : 108%;
     }
   }
 `;

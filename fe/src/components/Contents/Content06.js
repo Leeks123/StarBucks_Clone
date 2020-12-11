@@ -125,6 +125,7 @@ const Content6 = styled.section`
     }
   }
   @media (max-width: 670px) {
+    height: 800px;
     .txts {
       .txt1 {
         animation: none;

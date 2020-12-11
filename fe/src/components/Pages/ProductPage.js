@@ -8,10 +8,10 @@ import mediumIcon from "../../images/bean_icon_medium.png";
 import darkIcon from "../../images/bean_icon_dark.png";
 
 const Wrapper = styled.div`
+  width : 100vw;
   background-color: white;
   .wrapper {
-    width: 100%;
-    max-width: 1100px;
+    width: 95%;
 
     margin: 0 auto;
     padding-top: 120px;
@@ -105,94 +105,112 @@ const Wrapper = styled.div`
         }
       }
     }
-    @media (max-width: 950px) {
-      padding-top: 70px;
-    }
-    @media (max-width: 860px) {
-      .upperBox {
-        .shortDesc {
-          .type {
-            height: 90px;
-          }
-        }
-      }
-    }
-    @media (max-width: 640px) {
-      .upperBox {
-        display: block;
-        position: relative;
-        img {
-          width: 100%;
-          position: relative;
-          top: 45vw;
-        }
-        .shortDesc {
-          position: relative;
-          top: -97.3vw;
-          .type {
-            height: 70px;
-            margin: 10px 0;
-            .typeName {
-              span {
-              }
-            }
-            .typeDesc {
-              span {
-              }
-            }
-          }
-        }
-      }
-      .bottomBox {
-        display: block;
-        .longDesc {
-          width: 100%;
-        }
-        .TasteNote {
-          width: 100%;
-          margin-left: 0px;
-          margin-top: 30px;
-          h4 {
-          }
-          p {
-          }
-          .tastingNote {
-          }
-          .enjoyWith {
-          }
-        }
-      }
-    }
-    @media (max-width: 520px) {
-      .upperBox {
-        img {
-          top: 50vw;
-        }
-        .shortDesc {
-          .type {
-            margin: 10px 0;
-            padding: 10px;
-            display: block;
-            height: 80px;
-            .typeName {
-              margin: 0;
-            }
-            .typeDesc {
-              margin-top: 0;
-              padding-top: 0;
-              span {
-                padding-left: 50px;
-                border: 0px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
   @media (max-width: 1100px) {
     margin: 0 20px;
   }
+  @media (max-width: 950px) {
+    padding-top: 70px;
+  }
+  @media (max-width: 860px) {
+    .upperBox {
+      .shortDesc {
+        .type {
+          height: 90px;
+        }
+      }
+    }
+  }
+  @media (max-width: 640px) {
+    .upperBox {
+      display: block;
+      position: relative;
+      img {
+        width: 100%;
+        position: relative;
+        top: 45vw;
+      }
+      .shortDesc {
+        position: relative;
+        top: -97.3vw;
+        .type {
+          height: 70px;
+          margin: 10px 0;
+        }
+      }
+    }
+    .bottomBox {
+      display: block;
+      .longDesc {
+        width: 100%;
+      }
+      .TasteNote {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 30px;
+      }
+    }
+  }
+  @media (max-width: 520px) {
+    .upperBox {
+      img {
+        top: 50vw;
+      }
+      .shortDesc {
+        .type {
+          margin: 10px 0;
+          padding: 10px;
+          display: block;
+          height: 80px;
+          .typeName {
+            margin: 0;
+          }
+          .typeDesc {
+            margin-top: 0;
+            padding-top: 0;
+            span {
+              padding-left: 50px;
+              border: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    .upperBox {
+      img {
+        top : 60vw;
+      }
+    }
+  }
+  @media (max-width: 415px) {
+    .upperBox {
+      img {
+        top : 70vw;
+      }
+    }
+  }
+  @media (max-width: 375px) {
+    .upperBox {
+      img {
+        top : 90vw;
+      }
+      .shortDesc {
+        .type {
+          height : 100px;
+        }
+      }
+      
+    }
+  }
+  @media (max-width: 320px) {
+    .upperBox {
+      img {
+        top : 100vw;
+      }
+    }
+  }
+}
 `;
 
 const ProductPage = ({ match }) => {
@@ -298,7 +316,7 @@ const ProductPage = ({ match }) => {
               }}
             />
           ) : (
-            <img src={productData.img} />
+            <img src={productData.img} alt=""/>
           )}
           <div className="shortDesc">
             <h2>{productData.title}</h2>

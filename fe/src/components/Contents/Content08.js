@@ -138,6 +138,29 @@ const Content8 = styled.section`
       margin-left: -72px;
     }
   }
+  @media (max-width: 460px) {
+    .img01 {
+      width: 43.4vw;
+    }
+    .img02 {
+      width: 65vw;
+    }
+    .img03 {
+      width: 45vw;
+    }
+    .img04 {
+      width: 37vw;
+    }
+    .txt01 {
+      width: 80vw;
+      left: 50%;
+      margin-left: -40vw;
+    }
+    .txt02 {
+      width : 91vw;
+      margin-left: -45.5vw;
+    }
+  }
 `;
 const Content08 = () => {
   return (

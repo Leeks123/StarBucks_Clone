@@ -170,6 +170,28 @@ const Content2 = styled.section`
         }
       }
     }
+    @media (max-width: 440px) {
+      .wrapper {
+        .notice {
+          ul {
+            li {
+              width : 61.4vw;
+              font-size: 18px;
+              text-overflow:ellipsis;
+              overflow:hidden;
+              white-space:nowrap;
+              word-wrap:normal;
+            }
+          }
+        }
+        .promotion {
+          & > a {
+            .text {
+              font-size: 1.5em;
+            }
+           }
+        }
+      }
   }
 `;
 

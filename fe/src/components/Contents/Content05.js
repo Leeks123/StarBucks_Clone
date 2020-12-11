@@ -83,6 +83,13 @@ const Content5 = styled.section`
       margin-left: -115px;
     }
   }
+  @media (max-width: 440px) {
+    height: 170vw;
+    
+    a {
+      top: 70%;
+    }
+  }
 `;
 const Content05 = () => {
   return (

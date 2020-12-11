@@ -187,11 +187,28 @@ const Content3 = styled.section`
             width: 100%;
             text-align: center;
             margin: 0;
-            margin-left: -20px;
           }
         }
       }
     }
+    @media (max-width: 440px) {
+      height: 840px;
+      .wrapper {
+        .reward_contents {
+          .ecard_text {
+            p {
+              width: 100%;
+             }
+            & > a {
+              display: block;
+              width: 100%;
+              text-align: center;
+              margin: 0;
+              // margin-left: -20px;
+            }
+          }
+        }
+      }
   }
 `;
 

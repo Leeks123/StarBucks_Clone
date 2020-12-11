@@ -176,6 +176,11 @@ const Content4 = styled.section`
       }
     }
   }
+  @media (max-width: 500px) {
+    .wrapper {
+      height : 190vw;
+    }
+  }
 `;
 const Content04 = () => {
   const [scrolled, setScrolled] = useState(false);
